@@ -1,237 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Bootstrap Walkthrough</title>
 
     <!-- default bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
 
     <!-- try themes from: https://startbootstrap.com/-->
     <!-- <link rel="stylesheet" type="text/css" href="theme.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="theme2.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="theme3.css"> -->
-    <link rel="stylesheet" type="text/css" href="theme4.css">
+    <!--<link rel="stylesheet" type="text/css" href="theme4.css">-->
+    <link rel="stylesheet" type="text/css" href="theme5.css">
 
     <!-- font awesome -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css">
-    
+
     <!-- animate.css -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css">
-    
+
+    <!--our own cumstom css override-->
+    <link rel="stylesheet" href="custom.css">
+
     <!-- use this style for testing and development purposes -->
-    <!-- <style type="text/css">
-    .container{border: 2px dotted green;}
-    .row{border: 1px dotted red;}
-    .row [class*=' col-']{border: 2px dotted purple;}
-    </style> -->
-    
+    <style type="text/css">
+        .container {
+            border: 2px dotted green;
+        }
+
+        .row {
+            border: 1px dotted red;
+        }
+
+        .row [class*=' col-'] {
+            border: 2px dotted purple;
+        }
+    </style>
+
 </head>
+
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="jumbotron">
-                    <h1>
-                        Neko Code Cafe<br>
-                        <small>Cats and Code</small>
-                    </h1>
-                    <p>
-                        <a class="btn btn-primary btn-lg"
-                        href="#form">
-                        Rent A Cat</a>
-                    </p>
-                </div>
+    <!-- to disable sticking bar to screen, remove class: navbar-fixed-top -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- hamburger button. do not touch! -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <!-- HOME BUTTON: REPLACE href="#" with your landing page url -->
+                <a class="navbar-brand" href="#">
+                    <!-- PUT BRAND LOGO / ICON HERE (instead of font-awesome -->
+                    <!--<i class="fa fa-telegram"></i>-->
+                    <img src="http://www.stackup.sg/assets/stackup_logo.svg" height="30" max-width="1vw">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!-- THIS UL HANDLES OUR LINKS -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://facebook.com">facebook</a></li>
+                    <li><a href="http://facebook.com">facebook2</a></li>
+                    <!-- to make more links, make some <li> in here -->
+                </ul>
             </div>
         </div>
+    </nav>
+
+    <!--main container for the entire page-->
+    <div class="container" style="margin-top : 50px;">
+        <!--<div class="container-fluid">-->
+        <div class="row">
+            <!--full width col for all devices-->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jumbotron my-jumbotron-background">
+
+                    <h1>Crab Lah!</h1>
+                    <p>On the House</p>
+                    <p><a class="btn btn-primary btn-lg" href="http://www.houseofseafood.sg/" role="button" target="_blank">Learn more</a></p>
+                </div>
+            </div>
+            <!--end of col-->
+        </div>
+        <!--end of row1-->
 
         <div class="row">
-
-            <div class="col-sm-4">
-                <div class="thumbnail wow fadeIn">
-                    <img src="http://placehold.it/800x600" alt="" class="img-responsive">
+            <!--col1: First thumbnail-->
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="thumbnail">
+                    <img src="home_menu_img_01.jpg"
+                        alt="...">
                     <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </p>
-                        <a href="#" class="btn btn-primary" role="button">Button</a>
+                        <h3>Salted Egg Crab</h3>
+                        <p>Crab served with best salted egg sauce. Served with some vegetables, this dish goes well with a cold glass of beer anytime.</p>
+                        <p><a href="#" class="btn btn-primary" role="button">Button1</a> <a href="#" class="btn btn-default"
+                                role="button">Button1</a></p>
                     </div>
                 </div>
             </div>
-
-            <div class="col-sm-4">
-                <div class="thumbnail wow fadeIn">
-                    <img src="http://placehold.it/800x600" alt="" class="img-responsive">
+            <!--end of col1-->
+            <!--col2: Second thumbnail-->
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="thumbnail">
+                    <img src="home_menu_img_02.jpg" alt="...">
                     <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </p>
-                        <a href="#" class="btn btn-primary" role="button">Button</a>
+                        <h3>Black Pepper Crab</h3>
+                       <p>Black pepper crab has a strong peppery taste without overwhelming the sweetness from the crab.</p>
+                        <p><a href="#" class="btn btn-primary" role="button">Button1</a> <a href="#" class="btn btn-default"
+                                role="button">Button1</a></p>
                     </div>
                 </div>
             </div>
-
-            <div class="col-sm-4">
-                <div class="thumbnail wow fadeIn">
-                    <img src="http://placehold.it/800x600" alt="" class="img-responsive">
+            <!--end of col2-->
+            <!--col3: Third thumbnail-->
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="thumbnail">
+                    <img src="home_menu_img_03.jpg" alt="...">
                     <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </p>
-                        <a href="#" class="btn btn-primary" role="button">Button</a>
+                        <h3>Chilli Crab</h3>
+                        <p>A wonderful myriad of savory and sweet flavours from the tomato and chilli sauce, with a lovely side of crispy and fluffy mantous.</p>
+                        <p><a href="#" class="btn btn-primary" role="button">Button1</a> <a href="#" class="btn btn-default"
+                                role="button">Button1</a></p>
                     </div>
                 </div>
-            </div>
-
-        </div>
-
-        <hr>
-
-        <div class="row">
-            <!-- 16:9 aspect ratio -->
-            <div class="col-xs-12" style="padding:0;">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item"
-                    src="https://www.youtube.com/embed/mpDOscUDQ_0"
-                    allowfullscreen=""></iframe>
-                </div>
+                <!--end of col3-->
             </div>
         </div>
-
-        <hr>
+        <!--end of row2-->
 
         <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                <div class="panel panel-default text-muted" style="margin-top: 2rem">
+            <div class="col-xs-12 col-sm-4">
+                <div class="panel panel-default">
                     <div class="panel-body">
-                        <form action="" method="post" role="form">
-                           <legend>Sign Up</legend>
-
-                            <div class="form-group">
-                                <label for="name-id">Name</label>
-                                <input type="text" class="form-control" name="name" id="name-id" placeholder="frank">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email-id">Email</label>
-                                <input type="email" class="form-control" name="email" id="email-id" placeholder="frank@email.com" autocomplete="on">
-                            </div>
-
-                            <div class="form-group">
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="newsletter" id="news-id-1" value="weekly" checked="checked">
-                                        Send me weekly newsletters
-                                    </label>
-                                </div>
-
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="newsletter" id="news-id-2" value="never">
-                                        Don't send me newsletters
-                                    </label>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <form action="https://coderinyou-1332.appspot.com/submit" method="post">
+                            <label for="username-id">name</label><br>
+                            <input type="text" id="username-id" size="41" name="USERNAME" placeholder="your name here">
                         </form>
+                        <form action="https://coderinyou-1332.appspot.com/submit" method="post">
+                            <label for="email-id">email</label><br>
+                            <input type="email" id="email-id" size="41" name="EMAIL" placeholder="your email here">
+                        </form>
+                        <!--<hr> Contact me</hr>-->
+                        <!--<div>
+                            <hr> </hr>
+                        </div>-->
+                        <div class="list-group">
+                            <a href="#" class="list-group-item"><i class="fa fa-phone fa-fw" aria-hidden="true"></i> +65 6285-9711</a>
+                            <a href="#" class="list-group-item"><i class="fa fa-envelope fa-fw" aria-hidden="true"></i> hello@meet.me</a>
+                            <a href="#" class="list-group-item"><i class="fa fa-telegram fa-fw" aria-hidden="true"></i> t.me/frank</a>
+                        </div>
+
+                    </div>
+                    <!--<div>
+                        <input type="submit">
+                    </div>-->
+                </div>
+                <!--panel-->
+            </div>
+            <!--left column-->
+
+            <div class="col-xs-12 col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <form action="https://coderinyou-1332.appspot.com/submit" method="post">
+                                <label for="username-id">name</label>
+                                <input type="text" class="form-control" id="username-id" name="USERNAME" placeholder="your name here">
+                            </form>
+                        </div>
+                        <div class="form-group">
+                            <form action="https://coderinyou-1332.appspot.com/submit" method="post">
+                                <label for="email-id">email</label>
+                                <input type="email" class="form-control" id="email-id" name="EMAIL" placeholder="your email here">
+                            </form>
+                        </div>
+                        <div class="form-group">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="GENDER" value="male">male
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="radio">
+                                <label> 
+                                    <input type="radio" name="GENDER" value="female">female
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="submit">
+                        </div>
                     </div>
                 </div>
+                <!--panel-->
+            </div>
+            <!--right column-->
+
+            <div class="col-xs-12 col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="list-group">
+                            <a class="list-group-item" href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>
+                            <a class="list-group-item" href="#"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Library</a>
+                            <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Applications</a>
+                            <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp; Settings</a>
+                        </div>
+                    </div>
+                </div>
+                <!--emmet: table>(tr>th*2)+(tr>td*2)*3-->
+                <!--<table>
+                    <tr>
+                        <th>Mon</th>
+                        <th>class </th>
+                    </tr>
+                    <tr>
+                        <td>Tue</td>
+                        <td>class </td>
+                    </tr>
+                    <tr>
+                        <td>Wed</td>
+                        <td>class </td>
+                    </tr>
+                    <tr>
+                        <td>Thur</td>
+                        <td>class </td>
+                    </tr>
+                </table>-->
             </div>
 
-            <div class="col-xs-12 col-sm-6 text-center">
-                
-                <h1 class="text-primary">Lorem ipsum dolor sit amet?</h1>
-                <hr>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur.
-                </p>
-                
-            </div>
         </div>
-
-        <hr>
+        <!--end of row3-->
 
         <div class="row">
-
-            <div class="col-xs-12 col-md-4">
-                <h3 class="text-center">Opening Hours</h3>
-                
-                <table class="table wow fadeInLeft">
-                    <thead>
-                        <tr>
-                            <th>Day</th>
-                            <th>Hours</th>
-                        </tr>
-                    </thead>
-                    
-                    <tbody>
-                        <tr>
-                            <td>Monday to Thursday</td>
-                            <td>9am - 5pm</td>
-                        </tr>
-                        <tr>
-                            <td>Friday and Saturday</td>
-                            <td>$11am - 3am</td>
-                        </tr>
-                        <tr>
-                            <td>Sunday</td>
-                            <td>closed</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="col-xs-12 col-md-4">
-                <div class="embed-responsive embed-responsive-4by3">
-                    <iframe src="https://goo.gl/KUBB7L" class="responsive-embed"></iframe>
+            <div class="col-xs-6">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <!--<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7f4FyANdK8w"></iframe>-->
+                    <!--<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/czDvutbpO8w"></iframe>-->
+                    <iframe class="embed-responsive-item" src="HouseOfCrab.mp4"></iframe>
+                    <!--https://www.facebook.com/damnworthit/videos/582183701973217/-->
                 </div>
             </div>
+            <div class="col-xs-6">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <!--<iframe class="embed-responsive-item" src="https://goo.gl/vQ9ylp"></iframe>-->
+                    <iframe class="embed-responsive-item" src="http://www.streetdirectory.com/map/?l=12&w=640&h=480&long=103.8787609787&lat=1.3536109145049" frameborder="0" width="715" height="667"></iframe>
 
-            <div class="col-xs-12 col-md-4">
-                
-                <h3>
-                    Check me out
-                </h3>
-                
-                <div class="list-group">
-                    <a href="#" class="list-group-item"><i class="fa fa-phone fa-fw" aria-hidden="true"></i> +65 123 456 789</a>
-                    <a href="#" class="list-group-item"><i class="fa fa-envelope fa-fw" aria-hidden="true"></i> hello@meet.me</a>
-                    <a href="#" class="list-group-item"><i class="fa fa-telegram fa-fw" aria-hidden="true"></i> t.me/frank</a>
                 </div>
-
             </div>
         </div>
-        
-        <hr>
+        <!--end of row4-->
 
         <div class="row">
             <div class="col-xs-12 text-center">
                 <ul class="list-inline">
-                    <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram fa-2x"></i></a></li>
-                    <li><a href="#"><i class="fa fa-snapchat fa-2x"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google fa-2x"></i></a></li>
+                    <li><a href="https://www.facebook.com/HouseOfSeafoodGroupOfCompanies/" target="_blank">
+                    <i class="fa fa-facebook fa-3x"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-instagram fa-3x"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-snapchat fa-3x"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-google fa-3x"></i></a></li>
+                    <li></li>
                 </ul>
-           </div>
+            </div>
+
         </div>
+        <!--end of row5-->
+
     </div>
-</div>
+    <!--end of main container-->
 
-<!-- jquery -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
-<!-- bootstrap js -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/wow/1.1.2/wow.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script>new WOW().init();</script>
+    <!-- jquery -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/wow/1.1.2/wow.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
+
 </html>
