@@ -292,9 +292,11 @@
         </div>
         <div class="col-xs-12 col-sm-7 text-center">
             <div class="embed-responsive embed-responsive-4by3">
-                <iframe class="embed-responsive-item" id="my-map" src="http://www.streetdirectory.com/map/?l=12&long=103.912353966&lat=1.4206940567677"
+                <!--<iframe class="embed-responsive-item" id="my-map" src="http://www.streetdirectory.com/map/?l=12&long=103.912353966&lat=1.4206940567677"
                     frameborder="0"></iframe>
-                <!--<iframe class="embed-responsive-item" src="http://www.streetdirectory.com/map/?l=12&long=103.8787609787&lat=1.3536109145049" frameborder="0"></iframe>-->
+                <iframe class="embed-responsive-item" src="http://www.streetdirectory.com/map/?l=12&long=103.8787609787&lat=1.3536109145049" frameborder="0"></iframe>-->
+                <iframe class="embed-responsive-item" id="my-map" src="https://goo.gl/uy7uBi" frameborder="0"></iframe>
+                <!--<iframe class="embed-responsive-item" id="my-map" src="https://goo.gl/J82EDI" frameborder="0"></iframe>-->
             </div>
         </div>
     </div>
@@ -368,10 +370,12 @@
     <script>
         function loadMap(index) {
             if (index == 1) {
-                var loc = "http://www.streetdirectory.com/map/?l=12&long=103.912353966&lat=1.4206940567677";
+                // var loc = "http://www.streetdirectory.com/map/?l=12&long=103.912353966&lat=1.4206940567677";
+                var loc = "https://goo.gl/uy7uBi";
                 document.getElementById('my-map').setAttribute('src', loc);
             } else if (index == 2) {
-                var loc = "http://www.streetdirectory.com/map/?l=12&long=103.8787609787&lat=1.3536109145049";
+                // var loc = "http://www.streetdirectory.com/map/?l=12&long=103.8787609787&lat=1.3536109145049";
+                var loc = "https://goo.gl/J82EDI";
                 document.getElementById('my-map').setAttribute('src', loc);
             }
         }
