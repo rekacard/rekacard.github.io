@@ -4,21 +4,9 @@ var app = express();
 
 app.get("/register", function(req, resp) {
 
-        // console.log(JSON.stringify(req));
-        console.log("Print req");
-        
-        console.log(JSON.stringify(req.query));
-        console.log(req.query.name);
-        console.log("End of req");
-
         resp.status(201);
         resp.type("text/plain");
         resp.send();
-
-    // resp.status(202);
-    // resp.type("application/json");
-    // resp.json({regId: regId});
-
 });
 
 
