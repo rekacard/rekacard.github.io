@@ -4,7 +4,7 @@ var app = express();
 
 app.get("/register", function(req, resp) {
 
-        resp.status(201);
+        resp.status(200);
         resp.type("text/plain");
         resp.send();
 });
