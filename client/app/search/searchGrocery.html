@@ -1,0 +1,95 @@
+<!--<div class="container" ng-controller="SearchGroceryCtrl as ctrl">-->
+<div class="container">
+
+    <div class="page-header">
+        <h1>Supermart
+            <small>Search Grocery</small>
+        </h1>
+    </div>
+
+    <form name="queryForm" novalidate class="form-inline">
+        <div class="form-group">
+            <input id="searchBrandString"
+                   class="form-control"
+                   size="50"
+                   type="text"
+                   name="searchBrandString"
+                   ng-model="ctrl.searchBrandString"
+                   placeholder="Enter brand here">
+
+            <hr>
+
+            <input id="searchProductString"
+                   class="form-control"
+                   size="50"
+                   type="text"
+                   name="searchProductString"
+                   ng-model="ctrl.searchProductString"
+                   placeholder="Enter product name here">
+            <button class="btn btn-info form-control" ng-disabled="queryForm.$invalid"
+                    ng-click="ctrl.search()">
+                Search
+            </button>
+        </div>
+    </form>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Barcode</th>
+            <th>brand</th>
+            <th>Product</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-show="ctrl.showGrocery" ng-repeat="grocery in ctrl.grocery">
+            <td><a ui-sref="editWithParam({id:grocery.id})">{{grocery.id }}</a></td>
+            <td>
+                  <img border="0" alt="barcode" src="{{ grocery.imgpath }}" width="200">
+            </td>            
+            <td>{{ grocery.brand }}</td>
+            <td>{{ grocery.name }}</td>
+            <!--<td ng-show="ctrl.showGrocery"><a ui-sref="editWithParam({id:grocery.id})">{{grocery.id }}</a></td>
+            <td ng-show="ctrl.showGrocery">
+                  <img border="0" alt="barcode" src="{{ grocery.imgpath }}" width="200">
+            </td>            
+            <td ng-show="ctrl.showGrocery">{{ grocery.brand }}</td>
+            <td ng-show="ctrl.showGrocery">{{ grocery.name }}</td>-->
+        </tr>
+        </tbody>
+    </table>-->
+
+
+    <!--<hr>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Department No</th>
+            <th>Department name</th>
+            <th ng-show="ctrl.showManager">Department Manager Id</th>
+            <th ng-show="ctrl.showManager">Department Manager Name</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="dept in ctrl.departments">
+            <td><a ui-sref="editWithParam({dept_no:dept.dept_no})">{{dept.dept_no }}</a></td>
+            <td>{{ dept.dept_name }}</td>
+            <td>
+            <span ng-show="ctrl.showManager">
+                 <!-- Handles display of departments that have not been assigned any manager --
+                {{ dept.managers[0] ? dept.managers[0].emp_no : " "}}
+            </span>
+            </td>
+            <td>
+            <span ng-show="ctrl.showManager">
+                 <!-- Handles display of departments that have not been assigned any manager --
+                {{ dept.managers[0]
+                ? (dept.managers[0].employee.first_name + " " + dept.managers[0].employee.last_name)
+                : " "}}
+            </span>
+            </td>
+        </tr>
+        </tbody>
+    </table>-->
+</div>
