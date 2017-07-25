@@ -1,7 +1,7 @@
-//Model for email table
+//Model for event table
 
 module.exports = function (sequelize, Sequelize) {
-    return sequelize.define("users",
+    return sequelize.define("events",
         {
             event_id: {
                 type: Sequelize.INTEGER(20),
@@ -14,15 +14,15 @@ module.exports = function (sequelize, Sequelize) {
                 allowNull: false,
             },
             brief_desc: {
-                type: Sequelize.STRING,
+                type: Sequelize.TEXT,
                 allowNull: false
             },
             detail_desc: {
-                type: Sequelize.STRING,
+                type: Sequelize.TEXT,
                 allowNull: false,
             },
             date: {
-                type: Sequelize.DATE,
+                type: Sequelize.DATEONLY,
                 allowNull: false
             },
             start_time: {
@@ -41,40 +41,52 @@ module.exports = function (sequelize, Sequelize) {
                 type: Sequelize.STRING,
                 allowNull: false
             },
-            tel_mobile: {
+            direction: {
+                type: Sequelize.TEXT('TINY'),
+                allowNull: true,
+            },
+            note: {
+                type: Sequelize.TEXT,
+                allowNull: true,
+            },
+            member_age_max: {
                 type: Sequelize.INTEGER,
                 allowNull: true,
             },
-            tel_home: {
+            member_age_min: {
                 type: Sequelize.INTEGER,
                 allowNull: true,
             },
-            dob: {
-                type: Sequelize.DATE,
+            meal_avail: {
+                type: Sequelize.BOOLEAN,
                 allowNull: true,
             },
-            gender: {
-                type: Sequelize.ENUM('M','F'),
-                allowNull: false,
-            },
-            dialect: {
-                type: Sequelize.STRING,
-                allowNull: true
-            },
-            lang_cnt: {
-                type: Sequelize.INTEGER,
-                allowNull: true,
-            },
-            skillset_cnt: {
-                type: Sequelize.INTEGER,
-                allowNull: true,
-            },
-            interest_cnt: {
-                type: Sequelize.INTEGER,
+           shirt_avail: {
+                type: Sequelize.BOOLEAN,
                 allowNull: true,
             },
             img_filename: {
                 type: Sequelize.STRING,
+                allowNull: true,
+            },
+            map_location: {
+                type: Sequelize.STRING,
+                allowNull: true,
+            },
+           approved: {
+                type: Sequelize.BOOLEAN,
+                allowNull: true,
+            },
+            approved_user_id: {
+                type: Sequelize.INTEGER,
+                allowNull: true,
+            },
+           published: {
+                type: Sequelize.BOOLEAN,
+                allowNull: true,
+            },
+            published_user_id: {
+                type: Sequelize.INTEGER,
                 allowNull: true,
             },
             created_at: {
