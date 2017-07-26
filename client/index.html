@@ -12,14 +12,17 @@
   <link rel="stylesheet" type="text/css" href="assets/css/jquery.bxslider.css">
   <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-social.css">
   <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/ng-tags-input/ng-tags-input.min.css">
+  <link rel="stylesheet" type="text/css" href="app/upcoming/upcoming.css">
 
 </head>
 
 <body>
 
-  <div class="loader"></div>
+<div class="loader"></div>
   <div id="myDiv">
     <!--HEADER-->
     <div class="header">
@@ -40,25 +43,23 @@
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                   <li class="active"><a ui-sref="home" ui-sref-active="active">Home<span class="sr-only">(home)</span></a></li>
-                  <li class=""><a ui-sref="searchGrocery" ui-sref-active="active">Search Grocery<span class="sr-only">(searchGrocery)</span></a></li>
-                  <li class=""><a ui-sref="edit" ui-sref-active="active">Edit<span class="sr-only">(edit)</span></a></li>
+                  <li class=""><a ui-sref="login" ui-sref-active="active">Sign in<span class="sr-only">(login)</span></a></li>
+                  <li class=""><a ui-sref="register" ui-sref-active="active">Register<span class="sr-only">(register)</span></a></li>
                 </ul>
               </div>
             </div>
           </nav>
         </header>
-        <div class="wrapper">
+       <div class="wrapper">
           <div class="container">
             <div class="row">
               <div class="banner-info text-center wow fadeIn delay-05s">
-                <h1 class="bnr-title">We are at ba<span>ker</span></h1>
+                <h1 class="bnr-title">Volunteer</h1>
                 <h2 class="bnr-sub-title">Starting a new journey!!</h2>
-                <p class="bnr-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip <br>ex
-                  ea commodo consequat.</p>
+                <p class="bnr-para">Join us for some of the fun events!</p>
                 <div class="brn-btn">
-                  <a href="#" class="btn btn-download">Download now!</a>
-                  <a href="#" class="btn btn-more">Learn More</a>
+                  <a ui-sref="login" class="btn btn-download">Sign in</a>
+                  <a ui-sref="register" class="btn btn-more">Register</a>
                 </div>
                 <div class="overlay-detail">
                   <a href="#feature"><i class="fa fa-angle-down"></i></a>
@@ -69,6 +70,9 @@
         </div>
       </div>
     </div>
+
+
+  
     <!--/ HEADER-->
     <!---->
     <!-- Display views -->
@@ -120,8 +124,9 @@
 <script src="assets/js/wow.js"></script>
 <script src="assets/js/jquery.bxslider.min.js"></script>
 <script src="assets/js/custom.js"></script>
-<script src="assets/contactform/contactform.js"></script>
+<!-- Load angular TagInput -->
 <script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/ng-tags-input/ng-tags-input.min.js"></script>
 <!--Load angular-messages AFTER Angular-->
 <script src="bower_components/angular-messages/angular-messages.min.js"></script>
 <!--Load angular-animate-->
@@ -136,13 +141,25 @@
 
 <!--Loads the js file that contains the Grocery Service controller definition-->
 <script src="app/services/grocery.services.js"></script>
+<!--Loads the js file that contains the Grocery Service controller definition-->
+<script src="app/services/user.services.js"></script>
 
-<!--Loads the js file that contains the SearchDBCtrl controller definition-->
-<script src="app/event/event.controller.js"></script>
 <!--Loads the js file that contains the SearchDBCtrl controller definition-->
 <script src="app/edit/edit.controller.js"></script>
 <!--Loads the js file that contains the SearchDBCtrl controller definition-->
 <script src="app/edit/newedit.controller.js"></script>
+<!--Loads the js file that contains the SearchDBCtrl controller definition-->
+<script src="app/event/event.controller.js"></script>
+<!--Loads the js file that contains the SearchDBCtrl controller definition-->
+<script src="app/login/login.controller.js"></script>
+<!--Loads the js file that contains the SearchDBCtrl controller definition-->
+<script src="app/registration/register.controller.js"></script>
+<!--Loads the js file that contains the SearchDBCtrl controller definition-->
+<script src="app/upcoming/upcoming.controller.js"></script>
+<!--Loads the js file that contains the userprofile controller definition-->
+<script src="app/user_searchDB/user_searchDB.controller.js"></script>
+<!--Loads the js file that contains the SearchDBCtrl controller definition-->
+<script src="app/userprofile/userprofile.controller.js"></script>
 <!--Loads the js file that contains the SearchDBCtrl controller definition-->
 <script src="app/search/searchGrocery.controller.js"></script>
 

@@ -38,6 +38,42 @@
                     controller: "NewEditCtrl",
                     controllerAs: "ctrl"
             })
+            .state("login", {
+                    url: "/login",
+                    templateUrl: "app/login/login.html",
+                    controller: "LoginCtrl",
+                    controllerAs: "ctrl"
+            })
+            .state("register", {
+                    url: "/register",
+                    templateUrl: "app/registration/register.html",
+                    controller: "RegCtrl",
+                    controllerAs: "ctrl"
+            })
+            .state("thanks", {
+                    url: "/thanks",
+                    templateUrl: "app/registration/thanks.html",
+                    controller: "RegCtrl",
+                    controllerAs: "ctrl"
+            })
+            .state("userprofile", {
+                    url: "/userprofile",
+                    templateUrl: "app/userprofile/userprofile.html",
+                    controller: "ProfileCtrl",
+                    controllerAs: "ctrl"
+            })
+            .state("upcoming", {
+                    url: "/upcoming",
+                    templateUrl: "app/upcoming/upcoming.html",
+                    controller: "UpcomingCtrl",
+                    controllerAs: "ctrl"
+            })
+            .state("user_searchDB", {
+                    url: "/user_searchDB",
+                    templateUrl: "app/user_searchDB/user_searchDB.html",
+                    controller: "UserSearchDBCtrl",
+                    controllerAs: "ctrl"
+            })
             .state("editWithParam", {
                     url: "/edit/:id",
                     templateUrl: "app/edit/edit.html",

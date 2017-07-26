@@ -6,9 +6,11 @@ var retrieveIDByEmail = function(db) {
 
     var where = {};
     if (req.query.email) {
-        where.email = req.query.email;
+        where.email_id = req.query.email;
     }
-    // console.log("-- GET /api/id/ " + where.id);
+
+    // console.log("-- POST /api/login/ " + where.id);
+
     db.Email
     // findOne asks sequelize to search
         .findOne({ where: where })
@@ -17,12 +19,12 @@ var retrieveIDByEmail = function(db) {
         // we named it departments, but this object also contains info about the
         // latest manager of that department
         .then(function (result) {
-            console.log("-- GET /api/id/ findOne then() result \n " + JSON.stringify(result));
+            console.log("-- POST /api/login/ findOne then() result \n " + JSON.stringify(result));
             res.json(result);
         })
         // this .catch() handles erroneous findAll operation
         .catch(function (err) {
-            console.log("-- GET /api/id/ findOne catch() \n " + JSON.stringify(departments));
+            console.log("-- POST /api/login/ findOne catch() \n " + JSON.stringify(departments));
             res
                 .status(500)
                 .json({error: true});

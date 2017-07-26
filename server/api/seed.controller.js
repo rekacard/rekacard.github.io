@@ -3,7 +3,6 @@
 var createNewRole = function(db) {
   return function(req, res) {
 
-
         db.Role
             .create({
                 // role_id: 1,
