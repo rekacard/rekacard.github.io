@@ -7,35 +7,10 @@
 
     function uiRouteConfig($stateProvider, $urlRouterProvider) {
         $stateProvider
-            // .state("register", {
-            //         url: "/register",
-            //         templateUrl: "app/registration/register.html",
-            //         controller: "RegCtrl",
-            //         controllerAs: "ctrl"
-            // })
-            // .state("search", {
-            //         url: "/search",
-            //         templateUrl: "app/search/search.html",
-            //         controller: "SearchCtrl",
-            //         controllerAs: "ctrl"
-            // })
-            
             .state("home", {
                     url: "/home",
                     templateUrl: "app/event/event.html",
                     controller: "EventCtrl",
-                    controllerAs: "ctrl"
-            })
-            .state("searchGrocery", {
-                    url: "/searchGrocery",
-                    templateUrl: "app/search/searchGrocery.html",
-                    controller: "SearchGroceryCtrl",
-                    controllerAs: "ctrl"
-            })
-            .state("edit", {
-                    url: "/edit",
-                    templateUrl: "app/edit/newedit.html",
-                    controller: "NewEditCtrl",
                     controllerAs: "ctrl"
             })
             .state("login", {
@@ -74,12 +49,18 @@
                     controller: "UserSearchDBCtrl",
                     controllerAs: "ctrl"
             })
-            .state("editWithParam", {
-                    url: "/edit/:id",
-                    templateUrl: "app/edit/edit.html",
-                    controller: "EditCtrl",
+            .state("user_editDB", {
+                    url: "/user_editDB",
+                    templateUrl: "app/user_searchDB/user_editDB.html",
+                    controller: "UserEditDBCtrl",
                     controllerAs: "ctrl"
-            });
+            })
+            .state("user_event", {
+                    url: "/user_event",
+                    templateUrl: "app/user_event/user_event.html",
+                    controller: "UserEventCtrl",
+                    controllerAs: "ctrl"
+            })
         // $urlRouterProvider.otherwise("/register");
         $urlRouterProvider.otherwise("/home");
     }

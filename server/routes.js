@@ -1,5 +1,4 @@
-module.exports = function(app, db) {
-  // var Grocery  = require('./api/grocery.controller')(db);
+module.exports = function(app, db, auth, passport) {
   var Email  = require('./api/email.controller')(db);
   var Seed  = require('./api/seed.controller')(db);
 

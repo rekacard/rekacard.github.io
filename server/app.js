@@ -8,6 +8,12 @@ var path = require("path");
 // Loads bodyParser to populate and parse the body property of the request object
 var bodyParser = require("body-parser");
 
+// Loads Session
+var session = require('express-session');
+
+// Load authentication module
+var passport = require('passport');
+
 // Loads sequelize ORM
 var Sequelize = require("sequelize");
 
@@ -17,7 +23,7 @@ var config = require("./config");
 // CONSTANTS ---------------------------------------------------------------------------------------------------------
 // Defines server port.
 // Value of NODE_PORT is taken from the user environment if defined; port 3000 is used otherwise.
-const NODE_PORT = process.env.NODE_PORT || config.PORT || 3000;
+const NODE_PORT = process.env.PORT || process.env.NODE_PORT || config.PORT || 3000;
 
 // Defines paths
 // __dirname is a global that holds the directory name of the current module
@@ -33,18 +39,33 @@ const db = require('./db');
 
 // MIDDLEWARES --------------------------------------------------------------------------------------------------------
 
-// Serves files from public directory (in this case CLIENT_FOLDER).
-// __dirname is the absolute path of the application directory.
-// if you have not defined a handler for "/" before this line, server will look for index.html in CLIENT_FOLDER
-app.use(express.static(CLIENT_FOLDER));
 
 // Populates req.body with information submitted through the registration form.
 // Default $http content type is application/json so we use json as the parser type
 // For content type is application/x-www-form-urlencoded  use: app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 // ROUTE HANDLERS ---------------------------------------------------------------------------------
 // Load Routes handlers
+app.use(session({
+  secret: config.SECRET,
+  resave: true,
+  saveUninitialized: true,
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Serves files from public directory (in this case CLIENT_FOLDER).
+// __dirname is the absolute path of the application directory.
+// if you have not defined a handler for "/" before this line, server will look for index.html in CLIENT_FOLDER
+app.use(express.static(CLIENT_FOLDER));
+
+
+var auth = require('./auth')(app, passport);
+require('./auth_routes')(auth, app, passport);
+
 const routes = require('./routes')(app, db);
 
 // ERROR HANDLING ----------------------------------------------------------------------------------------------------

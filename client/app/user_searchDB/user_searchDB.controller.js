@@ -1,26 +1,64 @@
-//TODO: Add ability to choose manager when registering a department. An existing manager shouldn't be
-//TODO: allowed on the list. Saving of department in departments table and of manager in dept_managers table should be 1
-//TODO: transaction (i.e., atomic)
-//TODO: 2. Allow users to choose a manager from a list of employees. Note: Function to call is in EmpService
-
-// Always use an IIFE, i.e., (function() {})();
 (function () {
     angular
-        .module("DMS")          // to call an angular module, omit the second argument ([]) from the angular.module()
-        // syntax this syntax is called the getter syntax
-        .controller("UserSearchDBCtrl", UserSearchDBCtrl);    // angular.controller() attaches a controller to the angular module
-                                            // specified as you can see, angular methods are chainable
+        .module("DMS")
+        .controller("UserSearchDBCtrl", UserSearchDBCtrl)
 
+    UserSearchDBCtrl.$inject = ['UserSearchDBService', '$state'];
 
-    // EventCtrl function declaration. A function declaration uses the syntax: functionName([arg [, arg [...]]]){ ... }
-    // EventCtrl accepts the injected dependency as a parameter. We name it DeptService for consistency, but you may
-    // assign any name
-    function UserSearchDBCtrl() {
-
-        // Declares the var vm (for ViewModel) and assigns it the object this (in this case, the EventCtrl)
-        // Any function or variable that you attach to vm will be exposed to callers of EventCtrl, e.g., register.html
+    function UserSearchDBCtrl(UserSearchDBService, $state) {
         var vm = this;
+        vm.users = "";
+        vm.typesOfSearch = ['First Name','NRIC'];
+        vm.searchType = [];
+        vm.searchType.selectedType = [];
+        vm.sortBy = "";
+        vm.keyword = "";
 
-    } // END UserSearchDBCtrl
+        vm.totalItems = 0;
+        vm.itemsPerPage = 20;
+        vm.maxSize = 8;
+        vm.currentPage = 1;
 
+        vm.pageChanged = function() {
+            console.log('Page changed to: ' + vm.currentPage);
+
+            UserSearchDBService.search(vm.searchType, vm.keyword, vm.sortBy, vm.itemsPerPage, vm.currentPage)
+                .then(function (users) {
+                    vm.users = users.rows;
+                    vm.totalItems = users.count;
+                }).catch(function (err) {
+                console.info("Some Error Occurred",err)
+            });
+        };
+
+        vm.search = function (searchType, keyword, sortBy) {
+            if(searchType.length==0) {
+                alert('Please select at least one search type');
+            }
+            else {
+                vm.searchType = searchType;
+                vm.keyword = keyword;
+                UserSearchDBService.search(searchType, keyword, sortBy, vm.itemsPerPage, vm.currentPage)
+                    .then(function (users) {
+                        vm.users = users.rows;
+                        vm.totalItems = users.count;
+                    })
+                    .catch(function (err) {
+                        console.info("Some Error Occurred",err);
+                    });
+            }
+        };
+        
+        vm.getUser = function (id) {
+            $state.go("user_editDB", {'user_id' : user_id});
+        };
+
+        UserSearchDBService.search(vm.searchType, vm.keyword, vm.sortBy, vm.itemsPerPage, vm.currentPage)
+            .then(function (users) {
+                vm.users = users.rows;
+                vm.totalItems = users.count;
+            }).catch(function (err) {
+            console.info("Some Error Occurred",err)
+        });
+    }  
 })();

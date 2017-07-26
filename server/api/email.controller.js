@@ -2,7 +2,6 @@
 var retrieveIDByEmail = function(db) {
   return function(req, res) {
       console.log("retrieve req.query" + JSON.stringify(req.query));
-    //   console.log("retrieve req.params" + JSON.stringify(req.params));
 
     var where = {};
     if (req.query.email) {
@@ -29,7 +28,8 @@ var retrieveIDByEmail = function(db) {
                 .status(500)
                 .json({error: true});
         });
-  };
+
+    };
 }; 
 
 // Export route handlers

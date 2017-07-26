@@ -6,7 +6,6 @@
 					<div class="panel-heading">
 						<h1>Login</h1>
 						<p><i>Do not have an account yet? <a href="app/registration/register.html">Sign Up</a></i></p>
-
 					</div>
 
 					<!-- <div class="form-group">
@@ -20,10 +19,6 @@
                 <input type="password" placeholder="Enter Password" name="psw" id="psw-id" 
                         pattern="[A-Za-z0-9@#$]+" ng-model="myCtrl.password1" required>
             </div> -->
-
-
-
-
 
 					<div class="panel-body">
 						<form accept-charset="UTF-8" role="form">
@@ -45,7 +40,7 @@
 			    	    		<input name="remember" type="checkbox" value="Remember Me"> Remember Me
 			    	    	</label>
 								</div>
-								<input type="button" class="btn btn-lg btn-success btn-block" ng-click="ctrl.submit()" value="Login">
+								<input type="button" class="btn btn-lg btn-success btn-block" ng-click="ctrl.login()" value="Login">
 							</fieldset>
 						</form>
 						<hr>
@@ -55,7 +50,7 @@
 						<!-- <input class="btn btn-lg btn-facebook btn-block" type="submit" value="Login via facebook"> -->
 						<!-- <input class="btn btn-block btn-social btn-facebook" type="button" value="Login via facebook"><span class="fa fa-facebook"></span> -->
 						<a class="btn btn-lg btn-block btn-primary btn-social btn-facebook" ng-click="ctrl.submit()">
-    						<span class="fa fa-facebook"></span> Sign in with Facebook </a>
+    						<span class="fa fa-facebook" ></span><h4 style="text-align: center"> Sign in with Facebook </h4></a>
 						<!-- <input type="text" class="btn btn-lg btn-block btn-primary btn-social btn-facebook" ng-click="ctrl.submit()">
 						<span class="fa fa-facebook"></span> Sign in with Facebook -->
 					</div>
