@@ -1,5 +1,2 @@
 client/bower_components
 node_modules
-*.html
-*.json
-*.js

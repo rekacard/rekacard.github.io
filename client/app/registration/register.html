@@ -183,8 +183,9 @@ TODO: transaction (i.e., atomic) -->
                 <!--Input field for Password-->
                 <div class="form-group">
                     <label for="psw-id">Password</label>
-                    <input id="psw-id" class="form-control" name="password" type="password" required minlength="8" pattern="[A-Za-z0-9@#$]+"
-                        ng-model="ctrl.user.password">
+                    <input id="psw-id" class="form-control" name="password" type="password" pattern="[A-Za-z0-9@#$]+"
+                        ng-model="ctrl.user.password" required>
+                        <!-- minlength="8" -->
                     <!-- ng-pattern ="/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/" -->
 
                     <!-- <div class="validation"  data-ng-show="regForm.psw-id.$touched || regForm.$submitted">
@@ -204,14 +205,15 @@ TODO: transaction (i.e., atomic) -->
 
                 <div class="form-group">
                     <label for="psw-confirm-id">Confirm Password</label>
-                    <input id="psw-confirm-id" class="form-control" name="confirmPassword" type="password" required ng-model="ctrl.user.confirmPassword">
+                    <input id="psw-confirm-id" class="form-control" name="confirmPassword" type="password" pattern="[A-Za-z0-9@#$]+"
+                        ng-model="ctrl.confirmPassword" required>
 
                     <!-- <div class="validation"  data-ng-show="regForm.psw-confirm-id.$touched || regForm.$submitted">
                     <div data-ng-show="regForm.psw-confirm-id.$error.required">
                         <span class="glyphicon glyphicon-alert"></span>
                         Confirm Password is required.
                     </div>
-                    <div data-ng-show="ctrl.user.password != ctrl.user.confirmPassword">
+                    <div data-ng-show="ctrl.user.password != ctrl.confirmPassword">
                         <span class="glyphicon glyphicon-alert"></span>
                         Passwords do not match
                     </div> -->

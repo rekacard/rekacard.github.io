@@ -1,34 +1,58 @@
 // Defines endpoint handler exposed to client side for retrieving department information from database
 var registerUser = function(db) {
   return function(req, res) {
-      console.log("Register User retrieve req.query" + JSON.stringify(req.query));
+      console.log("Register User retrieve req.body " + JSON.stringify(req.body));
+    //   console.log("Register User1 retrieve req.query " + JSON.stringify(req.query));
 
     var where = {};
-    if (req.query.email) {
-        where.email_id = req.query.email;
+    var user = req.body;
+    if (req.body.email) {
+        where.email_id = user.email;
     }
 
-    // console.log("-- POST /api/login/ " + where.id);
-
+    //console.log("-- POST /register " + where.id);
     db.User
-    // findOne asks sequelize to search
-        .findOne({ where: where })
-        // this .then() handles successful findAll operation
-        // in this example, findAll() used the callback function to return departments
-        // we named it departments, but this object also contains info about the
-        // latest manager of that department
-        .then(function (result) {
-            console.log("-- POST /api/login/ findOne then() result \n " + JSON.stringify(result));
-            res.json(result);
+        .create({
+            role_id: user.role_id,
+            nric: user.nric,
+            salutation: user.salutation,  // to be changed to saluration
+            name_first: user.surname,
+            name_last: user.givenName,
+            tel_mobile: user.contactNumber,
+            dob: user.dateOfBirth,
+            gender: user.gender,
         })
-        // this .catch() handles erroneous findAll operation
-        .catch(function (err) {
-            console.log("-- POST /api/login/ findOne catch() \n " + JSON.stringify(departments));
-            res
-                .status(500)
-                .json({error: true});
-        });
+        .then(function (newuser) {
+            console.log(newuser);
+            db.Email
+                .create({
+                    email_id: user.email,
+                    user_id: parseInt(newuser.dataValues.user_id),
+                    password: user.password,
+                })
+                .then(function (newuser) {
+                        console.log("Respose: " + newuser);
+                        // console.log("path /register handler");
+                        res.status(200).type("application/json").json({user: parseInt(newuser.dataValues.user_id)});
+                }).catch(function () {
+                    console.log("Error", arguments)
+                })
+        }).catch(function () {
+            console.log("Error", arguments)
+        })
 
+    // db.User
+    //     .findOne({ where: where })
+    //     .then(function (result) {
+    //         console.log("-- POST /register findOne then() result \n " + JSON.stringify(result));
+    //         res.json(result);
+    //     })
+    //     .catch(function (err) {
+    //         console.log("-- POST /register findOne catch() \n " + JSON.stringify(departments));
+    //         res
+    //             .status(500)
+    //             .json({error: true});
+    //     });
     };
 }; 
 

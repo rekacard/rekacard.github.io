@@ -56,7 +56,7 @@ var createNewUser = function(db) {
             .create({
                 role_id: 1,
                 nric: "S4535258D",
-                saturation: "Mr",
+                salutation: "Mr",
                 name_first: "John",
                 name_last: "Kwan",
                 gender: 'M',
@@ -82,7 +82,7 @@ var createNewUser = function(db) {
             .create({
                 role_id: 2,
                 nric: "S2329421A",
-                saturation: "Ms",
+                salutation: "Ms",
                 name_first: "Jenny",
                 name_last: "Liu",
                 gender: 'F',
@@ -110,7 +110,7 @@ var createNewUser = function(db) {
             .create({
                 role_id: 3,
                 nric: "S9893439F",
-                saturation: "Mr",
+                salutation: "Mr",
                 name_first: "Kenneth",
                 name_last: "Pang",
                 gender: 'M',
@@ -137,7 +137,7 @@ var createNewUser = function(db) {
             .create({
                 role_id: 4,
                 nric: "S7423297G",
-                saturation: "Dr",
+                salutation: "Dr",
                 name_first: "Winnie",
                 name_last: "Liang",
                 gender: 'F',
@@ -163,7 +163,7 @@ var createNewUser = function(db) {
             .create({
                 role_id: 4,
                 nric: "S8782191H",
-                saturation: "Ms",
+                salutation: "Ms",
                 name_first: "Alice",
                 name_last: "Tan",
                 gender: 'F',
@@ -189,7 +189,7 @@ var createNewUser = function(db) {
             .create({
                 role_id: 4,
                 nric: "S3243342E",
-                saturation: "Mr",
+                salutation: "Mr",
                 name_first: "Terry",
                 name_last: "Foo",
                 gender: 'M',
@@ -215,7 +215,7 @@ var createNewUser = function(db) {
             .create({
                 role_id: 4,
                 nric: "S6762314D",
-                saturation: "Ms",
+                salutation: "Ms",
                 name_first: "Felicia",
                 name_last: "Tang",
                 gender: 'F',

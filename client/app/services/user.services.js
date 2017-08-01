@@ -43,25 +43,37 @@
         //         }
         //     });
         // }
+        const role = 4; // to be changed to reading from database to get role_id
 
         function insertUser(user) {
-            return $http({
-                method: 'POST'
-                , url: 'register'
-                , body: {
-                    role_id: 4,
-                    nric: user.nric,
-                    saturation: user.salutation,
-                    name_first: user.surname,
-                    name_last: user.givenName,
-                    tel_mobile: user.contactNumber,
-                    dob: user.dateOfBirth,
-                    gender: 'M',
-                    email: user.email,
-                    password: user.password,
-                }
-            });
+            user.role_id = role;  // to be changed
+
+            return $http.post(
+            '/register',
+            user,
+            );
         }
+
+
+        // function insertUser(user) {
+        //     return $http({
+        //         method: 'POST'
+        //         , url: "register"
+        //         , body: { 
+        //             user: user,
+                            // role_id: role,
+                            // nric: user.nric,
+                            // salutation: user.salutation,
+                            // name_first: user.surname,
+                            // name_last: user.givenName,
+                            // tel_mobile: user.contactNumber,
+                            // dob: user.dateOfBirth,
+                            // gender: user.gender,
+                            // email: user.email,
+                            // password: user.password,
+        //         }
+        //     });
+        // }
 
 
 /*

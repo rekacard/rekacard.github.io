@@ -51,16 +51,15 @@
             dateOfBirth: "",
             email: "",
             password: "",
-            confirmPassword: ""
         };
+        vm.confirmPassword = "";
 
 
-
-        vm.isAgeValid = function () {
-            var date = new Date(vm.user.dateOfBirth);
-            date.setFullYear(date.getFullYear() + 18);
-            return date <= new Date();
-        };
+        // vm.isAgeValid = function () {
+        //     var date = new Date(vm.user.dateOfBirth);
+        //     date.setFullYear(date.getFullYear() + 18);
+        //     return date <= new Date();
+        // };
 
         // EXPOSED FUNCTIONS ----------------------------------------------------------------------------------------
         // Exposed functions can be called from the view. e.g., to call the vm.register from our view (register.html),
@@ -94,7 +93,6 @@
         function register() {
             // Calls alert box and displays registration information
             // alert("The registration information you sent are \n" + JSON.stringify(vm.user));
-
             // Prints registration information onto the client console
             console.log("The registration information you sent were:");
             console.log("Salutation: " + vm.user.salutation);
@@ -110,7 +108,7 @@
             UserService
                 .insertUser(vm.user)
                 .then(function (result) {
-                    console.log("result " + JSON.stringify(result));
+                    console.log("Registration result " + JSON.stringify(result));
                     PassportSvc.login(vm.user)
                         .then(function (result) {
                             // console.log(JSON.stringify(result));
