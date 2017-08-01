@@ -33,6 +33,9 @@ sequelize.authenticate()
 const Role = sequelize.import('./models/roles');
 const Email = sequelize.import('./models/emails');
 const User = sequelize.import('./models/users');
+const Events = sequelize.import('./models/events');
+const Event_User = sequelize.import('./models/event_users');
+const Organisation = sequelize.import('./models/organisations');
 
 // Define Model Associations
 // Department.hasMany(DeptManager, { foreignKey: 'dept_no' });
@@ -53,9 +56,11 @@ const User = sequelize.import('./models/users');
 
 // Exports Models
 module.exports = {
-  // Loads model for grocery table
-  // Grocery: Grocery,
+  // Loads model for ConnectPro
   Email: Email,
   Role: Role,
   User: User,
+  Events: Events,
+  Event_User: Event_User,
+  Organisation: Organisation,
 };

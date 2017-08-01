@@ -1,4 +1,8 @@
-<div>
+<h1>Home</h1>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <!-- <h4 ng-if='!ctrl.user'>Please <a ui-sref='login'>login</a> first.</h4> -->
+<div ng-if='!ctrl.user'>
     <div class="container">
         <div class="row">
             <!--<div class="item-img">-->
@@ -144,4 +148,10 @@
         </div>
         <!--container-->
     </div>
+</div>
+
+
+
+    <h3 ng-if='ctrl.user'>Welcome back, {{ctrl.user | uppercase}}!</h3>
+  </div>
 </div>

@@ -7,109 +7,231 @@ TODO: transaction (i.e., atomic) -->
 <!--In this case, the RegCtrl is given the scope of the <div> element where it is called-->
 <!--We then use RegCtrl (as ctrl) to manipulate elements within this <div>-->
 <!--<div ng-controller="RegCtrl as ctrl">-->
-<div>
+<div class="container">
+
     <div class="page-header">
-        <h1>Department Management System
-            <small>Registration</small>
-        </h1>
-    </div>
-    <br/>
+        <div class="col-md-6 col-md-offset-3">
+            <h1>User Sign up</h1>
+            <h3><i>Already have an account? <a ui-sref="login" ui-sref-active="active">Login</a></i></h3>
+            <!-- <h3><i>Already have an account? <a href="app/login/login.html">Login</a></i></h3> -->
+        </div>
+        <br/>
 
 
-    <!-- Creates Input Form and fields -->
-    <!--1. The ng-submit directive specifies the function called when the Register button is clicked or ENTER is
+        <!-- Creates Input Form and fields -->
+        <!--1. The ng-submit directive specifies the function called when the Register button is clicked or ENTER is
     pressed
     2. novalidate is an HTML5 boolean property that tells HTML5 to ignore validation constraints (i.e., do not
     perform validation) when form is submitted-->
-    <form name="regForm" novalidate ng-submit="ctrl.register()" autocomplete="off">
+        <form name="regForm" ng-submit="ctrl.register()" autocomplete="off" novalidate>
+            <div class="col-md-6 col-md-offset-3">
+                <div class="form-group">
+                    <label for="salutation-id">Salutation</label>
+                    <select id="salutation-id" class="form-control" name="salutation" ng-model="ctrl.user.salutation" required>
+                        <option value="" selected>-- Please select an option --</option>
+                        <option value="dr">Dr</option>
+                        <option value="mr">Mr</option>
+                        <option value="ms">Ms</option>
+                    </select>
 
-        <!--Input field for department number-->
-        <div class="form-group"  ng-class="{ 'has-error': regForm.deptNo.$touched && regForm.deptNo.$invalid }">
+                    <!-- <div class="validation" data-ng-show="regForm.salutation-id.$touched || regForm.$submitted">
+                        <div data-ng-show="regForm.salutation-id.$error.required">
+                            <span class="glyphicon glyphicon-alert"></span>
+                            Salutation is required.
+                        </div>
+                    </div> -->
+                </div>
 
-            <label for="deptNo">Department No:</label>
-            <!--1. Using the ng-model directive, we perform a 2-way data binding between the department input field and
-            he ctrl.department.id data model. By doing so, we automatically sync the view data and the data
-            model data
-            2. The required property tells HTML5 that the input field is mandatory. type="number" specifies that a
-            numerical value is expected-->
-            <input type="number" id="deptNo" name="deptNo"
-                   class="form-control"
-                   ng-model="ctrl.department.id"
-                   required>
+                <!--Input field for Surname-->
+                <div class="form-group">
+                    <label for="surname-id">Surname:</label>
+                    <!--1. Using the ng-model directive, we perform a 2-way data binding between the department input field and
+                    he ctrl.department.id data model. By doing so, we automatically sync the view data and the data
+                    model data
+                    2. The required property tells HTML5 that the input field is mandatory. type="number" specifies that a
+                    numerical value is expected-->
+                    <input type="text" id="surname-id" name="surname" class="form-control" ng-model="ctrl.user.surname" required>
 
-            <!-- 1. help-block is a bootstrap class that allows for better formatting of help texts
-            2. ng-message directive hides or shows message based on value of expression, i.e., if regForm.deptNo.$error
-            evaluates to true then error message is shown
-            3. $touched is a boolean that indicates whether or not field has been touched (visited)-->
-            <div class="help-block" ng-messages="regForm.deptNo.$error" ng-if="regForm.deptNo.$touched">
-                <p ng-message="required">Department Number Required</p>
+                    <!-- 1. help-block is a bootstrap class that allows for better formatting of help texts
+                    2. ng-message directive hides or shows message based on value of expression, i.e., if regForm.deptNo.$error
+                    evaluates to true then error message is shown
+                    3. $touched is a boolean that indicates whether or not field has been touched (visited)-->
+                    <span class="help-block" ng-messages="regForm.surname-id.$error" ng-if="regForm.surname-id.$invalid && regForm.surname-id.$dirty">
+                        <p ng-message="required">Surname (i.e., Family Name) is Required</p>
+                    </span>
+                </div>
+
+                <!--Input field for Given name-->
+                <div class="form-group">
+
+                    <label for="givenName-id">Given Name:</label>
+                    <!--1. Using the ng-model directive, we perform a 2-way data binding between the department input field and
+                    he ctrl.department.id data model. By doing so, we automatically sync the view data and the data
+                    model data
+                    2. The required property tells HTML5 that the input field is mandatory. type="number" specifies that a
+                    numerical value is expected-->
+                    <input type="text" id="givenName-id" name="givenName" class="form-control" ng-model="ctrl.user.givenName" required>
+
+                    <!-- 1. help-block is a bootstrap class that allows for better formatting of help texts
+                    2. ng-message directive hides or shows message based on value of expression, i.e., if regForm.deptNo.$error
+                    evaluates to true then error message is shown
+                    3. $touched is a boolean that indicates whether or not field has been touched (visited)-->
+                    <div class="help-block" ng-messages="regForm.givenName-id.$error" ng-if="regForm.givenName-id.$touched">
+                        <p ng-message="required">Given Name is Required</p>
+                    </div>
+                </div>
+
+                <!--Input field for Given name-->
+                <div class="form-group">
+
+                    <label for="nric-id">NRIC:</label>
+                    <!--1. Using the ng-model directive, we perform a 2-way data binding between the department input field and
+                    he ctrl.department.id data model. By doing so, we automatically sync the view data and the data
+                    model data
+                    2. The required property tells HTML5 that the input field is mandatory. type="number" specifies that a
+                    numerical value is expected-->
+                    <input type="text" id="nric-id" name="nric" class="form-control" ng-model="ctrl.user.nric" required>
+
+                    <!-- 1. help-block is a bootstrap class that allows for better formatting of help texts
+                    2. ng-message directive hides or shows message based on value of expression, i.e., if regForm.deptNo.$error
+                    evaluates to true then error message is shown
+                    3. $touched is a boolean that indicates whether or not field has been touched (visited)-->
+                    <div class="help-block" ng-messages="regForm.nric-id.$error" ng-if="regForm.nric-id.$touched">
+                        <p ng-message="required">NRIC or FIN</p>
+                    </div>
+                </div>
+
+                <!--Input field for Contact Number-->
+                <div class="form-group">
+                    <label for="contactNumber-id">Contact Number</label>
+                    <input id="contactNumber-id" class="form-control" name="contactNumber" type="text" required minlength="8" ng-pattern="/^[0-9+( )-]*$/"
+                        ng-model="ctrl.user.contactNumber">
+
+                    <!-- <div class="validation"  data-ng-show="regForm.contactNumber-id.$touched || regForm.$submitted">
+                        <div data-ng-show="regForm.contactNumber-id.$error.required">
+                            <span class="glyphicon glyphicon-alert"></span>
+                            Contact Number is required.
+                        </div>
+                        <div data-ng-show="regForm.contactNumber-id.$error.minlength">
+                            <span class="glyphicon glyphicon-alert"></span>
+                            Contact Number must be at least 8 digits long.
+                        </div>
+                        <div data-ng-show="regForm.contactNumber-id.$error.pattern">
+                            <span class="glyphicon glyphicon-alert"></span>
+                            Contact Number contains invalid characters.
+                        </div>
+                    </div> -->
+                </div>
+
+                <!--Input field for Date of Birth-->
+                <div class="form-group">
+                    <label for="dateOfBirth-id">Date of Birth</label>
+                    <input id="dateOfBirth-id" class="form-control" name="dateOfBirth" type="date" required ng-model="ctrl.user.dateOfBirth"
+                    />
+
+                    <!-- <div class="validation" data-ng-show="regForm.dateOfBirth-id.$touched || regForm.$submitted">
+                        <div data-ng-show="regForm.dateOfBirth-id.$error.required">
+                            <span class="glyphicon glyphicon-alert"></span>
+                            Date of Birth is required.
+                        </div>
+                        <div data-ng-show="regForm.dateOfBirth-id.$invalid">
+                            <span class="glyphicon glyphicon-alert"></span>
+                            Invalid Date.
+                        </div>
+                        <div data-ng-hide="ctrl.isAgeValid()">
+                            <span class="glyphicon glyphicon-alert"></span>
+                            You must be at least 18 years to register.
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="form-group">
+                    <div class="radioi-inline">
+                        <span>   
+                            <label for="gender-id"><b>Gender &nbsp</b></label>
+                            <label>
+                            <input type="radio" name="gender" id="gender-id" ng-model="ctrl.user.gender" 
+                                    value='M' checked="checked" required>
+                                Male &nbsp
+                            </label>
+
+                            <label>
+                            <input type="radio" name="gender" id="gender-id" ng-model="ctrl.user.gender" 
+                                    value='F' required>
+                                Female
+                            </label>   
+                        </span> 
+                    </div>
+                </div>
+
+                <!--Input field for Email-->
+                <div class="form-group">
+                    <label for="email-id">Email</label>
+                    <input id="email-id" class="form-control" placeholder="yourmail@example.com" name="email" type="email" required ng-model="ctrl.user.email">
+                    <!-- <div class="validation" data-ng-show="regForm.email-id.$touched || regForm.$submitted">
+                        <div data-ng-show="regForm.email-id.$error.required">
+                            <span class="glyphicon glyphicon-alert"></span>
+                            Email is mandatory.
+                        </div>
+                        <div data-ng-show="regForm.email-id.$error">
+                            <span class="glyphicon glyphicon-alert"></span>
+                            Email is invalid.
+                        </div>
+                    </div> -->
+                </div>
+
+                <!--Input field for Password-->
+                <div class="form-group">
+                    <label for="psw-id">Password</label>
+                    <input id="psw-id" class="form-control" name="password" type="password" required minlength="8" pattern="[A-Za-z0-9@#$]+"
+                        ng-model="ctrl.user.password">
+                    <!-- ng-pattern ="/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/" -->
+
+                    <!-- <div class="validation"  data-ng-show="regForm.psw-id.$touched || regForm.$submitted">
+                        <div data-ng-show="regForm.psw-id.$error.required">
+                            <span class="glyphicon glyphicon-alert"></span>
+                            Password is required.
+                        </div>
+                        <div data-ng-show="regForm.psw-id.$error.minlength">
+                            <span class="glyphicon glyphicon-alert"></span>
+                            Password must be at least 8 characters long.
+                        </div>
+                        <div data-ng-show="regForm.psw-id.$error.pattern">
+                            <span class="glyphicon glyphicon-alert"></span>
+                            Password must include a number, a special character (@, #, $), and both upper and lower cases.
+                        </div> -->
+                </div>
+
+                <div class="form-group">
+                    <label for="psw-confirm-id">Confirm Password</label>
+                    <input id="psw-confirm-id" class="form-control" name="confirmPassword" type="password" required ng-model="ctrl.user.confirmPassword">
+
+                    <!-- <div class="validation"  data-ng-show="regForm.psw-confirm-id.$touched || regForm.$submitted">
+                    <div data-ng-show="regForm.psw-confirm-id.$error.required">
+                        <span class="glyphicon glyphicon-alert"></span>
+                        Confirm Password is required.
+                    </div>
+                    <div data-ng-show="ctrl.user.password != ctrl.user.confirmPassword">
+                        <span class="glyphicon glyphicon-alert"></span>
+                        Passwords do not match
+                    </div> -->
+                </div>
+
+                <br>
+                
+                <!-- Creates button used to submit data -->
+                <div class="form-group">
+                    <!--1. The <button> type attribute specifies the behavior of the button. A button with type=submit submits
+                            form data to the server
+                        2. The ng-disabled directive specifies whether to enable or disable an HTML element based on the value
+                            of the expression it's evaluating-->
+                    <button type="submit" class="btn-success form-control">
+                        <!-- ng-disabled="regForm.$invalid" -->
+                        Register
+                    </button>
+                </div>
             </div>
-        </div>
-
-        <!--Input field for department name-->
-        <div class="form-group" ng-class="{ 'has-error': regForm.deptName.$touched && regForm.deptName.$invalid }">
-            <label for="deptName">Department name:</label>
-
-            <!--1. Using the ng-model directive, we perform a 2-way data binding between the department input field and
-            the ctrl.department data model. This automatically syncs the view data and the data model data-->
-            <input type="text" id="deptName" name="deptName"
-                   class="form-control"
-                   ng-model="ctrl.department.name"
-                   ng-minlength="2"
-                   required>
-
-            <div class="help-block" ng-messages="regForm.deptName.$error" ng-if="regForm.deptName.$touched">
-                <p ng-message="required">Department Name Required</p>
-                <p ng-message="minlength">Department Name Too Short</p>
-            </div>
-        </div>
-
-        <!--TODO: 1.1 Add dropdown box. Display first name and last name, but bind emp_no to model.-->
-        <!--Dropdown box for list of employees-->
-        <div class="form-group"
-             ng-class="{ 'has-error': regForm.deptManager.$touched && regForm.deptManager.$invalid }">
-            <label for="deptManager">Manager:</label>
-            <!-- In this select box, ng-options displays select box value as employee.first_name +
-            employee.last_name, however the value that is bound to the model (ctrl.department.manager)
-             is the employee.emp_no -->
-            <select id="deptManager" name="deptManager" class="form-control"
-                    ng-options="employee.emp_no as employee.first_name + ' ' + employee.last_name
-                    for employee in ctrl.employees"
-                    ng-model="ctrl.department.manager" required>
-            </select>
-            <div class="help-block" ng-messages="regForm.deptManager.$error" ng-if="regForm.deptManager.$touched">
-                <p ng-message="required">Department Manager Required</p>
-            </div>
-        </div>
-
-
-        <!-- Creates button used to submit data -->
-        <div class="form-group">
-
-            <!--1. The <button> type attribute specifies the behavior of the button. A button with type=submit submits
-            form data to the server
-            2. The ng-disabled directive specifies whether to enable or disable an HTML element based on the value
-            of the expression it's evaluating-->
-            <button type="submit"
-                    class="btn-success form-control"
-                    ng-disabled="regForm.$invalid">
-                Register
-            </button>
+        </form>
 
         </div>
-
-    </form>
-
-    <!--Handles status messages-->
-    <div class="alert" role="alert" alert-dismissable ng-show="ctrl.status.code"
-         ng-class="{'alert-success': ctrl.status.code == 0, 'alert-danger': ctrl.status.code != 0 }">
-
-        <button class="close" data-dismiss="alert">
-            <!-- data dismiss removes the element. This alert won't show up again before refreshing -->
-            &times;
-        </button>
-
-        <p>Error No: {{ ctrl.status.code + " " + ctrl.status.message }}</p>
-
     </div>
-</div>

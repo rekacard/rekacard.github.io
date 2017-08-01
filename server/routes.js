@@ -1,15 +1,19 @@
 module.exports = function(app, db) {
-  // var Grocery  = require('./api/grocery.controller')(db);
-  var Email  = require('./api/email.controller')(db);
-
-  //Search items that match brand name or product name
-  // app.get("/api/id", Grocery.retrieveByID);
-  // app.get("/api/grocery", Grocery.retrieveAll);
-  // app.get("/api/grocery/brand", Grocery.retrieveByBrand);
-  // app.get("/api/grocery/product", Grocery.retrieveByProduct);
-  // app.put('/api/grocery/brand/', Grocery.UpdateBrand);
-  // app.put('/api/grocery/product/', Grocery.UpdateProduct);
-
-  app.post("/api/id", Email.retrieveIDByEmail);
-  app.get("/api/new", Email.createNew);
+  // var Authenticate = require('./api/email.controller')(db);
+  // var Email  = require('./api/email.controller')(db);
+  var Uer  = require('./api/user.controller')(db);
+  var Seed  = require('./api/seed.controller')(db);
+  
+  // app.post("/api/login", Email.retrieveIDByEmail);
+    app.post("/register", function(req, res) {
+    // console.log(req);
+    console.log("/register handler");
+    res.status(200).type("application/json").json({user: 1});
+    // res.status(200).json({user: req.user});
+  });
+  app.get("/api/newrole", Seed.createNewRole);
+  app.get("/api/newuser", Seed.createNewUser);
+  app.get("/api/neworg", Seed.createNewOrganisation);
+  app.get("/api/newevent", Seed.createNewEvent);
+  
 };

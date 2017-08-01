@@ -1,7 +1,7 @@
 // Defines endpoint handler exposed to client side for retrieving department information from database
-var retrieveIDByEmail = function(db) {
+var registerUser = function(db) {
   return function(req, res) {
-      console.log("retrieve req.query" + JSON.stringify(req.query));
+      console.log("Register User retrieve req.query" + JSON.stringify(req.query));
 
     var where = {};
     if (req.query.email) {
@@ -10,7 +10,7 @@ var retrieveIDByEmail = function(db) {
 
     // console.log("-- POST /api/login/ " + where.id);
 
-    db.Email
+    db.User
     // findOne asks sequelize to search
         .findOne({ where: where })
         // this .then() handles successful findAll operation
@@ -35,6 +35,6 @@ var retrieveIDByEmail = function(db) {
 // Export route handlers
 module.exports = function(db) {
   return {
-    retrieveIDByEmail: retrieveIDByEmail(db),
+    registerUser: registerUser(db),
   }
 };

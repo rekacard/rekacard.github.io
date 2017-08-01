@@ -16,9 +16,9 @@ module.exports = {
   MYSQL_MAXCONNECT: 5,
   MYSQL_MINCONNECT: 0,
   MYSQL_IDLE: 10000,
+  SECRET: 'connectpro_stackup',  //use by passport authentication service
   // seed: true,
   seed: false,
   
-
   version: '1.0.0'
 };

@@ -1,51 +1,102 @@
-(function(){
-    angular
-        .module("DMS")
-        .config(uiRouteConfig);
+(function () {
+  angular
+    .module("PAF")
+    .config(UIRouterAppConfig);
+  UIRouterAppConfig.$inject = ["$stateProvider", "$urlRouterProvider"];
 
-    uiRouteConfig.$inject = ["$stateProvider", "$urlRouterProvider"];
+  function UIRouterAppConfig($stateProvider, $urlRouterProvider){
+    $stateProvider
+      .state('home', {
+        url: '/home',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            // templateUrl: 'menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/home/home.html',
+            controller: 'HomeCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state("login", {
+        url: "/login",        
+        views: {
+          'menu': {
+            // templateUrl: 'menu.html',
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/login/login.html',
+            controller: 'LoginCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      // .state("register", {
+      //   url: "/register",        
+      //   views: {
+      //     'menu': {
+      //       // templateUrl: 'menu.html',
+      //       templateUrl: 'app/menu/menu.html',
+      //       controller: 'MenuCtrl as ctrl',
+      //     },
+      //     'content': {
+      //       templateUrl: 'app/registration/register.html',
+      //       controller: 'RegCtrl as ctrl',
+      //     }
+      //   }
+      // })
+      .state("register", {
+        url: "/register",        
+        views: {
+          'menu': {
+            // templateUrl: 'menu.html',
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/registration/register.html',
+            controller: 'RegCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      ;
 
-    function uiRouteConfig($stateProvider, $urlRouterProvider) {
-        $stateProvider
-            // .state("register", {
-            //         url: "/register",
-            //         templateUrl: "app/registration/register.html",
-            //         controller: "RegCtrl",
-            //         controllerAs: "ctrl"
-            // })
-            // .state("search", {
-            //         url: "/search",
-            //         templateUrl: "app/search/search.html",
-            //         controller: "SearchCtrl",
-            //         controllerAs: "ctrl"
-            // })
-            
-            .state("home", {
-                    url: "/home",
-                    templateUrl: "app/event/event.html",
-                    controller: "EventCtrl",
-                    controllerAs: "ctrl"
-            })
-            .state("searchGrocery", {
-                    url: "/searchGrocery",
-                    templateUrl: "app/search/searchGrocery.html",
-                    controller: "SearchGroceryCtrl",
-                    controllerAs: "ctrl"
-            })
-            .state("edit", {
-                    url: "/edit",
-                    templateUrl: "app/edit/newedit.html",
-                    controller: "NewEditCtrl",
-                    controllerAs: "ctrl"
-            })
-            .state("editWithParam", {
-                    url: "/edit/:id",
-                    templateUrl: "app/edit/edit.html",
-                    controller: "EditCtrl",
-                    controllerAs: "ctrl"
-            });
-        // $urlRouterProvider.otherwise("/register");
-        $urlRouterProvider.otherwise("/home");
-    }
-
+    $urlRouterProvider.otherwise("/home");
+  }
 })();
