@@ -2,7 +2,11 @@
 (function () {
     // Attaches DeptService service to the DMS module
     angular
+<<<<<<< HEAD:client/app/services/user.services.js
         .module("PAF")
+=======
+        .module("DMS")
+>>>>>>> master:client/app/services/user.services.js
         .service("UserService", UserService);
 
     // Dependency injection. Here we inject $http because we need this built-in service to communicate with the server
@@ -21,8 +25,12 @@
         // EXPOSED DATA MODELS -----------------------------------------------------------------------------------------
         // EXPOSED FUNCTIONS -------------------------------------------------------------------------------------------
 
+<<<<<<< HEAD:client/app/services/user.services.js
         // service.login = login;
         service.insertUser = insertUser;
+=======
+        service.login = login;
+>>>>>>> master:client/app/services/user.services.js
         // service.retrieveGroceryByID = retrieveGroceryByID;
         // service.retrieveGrocery = retrieveGrocery;
         // service.retrieveGroceryBrand = retrieveGroceryBrand;
@@ -33,6 +41,7 @@
         // retrieveDeptDB retrieves department information from the server via HTTP GET. Passes information via the query
         // string (params) Parameters: searchString. Returns: Promise object
 
+<<<<<<< HEAD:client/app/services/user.services.js
         // function login(email, password) {
         //     return $http({
         //         method: 'POST'
@@ -59,11 +68,23 @@
                     gender: 'M',
                     email: user.email,
                     password: user.password,
+=======
+        function login(email, password) {
+            return $http({
+                method: 'POST'
+                , url: 'api/login'
+                , params: {
+                    email: email,
+                    password: password,
+>>>>>>> master:client/app/services/user.services.js
                 }
             });
         }
 
+<<<<<<< HEAD:client/app/services/user.services.js
 
+=======
+>>>>>>> master:client/app/services/user.services.js
 /*
         function retrieveGroceryByID(id) {
             return $http({
