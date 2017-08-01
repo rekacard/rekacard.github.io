@@ -62,14 +62,8 @@ app.use(passport.session());
 // if you have not defined a handler for "/" before this line, server will look for index.html in CLIENT_FOLDER
 app.use(express.static(CLIENT_FOLDER));
 
-<<<<<<< HEAD
 var auth = require('./auth')(app, db, passport);
 const auth_routes = require('./auth_routes')(auth, app, passport);
-=======
-
-var auth = require('./auth')(app, passport);
-require('./auth_routes')(auth, app, passport);
->>>>>>> master
 
 const routes = require('./routes')(app, db);
 

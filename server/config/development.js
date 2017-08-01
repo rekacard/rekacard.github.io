@@ -20,36 +20,5 @@ module.exports = {
   // seed: true,
   seed: false,
   
-<<<<<<< HEAD
-=======
-
-
-
-  SECRET: 'stackup',
-
-  USER_DATABASE: [
-    {
-      username: 'adam',
-      password: 'adam',
-    },
-    {
-      username: 'betty',
-      password: 'betty',
-    },
-    {
-      username: 'charles',
-      password: 'charles',
-    },
-    {
-      username: 'denise',
-      password: 'denise',
-    },
-    {
-      username: 'eric',
-      password: 'eric',
-    }
-  ],
-
->>>>>>> master
   version: '1.0.0'
 };
