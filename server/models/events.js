@@ -21,7 +21,11 @@ module.exports = function (sequelize, Sequelize) {
                 type: Sequelize.TEXT,
                 allowNull: false,
             },
-            date: {
+            start_date: {
+                type: Sequelize.DATEONLY,
+                allowNull: false
+            },
+            end_date: {
                 type: Sequelize.DATEONLY,
                 allowNull: false
             },
@@ -31,6 +35,10 @@ module.exports = function (sequelize, Sequelize) {
             },
             end_time: {
                 type: Sequelize.TIME,
+                allowNull: false
+            },
+            total_hour: {
+                type: Sequelize.DECIMAL(10, 2),
                 allowNull: false
             },
             venue: {

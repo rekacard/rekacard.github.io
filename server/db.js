@@ -60,7 +60,7 @@ module.exports = {
   Email: Email,
   Role: Role,
   User: User,
-  Events: Events,
+  Events: Events,   // Event is a reserved word
   Event_User: Event_User,
   Organisation: Organisation,
 };

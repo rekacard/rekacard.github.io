@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('DMS')
+    .module('PAF')
     .service('PassportSvc', PassportSvc);
 
   PassportSvc.$inject = [ "$http" ];

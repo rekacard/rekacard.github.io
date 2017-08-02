@@ -1,3 +1,13 @@
+.nav, .pagination, .carousel, .panel-title a { 
+  cursor: pointer; 
+}
+
+.active { 
+  /* color: #be9e21; */
+  color: red;  
+  font-weight: bold; 
+}
+
 /*
     Theme Name: Baker
     Theme URL: https://bootstrapmade.com/baker-free-onepage-bootstrap-theme/
@@ -89,15 +99,15 @@ HEADER
 ************************************
 ***********************************/
 .header{
-    background: url('../img/bg-banner02.jpg') no-repeat fixed;
+    background: url('../img/bg-banner02.jpg') no-repeat fixed; 
     background-size: cover;
     min-height: 650px;
     position: relative;
 }
 .bg-color
 {
-    background-color: rgba(0, 0, 0, 0.5);
-    /*background-color: blue;*/
+     background-color: rgba(0, 0, 0, 0.5); 
+    /* background-color: blue; menu background*/
     min-height: 650px;
 }
 #main-header

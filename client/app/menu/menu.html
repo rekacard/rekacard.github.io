@@ -1,0 +1,8 @@
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                   <li class="active"><a ui-sref="home" ui-sref-active="active">Home<span class="sr-only">(home)</span></a></li>
+                  <li ng-if="!ctrl.user"><a ui-sref="login" ui-sref-active="active">Sign in<span class="sr-only">(login)</span></a></li>
+                  <li ng-if="!ctrl.user"><a ui-sref="register" ui-sref-active="active">Register<span class="sr-only">(register)</span></a></li>
+                  <li ng-if="ctrl.user"><a href="/logout" ui-sref-active="active">Logout</a></li> 
+                </ul>
+              </div>

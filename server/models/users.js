@@ -17,7 +17,7 @@ module.exports = function (sequelize, Sequelize) {
                 type: Sequelize.STRING,
                 allowNull: false
             },
-            saturation: {
+            salutation: {
                 type: Sequelize.STRING,
                 allowNull: false,
             },

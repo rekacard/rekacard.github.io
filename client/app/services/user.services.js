@@ -2,7 +2,7 @@
 (function () {
     // Attaches DeptService service to the DMS module
     angular
-        .module("DMS")
+        .module("PAF")
         .service("UserService", UserService);
 
     // Dependency injection. Here we inject $http because we need this built-in service to communicate with the server
@@ -21,7 +21,8 @@
         // EXPOSED DATA MODELS -----------------------------------------------------------------------------------------
         // EXPOSED FUNCTIONS -------------------------------------------------------------------------------------------
 
-        service.login = login;
+        // service.login = login;
+        service.insertUser = insertUser;
         // service.retrieveGroceryByID = retrieveGroceryByID;
         // service.retrieveGrocery = retrieveGrocery;
         // service.retrieveGroceryBrand = retrieveGroceryBrand;
@@ -32,16 +33,48 @@
         // retrieveDeptDB retrieves department information from the server via HTTP GET. Passes information via the query
         // string (params) Parameters: searchString. Returns: Promise object
 
-        function login(email, password) {
-            return $http({
-                method: 'POST'
-                , url: 'api/login'
-                , params: {
-                    email: email,
-                    password: password,
-                }
-            });
+        // function login(email, password) {
+        //     return $http({
+        //         method: 'POST'
+        //         , url: 'api/login'
+        //         , params: {
+        //             email: email,
+        //             password: password,
+        //         }
+        //     });
+        // }
+        const role = 4; // to be changed to reading from database to get role_id
+
+        function insertUser(user) {
+            user.role_id = role;  // to be changed
+
+            return $http.post(
+            '/register',
+            user,
+            );
         }
+
+
+        // function insertUser(user) {
+        //     return $http({
+        //         method: 'POST'
+        //         , url: "register"
+        //         , body: { 
+        //             user: user,
+                            // role_id: role,
+                            // nric: user.nric,
+                            // salutation: user.salutation,
+                            // name_first: user.surname,
+                            // name_last: user.givenName,
+                            // tel_mobile: user.contactNumber,
+                            // dob: user.dateOfBirth,
+                            // gender: user.gender,
+                            // email: user.email,
+                            // password: user.password,
+        //         }
+        //     });
+        // }
+
 
 /*
         function retrieveGroceryByID(id) {
