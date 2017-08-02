@@ -2,6 +2,7 @@ module.exports = function(app, db) {
   // var Authenticate = require('./api/email.controller')(db);
   // var Email  = require('./api/email.controller')(db);
   var User  = require('./api/user.controller')(db);
+  var Events  = require('./api/event.controller')(db);
   var Seed  = require('./api/seed.controller')(db);
   
   // app.post("/api/login", Email.retrieveIDByEmail);
@@ -13,6 +14,7 @@ module.exports = function(app, db) {
   // });
 
   app.post("/register", User.registerUser);
+  app.get("/api/event", Events.retrieveEvent);
   app.get("/api/newrole", Seed.createNewRole);
   app.get("/api/newuser", Seed.createNewUser);
   app.get("/api/neworg", Seed.createNewOrganisation);
