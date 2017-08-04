@@ -1,6 +1,6 @@
 // Always use an IIFE, i.e., (function() {})();
 (function () {
-    // Attaches DeptService service to the DMS module
+    // Attaches UserService service to the PAF module
     angular
         .module("PAF")
         .service("UserService", UserService);
@@ -23,26 +23,7 @@
 
         // service.login = login;
         service.insertUser = insertUser;
-        // service.retrieveGroceryByID = retrieveGroceryByID;
-        // service.retrieveGrocery = retrieveGrocery;
-        // service.retrieveGroceryBrand = retrieveGroceryBrand;
-        // service.retrieveGroceryProduct = retrieveGroceryProduct;
-        // service.updateBrand = updateBrand;
-        // service.updateName = updateName;
 
-        // retrieveDeptDB retrieves department information from the server via HTTP GET. Passes information via the query
-        // string (params) Parameters: searchString. Returns: Promise object
-
-        // function login(email, password) {
-        //     return $http({
-        //         method: 'POST'
-        //         , url: 'api/login'
-        //         , params: {
-        //             email: email,
-        //             password: password,
-        //         }
-        //     });
-        // }
         const role = 4; // to be changed to reading from database to get role_id
 
         function insertUser(user) {
@@ -75,78 +56,5 @@
         //     });
         // }
 
-
-/*
-        function retrieveGroceryByID(id) {
-            return $http({
-                method: 'GET'
-                , url: 'api/id'
-                , params: {
-                    'id': id,
-                }
-            });
-        }
-
-        function retrieveGrocery(searchBrandString, searchProductString) {
-            return $http({
-                method: 'GET'
-                , url: 'api/grocery/'
-                , params: {
-                    'searchString1': searchBrandString,
-                    'searchString2': searchProductString
-                }
-            });
-        }
-
-        // retrieveDeptDB retrieves department information from the server via HTTP GET. Passes information via the query
-        // string (params) Parameters: searchString. Returns: Promise object
-        function retrieveGroceryBrand(searchString) {
-            return $http({
-                method: 'GET'
-                , url: 'api/grocery/brand'
-                , params: {
-                    'searchString': searchString
-                }
-            });
-        }
-
-        // retrieveDeptDB retrieves department information from the server via HTTP GET. Passes information via the query
-        // string (params) Parameters: searchString. Returns: Promise object
-        function retrieveGroceryProduct(searchString) {
-            return $http({
-                method: 'GET'
-                , url: 'api/grocery/product'
-                , params: {
-                    'searchString': searchString
-                }
-            });
-        }
-
-        // updateDept uses HTTP PUT to update department name saved in DB; passes information as route parameters and via
-        // HTTP HEADER BODY IMPORTANT! Route parameters are not the same as query strings!
-        function updateBrand(id, brand) {
-            return $http({
-                method: 'PUT'
-                , url: 'api/grocery/brand/'
-                , data: {
-                    id: id,
-                    brand: brand
-                }
-            });
-        }
-
-        // updateDept uses HTTP PUT to update department name saved in DB; passes information as route parameters and via
-        // HTTP HEADER BODY IMPORTANT! Route parameters are not the same as query strings!
-        function updateName(id, name) {
-            return $http({
-                method: 'PUT'
-                , url: 'api/grocery/product/'
-                , data: {
-                    id: id,
-                    name: name
-                }
-            });
-        }
-        */
     }
 })();
