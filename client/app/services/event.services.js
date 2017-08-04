@@ -23,6 +23,7 @@
 
         // service.login = login;
         service.retrieveEvent = retrieveEvent;
+        service.retrieveUpcomingEvent = retrieveUpcomingEvent;
 
         function retrieveEvent(page) {
             return $http({
@@ -33,5 +34,17 @@
                 }
             });
         }
+
+        function retrieveUpcomingEvent(user, page) {
+            return $http({
+                method: 'GET'
+                , url: 'api/upcomingevent'
+                , params: {
+                    'user_id': user,
+                    'page': page,
+                }
+            });
+        }
+
     }
 })();

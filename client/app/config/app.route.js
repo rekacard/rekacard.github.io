@@ -11,7 +11,6 @@
         views: {
           'menu': {
             templateUrl: 'app/menu/menu.html',
-            // templateUrl: 'menu.html',
             controller: 'MenuCtrl as ctrl',
           },
           'content': {
@@ -94,8 +93,30 @@
               });
           }
         },
-      })
-      ;
+      .state('userhome', {
+        url: '/api/home',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/upcoming/upcoming.html',
+            controller: 'UpcomingCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      });
 
     $urlRouterProvider.otherwise("/home");
   }

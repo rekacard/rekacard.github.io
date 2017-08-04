@@ -47,6 +47,8 @@ const Organisation = sequelize.import('./models/organisations');
 // Comment.belongsTo(User);
 // User.hasMany(AuthProvider, { foreignKey: 'userId' });
 
+// Link Event_User model to Events model through the event_id FK. This relationship is 1-to-N and so we use hasMany
+Event_User.hasMany(Events, { foreignKey: 'event_id' });
 // sequelize
 //     .sync({force: config.seed})
 //     .then(function () {

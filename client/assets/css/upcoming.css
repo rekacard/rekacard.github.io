@@ -1,7 +1,10 @@
 a.list-group-item {
     height:auto;
     min-height:220px;
-}
+    background-color: #286090 !important;
+    border-color: #aed248;
+} 
+
 a.list-group-item.active small {
     color:#fff;
 }
