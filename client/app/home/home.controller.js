@@ -11,7 +11,7 @@
     vm.event = [];
     vm.user = user;
     vm.page = 0;
-    // console.log("Home user: " + user);
+
     if (!vm.user)
       vm.search();
 

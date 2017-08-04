@@ -11,7 +11,6 @@
         views: {
           'menu': {
             templateUrl: 'app/menu/menu.html',
-            // templateUrl: 'menu.html',
             controller: 'MenuCtrl as ctrl',
           },
           'content': {

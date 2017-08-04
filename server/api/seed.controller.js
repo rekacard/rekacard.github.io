@@ -1,7 +1,31 @@
 // Defines endpoint handler exposed to client side for retrieving department information from database
+var createNewAllTables = function(db) {
+  return function(req, res) {
+
+    createNewOrganisation(db);
+    setTimeout(function() { //your express code here
+        createNewRole(db);
+        setTimeout(function() { //your express code here
+            // console.log("T2B ");
+            createNewUser(db); 
+            setTimeout(function() { //your express code here
+                // console.log("T3B");
+                createNewEvent(db); 
+                setTimeout(function() { //your express code here
+                    // console.log("T4B");
+                    createNewEvent_User(db); 
+                    // setTimeout(function() { //your express code here
+                        // console.log("T5B");
+                    // }, 3000);
+                }, 3000);
+            }, 3000);
+        }, 1000);
+    }, 1000);
+
+  };
+};
 
 var createNewRole = function(db) {
-  return function(req, res) {
 
         db.Role
             .create({
@@ -46,12 +70,10 @@ var createNewRole = function(db) {
             }).catch(function () {
                 console.log("Error", arguments)
             })
-  }
-}
+};
 
 
 var createNewUser = function(db) {
-  return function(req, res) {
         db.User
             .create({
                 role_id: 1,
@@ -238,11 +260,9 @@ var createNewUser = function(db) {
             });
 
 
-  };
-}
+};
 
 var createNewEvent = function(db) {
-  return function(req, res) {
         db.Events
             .create({
                 organisation_id: 1,
@@ -422,12 +442,60 @@ var createNewEvent = function(db) {
             }).catch(function () {
                 console.log("Error", arguments)
             })
+  };
 
-    }
-  }
+var createNewEvent_User = function(db) {
+      console.log("createNewEvent_User");
+        db.Event_User
+            .create({
+                event_id: 1,
+                user_id: 4,
+                role_id: 4,
+            })
+            .then(function (user) {
+                console.log(user);
+            }).catch(function () {
+                console.log("Error", arguments)
+            })
+ 
+        db.Event_User
+            .create({
+                event_id: 2,
+                user_id: 4,
+                role_id: 4,
+            })
+            .then(function (user) {
+                console.log(user);
+            }).catch(function () {
+                console.log("Error", arguments)
+            })
+ 
+        db.Event_User
+            .create({
+                event_id: 3,
+                user_id: 4,
+                role_id: 4,
+            })
+            .then(function (user) {
+                console.log(user);
+            }).catch(function () {
+                console.log("Error", arguments)
+            })
+ 
+        db.Event_User
+            .create({
+                event_id: 4,
+                user_id: 4,
+                role_id: 4,
+            })
+            .then(function (user) {
+                console.log(user);
+            }).catch(function () {
+                console.log("Error", arguments)
+            })
+  };
 
   var createNewOrganisation = function(db) {
-  return function(req, res) {
         db.Organisation
             .create({
                 name: "NTUC",
@@ -438,16 +506,12 @@ var createNewEvent = function(db) {
             }).catch(function () {
                 console.log("Error", arguments)
             })
-    }
-  }
+  };
 
 // Export route handlers
 module.exports = function(db) {
   return {
-    createNewRole: createNewRole(db),
-    createNewUser: createNewUser(db),
-    createNewEvent: createNewEvent(db),
-    createNewOrganisation: createNewOrganisation(db),
+    createNewAllTables: createNewAllTables(db),
 
   }
 };

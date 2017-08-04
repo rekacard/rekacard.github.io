@@ -23,7 +23,7 @@ module.exports = function (sequelize, Sequelize) {
             },
             task_id: {
                 type: Sequelize.INTEGER(10),
-                allowNull: false,
+                allowNull: true,
             },
             dietary: {
                 type: Sequelize.STRING,
