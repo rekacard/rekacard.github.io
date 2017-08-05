@@ -36,6 +36,7 @@
           for (var i in vm.event) {
             // Get description of role
             vm.event[i].role = ModelService.role[parseInt(vm.event[i].role_id)];
+            vm.event[i].myrole = vm.event[i].role.toLowerCase();
             var evt = vm.event[i].events[0];
             vm.event[i].path = dir + evt.img_filename;
             vm.event[i].organization = ModelService.organization[parseInt(evt.organisation_id)];
