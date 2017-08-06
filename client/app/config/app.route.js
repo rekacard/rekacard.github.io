@@ -93,6 +93,7 @@
               });
           }
         },
+      })
       .state('userhome', {
         url: '/api/home',
         views: {
@@ -116,7 +117,32 @@
               });
           }
         },
-      });
+      })
+      .state('pastevent', {
+        url: '/api/pastevent',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/member_event_history/past_event.html',
+            controller: 'PastEventCtrl as ctrl',
+          }
+        },
+        // resolve: {
+        //   user: function(PassportSvc) {
+        //     return PassportSvc.userAuth()
+        //       .then(function(result) {
+        //         return result.data.user;
+        //       })
+        //       .catch(function(err) {
+        //         return '';
+        //       });
+        //   }
+        // },
+      })
+      ;
 
     $urlRouterProvider.otherwise("/home");
   }

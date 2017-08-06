@@ -24,6 +24,7 @@
         // service.login = login;
         service.retrieveEvent = retrieveEvent;
         service.retrieveUpcomingEvent = retrieveUpcomingEvent;
+        service.retrievePastEvent = retrievePastEvent;
 
         function retrieveEvent(page) {
             return $http({
@@ -39,6 +40,17 @@
             return $http({
                 method: 'GET'
                 , url: 'api/upcomingevent'
+                , params: {
+                    'user_id': user,
+                    'page': page,
+                }
+            });
+        }
+
+        function retrievePastEvent(user, page) {
+            return $http({
+                method: 'GET'
+                , url: 'api/pastevent'
                 , params: {
                     'user_id': user,
                     'page': page,

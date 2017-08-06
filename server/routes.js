@@ -17,7 +17,8 @@ module.exports = function(app, db) {
   app.post("/register", User.registerUser);
   app.get("/api/event", Events.retrieveEvent);
   app.get("/api/upcomingevent", Event_User.retrieveUpcomingEvent);
-  
+  app.get("/api/pastevent", Event_User.retrievePastEvent);
+
   app.get("/new", Seed.createNewAllTables);       // events Table
  
 };
