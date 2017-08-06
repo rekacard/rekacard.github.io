@@ -13,29 +13,31 @@ var retrieveUpcomingEvent = function (db) {
         var offset = parseInt(req.query.page) * itemPerPage;
 
         db.Event_User
-            // findOne asks sequelize to search
-
+            // findAll asks sequelize to search for records that contain the serach fields
             .findAll({
                 attributes: ["event_id", "role_id", "task_id"]  //, "events.brief_desc"
                 ,where: where
-                , include: [ {model: db.Events, attributes: 
-                  ["organisation_id", "start_date", "start_time", "end_time", "img_filename", "venue", "brief_desc", "note", ], required: true} ]
-                , order: [["event_id", "ASC"]]
-                , limit: [offset, itemPerPage]
+                , include: [ {model: db.Events
+                            , where: {
+                                start_date: {
+                                $gte: new Date()
+                                }
+                            }
+                            , attributes: ["organisation_id", "start_date", "start_time", "end_time", 
+                                           "img_filename", "venue", "brief_desc", "note", ]
+                            , order: [["start_date", "DESC"]]
+                            , required: true} ]
             })
             // this .then() handles successful findAll operation
-            // in this example, findAll() used the callback function to return departments
-            // we named it departments, but this object also contains info about the
-            // latest manager of that department
             .then(function (result) {
-                console.log("-- POST /api/login/ findOne then() result \n " + JSON.stringify(result));
+                console.log("-- POST /api/upcomingevent/ findAll then() result \n " + JSON.stringify(result));
                 res
                     .status(200)
                     .json(result);
             })
             // this .catch() handles erroneous findAll operation
             .catch(function (err) {
-                console.log("-- POST /api/login/ findOne catch() \n " + JSON.stringify(err));
+                console.log("-- POST /api/upcomingevent/ findAll catch() \n " + JSON.stringify(err));
                 res
                     .status(500)
                     .json(err);
