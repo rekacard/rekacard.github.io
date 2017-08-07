@@ -5,10 +5,10 @@
             <div data-spy="scroll" class="tabbable-panel">
                 <div class="tabbable-line">
                     <ul class="nav nav-tabs ">
-                        <li>
+                        <li class="active">
                             <a href="/#!/user_eventdetails">Event Details</a>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="/#!/user_eventsubmission">Profile Submitted</a>
                         </li>
                         <li>
@@ -27,9 +27,20 @@
                     <div class="tab-content">
                         <div class="tab-pane active">                     
                             <div class="well well-sm">
-                                <h4>This is information you submitted to event organizer during registration.</h4>
+                                <h4></h4>
                             </div>
-                        <form>
+                            <div align="middle">
+                                <a href="https://dummyimage.co"><img src="https://dummyimage.com/950x250/000/fff.jpg"></a>
+                                <p align="right">
+                                    <button type="button" class="btn btn-default btn-sm" align="right">
+                                    <span class="glyphicon glyphicon-upload"></span>Upload Image</button>
+                                </p>
+                            </div>
+
+                            <div class="well well-sm">
+                                <h4></h4>
+                            </div>
+                            <form>
                                 <div class="form-group row">
                                     <label for="inputEventName" class="col-sm-2 col-form-label">Event Name</label>
                                     <div class="col-sm-10">
@@ -40,6 +51,18 @@
                                     <label class="col-sm-2 col-form-label">Date</label>
                                     <div class="col-sm-3">
                                         <input class="form-control" type="date" value="2011-08-19" id="inputDate">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputStartTime" class="col-sm-2 col-form-label">Start Time</label>
+                                    <div class="col-sm-3">
+                                        <input type="time" class="form-control" id="inputStartTime">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEndTime" class="col-sm-2 col-form-label">End Time</label>
+                                    <div class="col-sm-3">
+                                        <input type="time" class="form-control" id="inputEndTime">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -67,25 +90,14 @@
                                     </div>
                                 </div>
                             </form>
-                        
-
-
-
-                            <div>
-                                <p> Surname: </p>
-                                <p> Given name:  </p>
-                                <p> NRIC:  </p>
-                                <p> Mobile Number:  </p>
-                                <p> Email:  </p>
-                                <p> Dietary Requirements:  </p>
-                                <p> T-shirt Size:  </p>
-                                <p> Interested Role:  </p>
-                                <br>
-                                <p><i class="fa fa-check-square-o" aria-hidden="true"></i> I agree to the organizer's terms of service and consent to having my photos/videos taken during the event for publicity purposes.</p>
-                                <br>
-                                <br>    
-                                <p align="center"><b>If you are unable to attend the event, please contact the organizer in advance.</b></p>
-                                <p align="center"><b>‘No shows’ will affect your member rating to sign up for future events.</b></p>
+                                <p align="right">
+                                    <button type="button" class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-floppy-saved"></span>Save</button>
+                                </p>
+                                
+                            <div class="well well-sm">
+                                <h4></h4>
+                            </div>
                             </div>
                         </div> 
                     </div>

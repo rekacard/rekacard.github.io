@@ -6,7 +6,7 @@
 // Always use an IIFE, i.e., (function() {})();
 (function () {
     angular
-        .module("DMS")          // to call an angular module, omit the second argument ([]) from the angular.module()
+        .module("PAF")          // to call an angular module, omit the second argument ([]) from the angular.module()
         // syntax this syntax is called the getter syntax
         .controller("UserEventDetailsCtrl", UserEventDetailsCtrl);    // angular.controller() attaches a controller to the angular module
                                             // specified as you can see, angular methods are chainable

@@ -142,60 +142,6 @@
         //   }
         // },
       })
-            .state("user_eventsignup", {
-                    url: "/user_eventsignup",
-                    templateUrl: "app/user_event/signup/user_eventsignup.html",
-                    controller: "UserEventSignupCtrl",
-                    controllerAs: "ctrl"
-            })
-            .state("user_eventedit", {
-                    url: "/user_eventedit",
-                    templateUrl: "app/user_event/eventedit/user_eventedit.html",
-                    controller: "UserEventEditCtrl",
-                    controllerAs: "ctrl"
-            })
-            .state("user_eventdetails", {
-                    url: "/user_eventdetails",
-                    templateUrl: "app/user_event/eventdetails/user_eventdetails.html",
-                    controller: "UserEventDetailsCtrl",
-                    controllerAs: "ctrl"
-            })
-            .state('user_eventsubmission', {
-                    url:'/user_eventsubmission',
-                    templateUrl: 'app/user_event/submission/user_eventsubmission.html',
-                    controller: "UserEventSubmissionCtrl",
-                    controllerAs: "ctrl"
-            })
-            .state('user_eventbrief', {
-                    url:'/user_eventbrief',
-                    templateUrl: 'app/user_event/brief/user_eventbrief.html',
-                    controller: "UserEventBriefCtrl",
-                    controllerAs: "ctrl"
-            })
-            .state('user_eventfeedback', {
-                    url:'/user_eventfeedback',
-                    templateUrl: 'app/user_event/feedback/user_eventfeedback.html',
-                    controller: "UserEventFeedbackCtrl",
-                    controllerAs: "ctrl"
-            })
-            .state('user_eventattendance', {
-                    url:'/user_eventattendance',
-                    templateUrl: 'app/user_event/attendance/user_eventattendance.html',
-                    controller: "UserEventAttendanceCtrl",
-                    controllerAs: "ctrl"
-            })
-            .state('user_eventdebrief', {
-                    url:'/user_eventdebrief',
-                    templateUrl: 'app/user_event/attendance/user_eventdebrief.html',
-                    controller: "UserEventDebriefCtrl",
-                    controllerAs: "ctrl"
-            })
-            .state('analytics_userdetails', {
-                    url:'/analytics_userdetails',
-                    templateUrl: 'app/analytics/analytics_userdetails/analytics_userdetails.html',
-                    controller: "AnalyticsUserDetailsCtrl",
-                    controllerAs: "ctrl"
-            })
       ;
 
     $urlRouterProvider.otherwise("/home");
