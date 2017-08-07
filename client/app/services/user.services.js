@@ -23,7 +23,7 @@
 
         // service.login = login;
         service.insertUser = insertUser;
-
+        service.retrieveUserName = retrieveUserName;
         const role = 4; // to be changed to reading from database to get role_id
 
         function insertUser(user) {
@@ -35,6 +35,15 @@
             );
         }
 
+        function retrieveUserName(user) {
+            return $http({
+                method: 'GET'
+                , url: 'api/username'
+                , params: {
+                    'user_id': user,
+                }
+            });
+        }
 
         // function insertUser(user) {
         //     return $http({

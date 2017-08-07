@@ -39,7 +39,8 @@ const Organisation = sequelize.import('./models/organisations');
 // Define Model Associations
 
 // Link Event_User model to Events model through the event_id FK. This relationship is 1-to-N and so we use hasMany
-// Link Event_User model to User model through the user_id FK. This relationship is N-to-1 and so we use hasOne
+// Link Event_User model to User model through the event_id FK. This relationship is N-to-1 and so we use belongsTo
+// Foreign key is set in Event_User model
 Events.hasMany(Event_User, { foreignKey: 'event_id' });
 Event_User.belongsTo(Events, { foreignKey: 'event_id' });
 

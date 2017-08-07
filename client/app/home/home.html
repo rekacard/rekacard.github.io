@@ -1,7 +1,9 @@
 <div class="panel panel-default">
     <div class="panel-body">
         <!-- <h4 ng-if='!ctrl.user'>Please <a ui-sref='login'>login</a> first.</h4> -->
-        <div ng-if='!ctrl.user'>
+        <h3 ng-if='ctrl.user'>Welcome back, {{ctrl.name | uppercase}}!</h3>
+        <br>
+        <div>
             <div class="container">
 
                 <div class="row">
@@ -147,8 +149,5 @@
             </div>
         </div>
 
-
-
-        <h3 ng-if='ctrl.user'>Welcome back, {{ctrl.user | uppercase}}!</h3>
     </div>
 </div>

@@ -56,9 +56,64 @@ var registerUser = function(db) {
     };
 }; 
 
+var retrieveUser = function(db) {
+  return function(req, res) {
+    //   console.log("RetrieveUserName req.body " + JSON.stringify(req.body));
+      console.log("RetrieveUserName req.query " + JSON.stringify(req.query));
+
+    var where = {};
+    var user = req.query;
+    if (user.user_id) {
+        where.user_id = parseInt(user.user_id);
+    }
+
+    //console.log("-- POST /register " + where.id);
+    switch (parseInt(user.option)) {
+        case 1:  //Option 1: Select all field in User table
+            db.User
+                .findOne({ where: where })
+                // this .then() handles successful findAll operation
+                .then(function (result) {
+                    console.log("-- POST /api/username findOne then() result \n " + JSON.stringify(result));
+                    res
+                        .status(200)
+                        .json(result);
+                })
+                // this .catch() handles erroneous findAll operation
+                .catch(function (err) {
+                    console.log("-- POST /api/username/ findOne catch() \n " + JSON.stringify(err));
+                    res
+                        .status(500)
+                        .json(err);
+                });
+        break;
+        case 2:  //Option 2: Get name of user
+            db.User
+                .findOne({ 
+                    attributes: ["salutation", "name_first", "name_last"]
+                    , where: where })
+                // this .then() handles successful findAll operation
+                .then(function (result) {
+                    console.log("-- POST /api/username findOne then() result \n " + JSON.stringify(result));
+                    res
+                        .status(200)
+                        .json(result);
+                })
+                // this .catch() handles erroneous findAll operation
+                .catch(function (err) {
+                    console.log("-- POST /api/username/ findOne catch() \n " + JSON.stringify(err));
+                    res
+                        .status(500)
+                        .json(err);
+                });
+            break;
+    }
+  };
+};
 // Export route handlers
 module.exports = function(db) {
   return {
     registerUser: registerUser(db),
+    retrieveUser: retrieveUser(db),
   }
 };

@@ -60,17 +60,19 @@
     <div class="row">
         <div ng-if="ctrl.user" class="well">
             <h1 class="text-center">Participated Events</h1>
-            <div class="list-group">
-
+            <div class="col-md-2">
+            <!-- Centralise the list box. Leave 2 column of space for desktop or larger size display -->
+            </div>
+            <div class="list-group col-md-8 col-xs-12">
                 <div ng-repeat="events in ctrl.event">
                     <a href="#" class="list-group-item active">
-                        <div class="media col-md-3">
+                        <div class="media">
                             <h4 class="list-group-item-heading"> </h4>
                             <figure class="pull-left">
                                 <img class="media-object img-rounded img-responsive" src="{{events.path}}" alt="placehold.it/350x250">
                             </figure>
                         </div>
-                        <div class="col-md-6">
+                        <div>
                             <h4 class="list-group-item-heading"> </h4>
                             <h4 class="list-group-item-heading"> {{events.brief_desc}} </h4>
                             <p class="list-group-item-text"> Date: {{events.event.start_date}}</p>
@@ -79,7 +81,7 @@
                             <p class="list-group-item-text"> Organizer: {{events.organization}}</p>
                             <p class="list-group-item-text"> Important Note: </p>
                         </div>
-                        <div class="col-md-3 text-center">
+                        <div class="text-center">
                             <h2 class={{events.myrole}}> <small> Role:  </small> {{events.role}} </h2>
                             <button type="button" class="btn btn-default btn-lg btn-block btn-info"> Details </button>
                         </div>

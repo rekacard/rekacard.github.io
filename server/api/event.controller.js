@@ -1,14 +1,14 @@
 // Defines endpoint handler exposed to client side for retrieving department information from database
 var retrieveEvent = function (db) {
     return function (req, res) {
-        console.log("retrieve req.query " + JSON.stringify(req.query));
+        console.log("RetrieveEvent req.query " + JSON.stringify(req.query));
 
         // var where = {};
         // if (req.query.event_id) {
         //     where.event_id = req.query.event_id;
         // }
 
-        // console.log("-- POST /api/login/ " + where.id);
+        // console.log("-- POST /api/event/ " + where.id);
         const itemPerPage = 9;
         var offset = parseInt(req.query.page) * itemPerPage;
 
@@ -23,14 +23,14 @@ var retrieveEvent = function (db) {
             // we named it departments, but this object also contains info about the
             // latest manager of that department
             .then(function (result) {
-                console.log("-- POST /api/login/ findOne then() result \n " + JSON.stringify(result));
+                console.log("-- POST /api/event/ findAll then() result \n " + JSON.stringify(result));
                 res
                     .status(200)
                     .json(result);
             })
             // this .catch() handles erroneous findAll operation
             .catch(function (err) {
-                console.log("-- POST /api/login/ findOne catch() \n " + JSON.stringify(err));
+                console.log("-- POST /api/event/ findAll catch() \n " + JSON.stringify(err));
                 res
                     .status(500)
                     .json(err);

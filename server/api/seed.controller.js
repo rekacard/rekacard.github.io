@@ -6,17 +6,14 @@ var createNewAllTables = function (db) {
         setTimeout(function () { //your express code here
             createNewRole(db);
             setTimeout(function () { //your express code here
-                // console.log("T2B ");
                 createNewUser(db);
                 setTimeout(function () { //your express code here
-                    // console.log("T3B");
                     createNewEvent(db);
                     setTimeout(function () { //your express code here
-                        // console.log("T4B");
                         createNewEvent_User(db);
                         // setTimeout(function() { //your express code here
-                        // console.log("T5B");
-                        // }, 3000);
+                            // console.log("Callback function");
+                        // }, timeout_millisecond);
                     }, 3000);
                 }, 3000);
             }, 1000);

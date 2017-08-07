@@ -26,7 +26,7 @@
           // console.log(JSON.stringify(result));
           // var user = String(result.data.user);
           // console.log("Login user: " + user);
-          $state.go('userhome');
+          $state.go('home');
           return true;
         })
         .catch(function(err) {

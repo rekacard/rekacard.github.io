@@ -14,48 +14,50 @@
     // assign any name
     function UpcomingCtrl(user, EventService, ModelService) {
       // Read configurations
-    // function UpcomingCtrl(user) {
 
         // Declares the var vm (for ViewModel) and assigns it the object this (in this case, the EventCtrl)
         // Any function or variable that you attach to vm will be exposed to callers of EventCtrl, e.g., register.html
         var vm = this;
+        vm.search = search;
         vm.page = 0;
         vm.user = user;
-    if (!vm.user)
-        search();
+      if (vm.user)
+        vm.search();
 
-    function search() {
-      const dir = "../../assets/img/";
+      function search() {
+        const dir = "../../assets/img/";
 
-      EventService.retrieveUpcomingEvent(String(vm.user), vm.page)
-        .then(function(result) {
-          // console.log(JSON.stringify(result));
-          // var user = String(result.data.event_id);
-          // console.log("Login user: " + user);
-          vm.event = result.data;  // assign to Event Table data
-          for (var i in vm.event) {
-            // Get description of role
-            vm.event[i].role = ModelService.role[parseInt(vm.event[i].role_id)];
-            var evt = vm.event[i].event;
-            vm.event[i].path = dir + evt.img_filename;
-            vm.event[i].organization = ModelService.organization[parseInt(evt.organisation_id)];
-            vm.event[i].myrole = vm.event[i].role.toLowerCase();
-            // Remove the second from time format HH:MM:SS
-            var l = evt.start_time.length;
-            var time = evt.start_time.substring(0, l-3);
-            evt.start_time = time;
-            l = evt.end_time.length;
-            time = evt.end_time.substring(0, l-3);
-            evt.end_time = time;
-            console.log(JSON.stringify(vm.event[i]));
-          }
-          return true;
-        })
-        .catch(function(err) {
-          console.log(err);
-          return false;
-        });
-    }
+        EventService.retrieveUpcomingEvent(String(vm.user), vm.page)
+          .then(function(result) {
+            // console.log(JSON.stringify(result));
+            // var user = String(result.data.event_id);
+            // console.log("Login user: " + user);
+            vm.event = result.data;  // assign to Event Table data
+            for (var i in vm.event) {
+              // Get description of role
+              vm.event[i].role = ModelService.role[parseInt(vm.event[i].role_id)];
+              var evt = vm.event[i].event;
+              vm.event[i].path = dir + evt.img_filename;
+              vm.event[i].organization = ModelService.organization[parseInt(evt.organisation_id)];
+              vm.event[i].myrole = vm.event[i].role.toLowerCase();
+
+              // Remove the second from time format HH:MM:SS
+
+              var l = evt.start_time.length;
+              var time = evt.start_time.substring(0, l-3);
+              evt.start_time = time;
+              l = evt.end_time.length;
+              time = evt.end_time.substring(0, l-3);
+              evt.end_time = time;
+              // console.log(JSON.stringify(vm.event[i]));
+            }
+            return true;
+          })
+          .catch(function(err) {
+            console.log(err);
+            return false;
+          });
+      }
 
     } // END UpcomingCtrl
 
