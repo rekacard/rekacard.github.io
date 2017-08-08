@@ -4,7 +4,6 @@
 //TODO: install Bower (bower install ng-tags-input --save)
 //TODO: Add this to index.html <script src="angular.js"></script> <script src="ng-tags-input.js"></script> <link rel="stylesheet" type="text/css" href="ng-tags-input.css">
 
-
 // Always use an IIFE, i.e., (function() {})();
 (function () {
     angular

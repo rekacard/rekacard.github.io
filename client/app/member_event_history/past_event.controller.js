@@ -8,12 +8,12 @@
 
 //   Todo: to be change back
 //   UpcomingCtrl.$inject = [ 'user', 'EventService', 'ModelService' ];
-  PastEventCtrl.$inject = [ 'EventService', 'ModelService' ];
+  PastEventCtrl.$inject = [ 'user', 'EventService', 'ModelService' ];
 
     // EventCtrl function declaration. A function declaration uses the syntax: functionName([arg [, arg [...]]]){ ... }
     // EventCtrl accepts the injected dependency as a parameter. We name it DeptService for consistency, but you may
     // assign any name
-    function PastEventCtrl(EventService, ModelService) {
+    function PastEventCtrl(user, EventService, ModelService) {
       // Read configurations
       // function UpcomingCtrl(user) {
 

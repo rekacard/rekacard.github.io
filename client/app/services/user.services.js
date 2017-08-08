@@ -22,11 +22,13 @@
         // EXPOSED FUNCTIONS -------------------------------------------------------------------------------------------
 
         // service.login = login;
-        service.insertUser = insertUser;
+        service.registerUser = registerUser;
         service.retrieveUserName = retrieveUserName;
+        service.retrieveUser = retrieveUser;
+
         const role = 4; // to be changed to reading from database to get role_id
 
-        function insertUser(user) {
+        function registerUser(user) {
             user.role_id = role;  // to be changed
 
             return $http.post(
@@ -35,12 +37,24 @@
             );
         }
 
+        function retrieveUser(user) {
+            return $http({
+                method: 'GET'
+                , url: 'api/user'
+                , params: {
+                    'user_id': user,
+                    'option': '1', // Option 1: Get user detail infomation
+                }
+            });
+        }
+
         function retrieveUserName(user) {
             return $http({
                 method: 'GET'
-                , url: 'api/username'
+                , url: 'api/user'
                 , params: {
                     'user_id': user,
+                    'option': '2', // Option 2: Get name of user
                 }
             });
         }
@@ -49,7 +63,7 @@
         //     return $http({
         //         method: 'POST'
         //         , url: "register"
-        //         , body: { 
+        //         , data: { 
         //             user: user,
                             // role_id: role,
                             // nric: user.nric,

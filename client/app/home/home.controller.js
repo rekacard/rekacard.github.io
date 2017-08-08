@@ -15,6 +15,7 @@
 
     if (vm.user) vm.getname();
     vm.search();
+
     function getname() {
       UserService.retrieveUserName(vm.user)
         .then(function(result) {

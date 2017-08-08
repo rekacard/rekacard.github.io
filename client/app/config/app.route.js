@@ -55,20 +55,6 @@
           }
         },
       })
-      // .state("register", {
-      //   url: "/register",        
-      //   views: {
-      //     'menu': {
-      //       // templateUrl: 'menu.html',
-      //       templateUrl: 'app/menu/menu.html',
-      //       controller: 'MenuCtrl as ctrl',
-      //     },
-      //     'content': {
-      //       templateUrl: 'app/registration/register.html',
-      //       controller: 'RegCtrl as ctrl',
-      //     }
-      //   }
-      // })
       .state("register", {
         url: "/register",        
         views: {
@@ -104,6 +90,30 @@
           'content': {
             templateUrl: 'app/upcoming/upcoming.html',
             controller: 'UpcomingCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('userprofile', {
+        url: '/api/userprofile',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/userprofile/userprofile.html',
+            controller: 'ProfileCtrl as ctrl',
           }
         },
         resolve: {
