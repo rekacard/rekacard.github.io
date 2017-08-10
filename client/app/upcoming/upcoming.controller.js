@@ -17,10 +17,10 @@
 
         // Declares the var vm (for ViewModel) and assigns it the object this (in this case, the EventCtrl)
         // Any function or variable that you attach to vm will be exposed to callers of EventCtrl, e.g., register.html
-        var vm = this;
-        vm.search = search;
+      var vm = this;
+      vm.user = user;
+      vm.search = search;
         vm.page = 0;
-        vm.user = user;
       if (vm.user)
         vm.search();
 

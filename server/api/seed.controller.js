@@ -82,6 +82,8 @@ var createNewUser = function (db) {
             name_first: "John",
             name_last: "Kwan",
             gender: 'M',
+            dob: '1945-03-09 00:00:00',
+            tel_mobile: 81247586,
         })
         .then(function (user) {
             console.log(user);
@@ -108,6 +110,8 @@ var createNewUser = function (db) {
             name_first: "Jenny",
             name_last: "Liu",
             gender: 'F',
+            dob: '1925-05-19 00:00:00',
+            tel_mobile: 86585424,
         })
         .then(function (user) {
             //  console.log(user);
@@ -136,6 +140,8 @@ var createNewUser = function (db) {
             name_first: "Kenneth",
             name_last: "Pang",
             gender: 'M',
+            dob: '1998-02-03 00:00:00',
+            tel_mobile: 87584632,
         })
         .then(function (user) {
             console.log(user);
@@ -163,6 +169,8 @@ var createNewUser = function (db) {
             name_first: "Winnie",
             name_last: "Liang",
             gender: 'F',
+            dob: '1974-11-12 00:00:00',
+            tel_mobile: 85146325,
         })
         .then(function (user) {
             console.log(user);
@@ -189,6 +197,8 @@ var createNewUser = function (db) {
             name_first: "Alice",
             name_last: "Tan",
             gender: 'F',
+            dob: '1987-09-19 00:00:00',
+            tel_mobile: 89995423,
         })
         .then(function (user) {
             console.log(user);
@@ -215,6 +225,8 @@ var createNewUser = function (db) {
             name_first: "Terry",
             name_last: "Foo",
             gender: 'M',
+            dob: '1940-07-14 00:00:00',
+            tel_mobile: 83205976,
         })
         .then(function (user) {
             console.log(user);
@@ -241,6 +253,8 @@ var createNewUser = function (db) {
             name_first: "Felicia",
             name_last: "Tang",
             gender: 'F',
+            dob: '1967-01-026 00:00:00',
+            tel_mobile: 81624587,
         })
         .then(function (user) {
             console.log(user);

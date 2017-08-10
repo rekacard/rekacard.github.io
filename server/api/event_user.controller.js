@@ -60,7 +60,7 @@ var retrievePastEvent = function (db) {
         var offset = parseInt(req.query.page) * itemPerPage;
 
         db.Event_User
-            // findAll asks sequelize to search for records that contain the serach fields
+            // findAll asks sequelize to search for records that contain the search fields
             .findAll({
                 attributes: ["event_id", "role_id", "task_id"]  //, "events.brief_desc"
                 ,where: where
@@ -73,7 +73,7 @@ var retrievePastEvent = function (db) {
                             , attributes: ["organisation_id", "start_date", "start_time", "end_time", 
                                            "img_filename", "venue", "brief_desc", "note", ]
                             , order: [["start_date", "DESC"]]
-                            , required: true} ]
+                            , required: true}]
             })
             // this .then() handles successful findAll operation
             .then(function (result) {

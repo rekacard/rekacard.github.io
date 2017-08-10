@@ -128,6 +128,54 @@
           }
         },
       })
+      .state('userprofileWithParam', {
+        url: '/api/userprofile:id',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/userprofile/userprofile.html',
+            controller: 'ProfileParamCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+    .state('userlist', {
+        url: '/api/userlist',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/userlist/userlist.html',
+            controller: 'UserListCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
       .state('pastevent', {
         url: '/api/pastevent',
         views: {

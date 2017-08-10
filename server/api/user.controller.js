@@ -54,7 +54,7 @@ var registerUser = function(db) {
     //             .json({error: true});
     //     });
     };
-}; 
+};
 
 var retrieveUser = function(db) {
   return function(req, res) {
@@ -107,6 +107,24 @@ var retrieveUser = function(db) {
                         .json(err);
                 });
             break;
+        case 3:  //Option 1: Select all field in User table
+            db.User
+                .findAll({ attributes: ["user_id", "salutation", "name_first", "name_last"] })
+                // this .then() handles successful findAll operation
+                .then(function (result) {
+                    console.log("-- POST /api/username findAll then() result \n " + JSON.stringify(result));
+                    res
+                        .status(200)
+                        .json(result);
+                })
+                // this .catch() handles erroneous findAll operation
+                .catch(function (err) {
+                    console.log("-- POST /api/username/ findAll catch() \n " + JSON.stringify(err));
+                    res
+                        .status(500)
+                        .json(err);
+                });
+        break;
     }
   };
 };

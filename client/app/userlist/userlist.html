@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="container">
+            <h1 class="page-header">List User</h1>
+            <div ng-if="ctrl.user" class="row">
+                <!-- left column -->
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="wrap-item text-left">
+                        <ul>
+                            <div ng-repeat="user in ctrl.profile">
+                                <div class="thumbnail" style="width:50%;">
+                                    <img src="../../assets/img/user_512.png">
+                                </div>
+                                <li>
+                                    <a ui-sref="userprofileWithParam({id:user.user_id})"><h3 class="pad-bt15">{{user.name}}</h3></a>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

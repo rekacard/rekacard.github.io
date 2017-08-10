@@ -8,14 +8,14 @@
 (function () {
     angular
         .module("PAF")
-        .controller("ProfileCtrl", ProfileCtrl);
+        .controller("ProfileParamCtrl", ProfileParamCtrl);
 
-    ProfileCtrl.$inject = ['user', '$scope', '$state', 'UserService'];
+    ProfileParamCtrl.$inject = ['user', '$scope', '$state', "$stateParams", 'UserService'];
 
-    // ProfileCtrl function declaration. A function declaration uses the syntax: functionName([arg [, arg [...]]]){ ... }
-    // ProfileCtrl accepts the injected dependency as a parameter. We name it DeptService for consistency, but you may
+    // ProfileParamCtrl function declaration. A function declaration uses the syntax: functionName([arg [, arg [...]]]){ ... }
+    // ProfileParamCtrl accepts the injected dependency as a parameter. We name it DeptService for consistency, but you may
     // assign any name
-    function ProfileCtrl(user, $scope, $state, UserService) {
+    function ProfileParamCtrl(user, $scope, $state, $stateParams, UserService) {
 
         // Declares the var vm (for ViewModel) and assigns it the object this (in this case, the EventCtrl)
         // Any function or variable that you attach to vm will be exposed to callers of EventCtrl, e.g., register.html
@@ -23,6 +23,8 @@
         vm.submit = submit;
         vm.search = search;
         vm.edit = false;
+        vm.salutation_control = {};
+
         vm.user = user;
         $scope.salutation = [ 
             {name:"-- select an option --", isdisabled: true},
@@ -42,16 +44,19 @@
                 return $http.get('/tags?query=' + query);
         };
 
-        if (vm.user)
+        if ($stateParams.id) {
+            console.log("Received stateParams.user_id: " + $stateParams.id);
+            vm.viewuser = parseInt($stateParams.id);
+            // vm.search();
             vm.search();
-
-        vm.salutation_control = {name:"Mdm", isdisabled: false};
+        }
+        
         function submit() {
             console.log("Save user profiles");
         }
 
         function search() {
-            UserService.retrieveUser(vm.user)
+            UserService.retrieveUser(vm.viewuser)
                 .then(function(result) {
                     // console.log(JSON.stringify(result));
                     // vm.name = result.data.salutation + ' ' + result.data.name_first + ' ' + result.data.name_last;
