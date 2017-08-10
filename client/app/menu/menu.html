@@ -4,7 +4,7 @@
                   <li ng-if="!ctrl.user"><a ui-sref="login" ui-sref-active="active">Sign in<span class="sr-only">(login)</span></a></li>
                   <li ng-if="!ctrl.user"><a ui-sref="register" ui-sref-active="active">Register<span class="sr-only">(register)</span></a></li>
 
-                  <li class="dropdown">
+                  <li ng-if="ctrl.user"class="dropdown">
                     <!-- Link or button to toggle dropdown -->
                     <a class="dropdown-toggle" id="dropDownUser-id" role="button" data-toggle="dropdown">
                       User
@@ -12,18 +12,20 @@
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                       <li><a tabindex="-1" ui-sref="userprofile" ui-sref-active="active">Profile</a></li>
-                      <li><a tabindex="-1" ui-sref="userlist" ui-sref-active="active">List User</a></li>
+                      <li class="divider"></li>
+                      <li><a tabindex="-1" href="#">My Event Detail</a></li> 
+                      <li><a tabindex="-1" ui-sref="userhome" ui-sref-active="active">Upcoming Events<span class="sr-only">(userhome)</span></a></li>
+                      <li><a tabindex="-1" ui-sref="pastevent" ui-sref-active="active">Event History<span class="sr-only">(pastevent)</span></a></li>
                     </ul>
                   </li>
-                  <li class="dropdown">
+                  <li ng-if="ctrl.user" class="dropdown">
                     <!-- Link or button to toggle dropdown -->
                     <a class="dropdown-toggle" id="dropDownUser-id" role="button" data-toggle="dropdown">
-                      Event
+                      Manage
                       <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                      <li><a tabindex="-1" ui-sref="userhome" ui-sref-active="active">Upcoming Events<span class="sr-only">(userhome)</span></a></li>
-                      <li><a tabindex="-1" ui-sref="pastevent" ui-sref-active="active">Event History<span class="sr-only">(pastevent)</span></a></li>
+                      <li><a tabindex="-1" ui-sref="userlist" ui-sref-active="active">List User</a></li>
                     </ul>
                   </li>
                   <li ng-if="ctrl.user"><a href="/logout" ui-sref-active="active">Logout</a></li> 
