@@ -106,7 +106,7 @@ HEADER
 }
 .bg-color
 {
-     background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5); 
     /* background-color: blue; menu background*/
     min-height: 650px;
 }

@@ -106,7 +106,7 @@
             console.log("password: " + vm.user.confirmPassword);
 
             UserService
-                .insertUser(vm.user)
+                .registerUser(vm.user)
                 .then(function (result) {
                     console.log("Registration result " + JSON.stringify(result));
                     PassportSvc.login(vm.user)

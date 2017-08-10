@@ -19,7 +19,8 @@
         service.organization = ["", "NTUC Youth"];
         service.skillset = ["", "Photography", ];
         service.causes = ["", "Enviroment", "Elderly"];
-        service.language = ["", "English", "Mandrian"];
+        service.language = ["", "English", "Mandarian", "Malay", "Tamil", "French", "German", "Japanese", "Korean", "French", "German"];
+        service.dialect = ["", "Cantonese", "Hokkien", "Teochew", "Hakka"];
         
         
         // EXPOSED FUNCTIONS -------------------------------------------------------------------------------------------

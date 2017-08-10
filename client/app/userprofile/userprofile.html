@@ -1,0 +1,258 @@
+<div class="container" style="padding-top: 60px;">
+  <h1 class="page-header">Edit Profile</h1>
+  <div ng-if="ctrl.user" class="row">
+    <!-- left column -->
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="text-center">
+        <img src="../../assets/img/user_512.png" class="avatar img-circle img-thumbnail"
+          alt="avatar">
+        <h6>Upload a different photo...</h6>
+        <input type="file" class="text-center center-block well well-sm">
+      </div>
+    </div>
+    <!-- edit form column -->
+    <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+      <div class="alert alert-info alert-dismissable">
+        <a class="panel-close close" data-dismiss="alert">×</a>
+        <i class="fa fa-coffee"></i> This is an <strong>.alert</strong>. Use this to show important messages to the user.
+      </div>
+      <h3>Personal info</h3>
+      <form name="userProfileForm" class="form-horizontal" role="form">
+        <div class="form-group">
+
+            <div ng-if="ctrl.edit" class="form-group">
+              <label class="col-lg-3 control-label">Salutation:</label>
+              <div class="col-lg-8">
+                <select id="salutation_control-id"
+                        ng-options="sal.name disable when sal.isdisabled for sal in salutation" 
+                        ng-value="ctrl.salutation_control"
+                        ng-model="ctrl.salutation_control" 
+                        required>
+                </select>
+              </div>
+            </div> 
+
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Salutation:</label>
+              <div class="col-lg-8">
+                <input class="form-control" ng-value="ctrl.profile.salutation" type="text" name="salutation" id="salutation-id" 
+                        ng-model="ctrl.profile.salutation" required>
+              </div>
+            </div> 
+
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Surname:</label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control" ng-value="ctrl.profile.name_first"name="surname" id="surname-id" 
+                       ng-model="ctrl.profile.name_first" required>
+              </div>
+            </div> 
+
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Given name:</label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control" ng-value="ctrl.profile.name_last" name="givenName" id="givenName-id" 
+                       ng-model="ctrl.profile.name_last" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Mobile Number</label>
+              <div class="col-lg-8">
+                <input type="tel" class="form-control" ng-value="ctrl.profile.tel_mobile" name="mobile" id="mobile-id"
+                       ng-model="ctrl.profile.tel_mobile" required>
+              </div>
+            </div>
+
+            <div ng-if="ctrl.edit" class="form-group">
+              <label class="col-lg-3 control-label">Date of Birth</label>
+              <div class="col-lg-8">
+                <input type="date" class="form-control" ng-value="ctrl.profile.dateofbirth" name="dob" id="dob-id"
+                       ng-model="ctrl.profile.dateofbirth" required>
+              </div>
+            </div> 
+
+            <div ng-if="!ctrl.edit" class="form-group">
+              <label class="col-lg-3 control-label">Date of Birth</label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control" ng-value="ctrl.profile.dob" name="dob" id="dob-id"
+                       ng-model="ctrl.profile.dob" required>
+              </div>
+            </div> 
+
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Email:</label>
+              <div class="col-lg-8">
+                <input class="form-control" value="janesemail@gmail.com" type="text">
+              </div>
+            </div>
+          <h3>My Roots</h3>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Ethnicity:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="Eurasian" type="text" name="ethnicity" id="ethnicity-id" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Ethnicity:</label>
+            <div class="col-lg-8">
+              <tags-input ng-model="tags">
+                <auto-complete source="loadTags($query)"></auto-complete>
+              </tags-input>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Dialect Group:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="Kristang" type="text" name="dialectgroup" id="dialectgroup-id" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Clan / Ancestral Village:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" name="clan" id="clan-id" required>
+            </div>
+          </div>
+
+          <h3>Skillsets & Interests</h3>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Conversational Languages:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" name="language" id="language-id" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Skillsets I would like to develop / contribute:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" name="clan" id="clan-id" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Interested Causes:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" name="clan" id="clan-id" required>
+            </div>
+          </div>
+
+
+          <h3>Work Experience</h3>
+          <div class="row col-md-9 col-md-offset-2">
+            <table class="table table-striped">
+              <thead>
+                <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new</a>
+                <tr>
+                  <th>Year</th>
+                  <th>Company</th>
+                  <th>Position</th>
+                  <th class="text-center">Action</th>
+                </tr>
+              </thead>
+              <tr>
+                <td>2017</td>
+                <td>NUS</td>
+                <td>Researcher</td>
+                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#"
+                    class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+              </tr>
+              <tr>
+                <td>2015</td>
+                <td>NTU</td>
+                <td>Teaching Assistant</td>
+                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#"
+                    class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+              </tr>
+            </table>
+          </div>
+
+          <br>
+
+          <h3>Education</h3>
+          <div class="row col-md-9 col-md-offset-2">
+            <table class="table table-striped">
+              <thead>
+                <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new</a>
+                <tr>
+                  <th>Year</th>
+                  <th>Institution</th>
+                  <th>Course</th>
+                  <th class="text-center">Action</th>
+                </tr>
+              </thead>
+              <tr>
+                <td>2011</td>
+                <td>National University of Singapore</td>
+                <td>Psychology</td>
+                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#"
+                    class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+              </tr>
+              <tr>
+                <td>2007</td>
+                <td>Hwa Chong Junior College</td>
+                <td>PCM LEP</td>
+                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#"
+                    class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+              </tr>
+            </table>
+          </div>
+
+    <br>
+
+          <h3>Emergency Information</h3>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Blood Type:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="O+" type="text" name="blood" id="blood-id" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Next-of-kin Name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="Mrs Vanda Jokim" type="text" name="nok" id="nok-id" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Relationship:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="Mother" type="text" name="relationship" id="relationship-id" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Mobile Number</label>
+            <div class="col-lg-8">
+              <input type="tel" class="form-control" name="mobile" id="mobile-id" value="91234567" required>
+            </div>
+          </div>
+
+
+          <h3>Change Password</h3>
+          <div class="form-group">
+            <label class="col-md-3 control-label">New Password:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Confirm password:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password">
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input class="btn btn-success" value="Save Changes" type="button" ng-click="ctrl.submit()">
+              <span>&nbsp</span>
+              <input class="btn btn-primary" value="&nbsp &nbsp &nbsp Cancel &nbsp &nbsp &nbsp" type="reset">
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

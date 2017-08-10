@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module("PAF")          
+        .module("DMS")          
         .controller("UserEventBriefCtrl", UserEventBriefCtrl);    
 
     function UserEventBriefCtrl() {

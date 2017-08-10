@@ -11,3 +11,19 @@ a.list-group-item.active small {
 .stars {
     margin:20px auto 1px;    
 }
+
+.member {
+     color:#c4e3f3; 
+}
+
+.tasklead {
+     color:#4cae4c;
+}
+
+.organizer {
+     color:orange;
+}
+
+.director {
+     color:#FA0000;
+}

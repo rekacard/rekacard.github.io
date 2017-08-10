@@ -3,31 +3,33 @@
     angular
         .module("PAF")          // to call an angular module, omit the second argument ([]) from the angular.module()
         // syntax this syntax is called the getter syntax
-        .controller("UpcomingCtrl", UpcomingCtrl);    // angular.controller() attaches a controller to the angular module
+        .controller("PastEventCtrl", PastEventCtrl);    // angular.controller() attaches a controller to the angular module
                                             // specified as you can see, angular methods are chainable
 
 //   Todo: to be change back
-     UpcomingCtrl.$inject = [ 'user', 'EventService', 'ModelService' ];
+//   UpcomingCtrl.$inject = [ 'user', 'EventService', 'ModelService' ];
+  PastEventCtrl.$inject = [ 'user', 'EventService', 'ModelService' ];
 
     // EventCtrl function declaration. A function declaration uses the syntax: functionName([arg [, arg [...]]]){ ... }
     // EventCtrl accepts the injected dependency as a parameter. We name it DeptService for consistency, but you may
     // assign any name
-    function UpcomingCtrl(user, EventService, ModelService) {
+    function PastEventCtrl(user, EventService, ModelService) {
       // Read configurations
+      // function UpcomingCtrl(user) {
 
-        // Declares the var vm (for ViewModel) and assigns it the object this (in this case, the EventCtrl)
-        // Any function or variable that you attach to vm will be exposed to callers of EventCtrl, e.g., register.html
+      // Declares the var vm (for ViewModel) and assigns it the object this (in this case, the EventCtrl)
+      // Any function or variable that you attach to vm will be exposed to callers of EventCtrl, e.g., register.html
       var vm = this;
-      vm.user = user;
       vm.search = search;
-        vm.page = 0;
+      vm.page = 0;
+      vm.user = user;
       if (vm.user)
         vm.search();
 
       function search() {
         const dir = "../../assets/img/";
 
-        EventService.retrieveUpcomingEvent(String(vm.user), vm.page)
+        EventService.retrievePastEvent(String(vm.user), vm.page)
           .then(function(result) {
             // console.log(JSON.stringify(result));
             // var user = String(result.data.event_id);

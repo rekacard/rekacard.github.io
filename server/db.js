@@ -29,7 +29,6 @@ sequelize.authenticate()
   });
 
 // Import DB Models
-// const Grocery = sequelize.import('./models/grocery');
 const Role = sequelize.import('./models/roles');
 const Email = sequelize.import('./models/emails');
 const User = sequelize.import('./models/users');
@@ -38,23 +37,12 @@ const Event_User = sequelize.import('./models/event_users');
 const Organisation = sequelize.import('./models/organisations');
 
 // Define Model Associations
-// Department.hasMany(DeptManager, { foreignKey: 'dept_no' });
-// DeptManager.belongsTo(Employee, { foreignKey: 'emp_no' });
-// User.hasMany(Post);
-// Post.belongsTo(User);
-// Post.hasMany(Comment);
-// Comment.belongsTo(Post);
-// Comment.belongsTo(User);
-// User.hasMany(AuthProvider, { foreignKey: 'userId' });
 
 // Link Event_User model to Events model through the event_id FK. This relationship is 1-to-N and so we use hasMany
-Event_User.hasMany(Events, { foreignKey: 'event_id' });
-// sequelize
-//     .sync({force: config.seed})
-//     .then(function () {
-//         console.log("Database in Sync Now");
-//         require("./seed")();
-//     });
+// Link Event_User model to User model through the event_id FK. This relationship is N-to-1 and so we use belongsTo
+// Foreign key is set in Event_User model
+Events.hasMany(Event_User, { foreignKey: 'event_id' });
+Event_User.belongsTo(Events, { foreignKey: 'event_id' });
 
 // Exports Models
 module.exports = {

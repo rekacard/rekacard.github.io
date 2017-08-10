@@ -3,25 +3,35 @@
     .module('PAF')
     .controller('HomeCtrl', HomeCtrl);
 
-  HomeCtrl.$inject = [ 'user', 'EventService' ];
+  HomeCtrl.$inject = [ 'user', 'EventService', 'UserService' ];
 
-  function HomeCtrl(user, EventService) {
+  function HomeCtrl(user, EventService, UserService) {
     var vm = this;
     vm.search = search;
+    vm.getname = getname;
     vm.event = [];
     vm.user = user;
     vm.page = 0;
 
-    if (!vm.user)
-      vm.search();
+    if (vm.user) vm.getname();
+    vm.search();
+
+    function getname() {
+      UserService.retrieveUserName(vm.user)
+        .then(function(result) {
+          // console.log(JSON.stringify(result));
+          vm.name = result.data.salutation + ' ' + result.data.name_first + ' ' + result.data.name_last;
+        })
+        .catch(function(err) {
+          console.log(err);
+        });
+    }
 
     function search() {
       const dir = "../../assets/img/";
       EventService.retrieveEvent(vm.page)
         .then(function(result) {
           // console.log(JSON.stringify(result));
-          // var user = String(result.data.event_id);
-          // console.log("Login user: " + user);
           vm.event = result.data;  // assign to Event Table data
           for (i in vm.event) {
             // console.log(JSON.stringify(vm.event[i]));
