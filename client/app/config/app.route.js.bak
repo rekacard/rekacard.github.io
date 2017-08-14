@@ -416,6 +416,30 @@
           }
         },
       })
+      .state('analytics_usersearch', {
+        url:'/api/analytics_usersearch',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_usersearch/analytics_usersearch.html',
+            controller: 'AnalyticsUserSearchCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
       ;
 
     $urlRouterProvider.otherwise("/home");

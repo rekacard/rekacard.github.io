@@ -117,6 +117,7 @@
 <script src="app/user_event/feedback/user_eventfeedback.controller.js"></script>
 <script src="app/user_event/submission/user_eventsubmission.controller.js"></script>
 <script src="app/analytics/analytics_userdetails/analytics_userdetails.controller.js"></script>
+<script src="app/analytics/analytics_usersearch/analytics_usersearch.controller.js"></script>
 <!--Loads the js file that contains the surveyjs integration controller definition-->
 <script src="https://surveyjs.azureedge.net/0.12.20/survey.jquery.min.js"></script>
 

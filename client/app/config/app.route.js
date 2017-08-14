@@ -392,6 +392,150 @@
           }
         },
       })
+.state('analytics_userprofile', {
+        url:'/api/analytics_userprofile',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userprofile/analytics_userprofile.html',
+            controller: 'AnalyticsUserProfileCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('analytics_userskills', {
+        url:'/api/analytics_userskills',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userskills/analytics_userskills.html',
+            controller: 'AnalyticsUserSkillsCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('analytics_userexperience', {
+        url:'/api/analytics_userexperience',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userexperience/analytics_userexperience.html',
+            controller: 'AnalyticsUserExperienceCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('analytics_userbadges', {
+        url:'/api/analytics_userbadges',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userbadges/analytics_userbadges.html',
+            controller: 'AnalyticsUserBadgesCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('analytics_userhistory', {
+        url:'/api/analytics_userhistory',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userhistory/analytics_userhistory.html',
+            controller: 'AnalyticsUserHistoryCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('analytics_useremergency', {
+        url:'/api/analytics_useremergency',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_useremergency/analytics_useremergency.html',
+            controller: 'AnalyticsUserEmergencyCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
       .state('analytics_userdetails', {
         url:'/api/analytics_userdetails',
         views: {
