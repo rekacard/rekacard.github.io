@@ -1,24 +1,24 @@
 <div class="container">
-     <h2 style="text-align: center;">Analytics - User Database Search</h2>
-     <br>
-    <div class="row">    
+    <h2 ng-if='ctrl.user' style="text-align: center;">Analytics - User Database Search</h2>
+    <br>
+    <div ng-if='ctrl.user' class="row">
         <div class="col-xs-8 col-xs-offset-2">
-		    <div class="input-group">
-                <input type="hidden" name="search_param" value="all" id="search_param">         
+            <div class="input-group">
+                <input type="hidden" name="search_param" value="all" id="search_param">
                 <input type="text" class="form-control" name="x" placeholder="Search term...">
-                 <div class="input-group-btn search-panel">
+                <div class="input-group-btn search-panel">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                     	<span id="search_concept">By Causes</span> <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                      <li><a href="#contains">Animal</a></li>
-                      <li><a href="#its_equal">Culture & Arts</a></li>
-                      <li><a href="#greather_than">Children</a></li>
-                      <li><a href="#less_than">Elderly </a></li>
-                      <li><a href="#greather_than">Environment</a></li>
-                      <li><a href="#less_than">Inclusivity</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#all">All Causes</a></li>
+                        <li><a href="#contains">Animal</a></li>
+                        <li><a href="#its_equal">Culture & Arts</a></li>
+                        <li><a href="#greather_than">Children</a></li>
+                        <li><a href="#less_than">Elderly </a></li>
+                        <li><a href="#greather_than">Environment</a></li>
+                        <li><a href="#less_than">Inclusivity</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#all">All Causes</a></li>
                     </ul>
                 </div>
                 <div class="input-group-btn search-panel">
@@ -26,10 +26,10 @@
                     	<span id="search_concept">By Date</span> <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                      <li><a href="#contains">Past 3 months</a></li>
-                      <li><a href="#its_equal">Past 1 year</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#all">All</a></li>
+                        <li><a href="#contains">Past 3 months</a></li>
+                        <li><a href="#its_equal">Past 1 year</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#all">All</a></li>
                     </ul>
                 </div>
                 <span class="input-group-btn">
@@ -37,263 +37,259 @@
                 </span>
             </div>
         </div>
-	</div>
+    </div>
 </div>
 
 <br>
 
-
-
 <div class="container">
-    
-        <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                <div class="card" style="margin-bottom: 1em;">
-                    <hr>
-                    <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <p style="line-height:0.75em">Total hours volunteered: 350</p>
-                            <p style="line-height:0.75em"># of events as task lead: 10</p>
-                            <p style="line-height:0.75em"># of events organized: 5</p>
-                            <p style="line-height:0.75em"># of badges earned: 7</p>
-                            <p style="line-height:0.75em">Last event: 2 weeks ago</p>
-                            <a href="#">More Details...</a><hr>
+    <div ng-if='ctrl.user' class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div class="card" style="margin-bottom: 1em;">
+                <hr>
+                <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
+                <div class="card-block">
+                    <h4 class="card-title">Tawshif Ahsan Khan</h4>
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                         </div>
-                        <div class="card-text">
-                            <h4>Average Rating:  3.5 /5</h4>
-                            <div class="star-ratings-css">
-                                <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
                             <hr>
-                            <div>
-                                <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
-                                <hr>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                <div class="card" style="margin-bottom: 1em;">
-                   <hr>
-                    <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <p style="line-height:0.75em">Total hours volunteered: 350</p>
-                            <p style="line-height:0.75em"># of events as task lead: 10</p>
-                            <p style="line-height:0.75em"># of events organized: 5</p>
-                            <p style="line-height:0.75em"># of badges earned: 7</p>
-                            <p style="line-height:0.75em">Last event: 2 weeks ago</p>
-                            <a href="#">More Details...</a><hr>
-                        </div>
-                        <div class="card-text">
-                            <h4>Average Rating:  3.5 /5</h4>
-                            <div class="star-ratings-css">
-                                <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            </div>
-                            <hr>
-                            <div>
-                                <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
-                                <hr>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-           <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                <div class="card" style="margin-bottom: 1em;">
-                   <hr>
-                    <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <p style="line-height:0.75em">Total hours volunteered: 350</p>
-                            <p style="line-height:0.75em"># of events as task lead: 10</p>
-                            <p style="line-height:0.75em"># of events organized: 5</p>
-                            <p style="line-height:0.75em"># of badges earned: 7</p>
-                            <p style="line-height:0.75em">Last event: 2 weeks ago</p>
-                            <a href="#">More Details...</a><hr>
-                        </div>
-                        <div class="card-text">
-                            <h4>Average Rating:  3.5 /5</h4>
-                            <div class="star-ratings-css">
-                                <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            </div>
-                            <hr>
-                            <div>
-                                <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
-                                <hr>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                <div class="card" style="margin-bottom: 1em;">
-                    <hr>
-                    <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <p style="line-height:0.75em">Total hours volunteered: 350</p>
-                            <p style="line-height:0.75em"># of events as task lead: 10</p>
-                            <p style="line-height:0.75em"># of events organized: 5</p>
-                            <p style="line-height:0.75em"># of badges earned: 7</p>
-                            <p style="line-height:0.75em">Last event: 2 weeks ago</p>
-                            <a href="#">More Details...</a><hr>
-                        </div>
-                        <div class="card-text">
-                            <h4>Average Rating:  3.5 /5</h4>
-                            <div class="star-ratings-css">
-                                <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            </div>
-                            <hr>
-                            <div>
-                                <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
-                                <hr>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                <div class="card" style="margin-bottom: 1em;">
-                    <hr>
-                    <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <p style="line-height:0.75em">Total hours volunteered: 350</p>
-                            <p style="line-height:0.75em"># of events as task lead: 10</p>
-                            <p style="line-height:0.75em"># of events organized: 5</p>
-                            <p style="line-height:0.75em"># of badges earned: 7</p>
-                            <p style="line-height:0.75em">Last event: 2 weeks ago</p>
-                            <a href="#">More Details...</a><hr>
-                        </div>
-                        <div class="card-text">
-                            <h4>Average Rating:  3.5 /5</h4>
-                            <div class="star-ratings-css">
-                                <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            </div>
-                            <hr>
-                            <div>
-                                <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
-                                <hr>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                <div class="card" style="margin-bottom: 1em;">
-                   <hr>
-                    <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <p style="line-height:0.75em">Total hours volunteered: 350</p>
-                            <p style="line-height:0.75em"># of events as task lead: 10</p>
-                            <p style="line-height:0.75em"># of events organized: 5</p>
-                            <p style="line-height:0.75em"># of badges earned: 7</p>
-                            <p style="line-height:0.75em">Last event: 2 weeks ago</p>
-                            <a href="#">More Details...</a><hr>
-                        </div>
-                        <div class="card-text">
-                            <h4>Average Rating:  3.5 /5</h4>
-                            <div class="star-ratings-css">
-                                <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            </div>
-                            <hr>
-                            <div>
-                                <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
-                                <hr>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-           <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                <div class="card" style="margin-bottom: 1em;">
-                   <hr>
-                    <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <p style="line-height:0.75em">Total hours volunteered: 350</p>
-                            <p style="line-height:0.75em"># of events as task lead: 10</p>
-                            <p style="line-height:0.75em"># of events organized: 5</p>
-                            <p style="line-height:0.75em"># of badges earned: 7</p>
-                            <p style="line-height:0.75em">Last event: 2 weeks ago</p>
-                            <a href="#">More Details...</a><hr>
-                        </div>
-                        <div class="card-text">
-                            <h4>Average Rating:  3.5 /5</h4>
-                            <div class="star-ratings-css">
-                                <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            </div>
-                            <hr>
-                            <div>
-                                <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
-                                <hr>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                <div class="card" style="margin-bottom: 1em;">
-                    <hr>
-                    <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <p style="line-height:0.75em">Total hours volunteered: 350</p>
-                            <p style="line-height:0.75em"># of events as task lead: 10</p>
-                            <p style="line-height:0.75em"># of events organized: 5</p>
-                            <p style="line-height:0.75em"># of badges earned: 7</p>
-                            <p style="line-height:0.75em">Last event: 2 weeks ago</p>
-                            <a href="#">More Details...</a><hr>
-                        </div>
-                        <div class="card-text">
-                            <h4>Average Rating:  3.5 /5</h4>
-                            <div class="star-ratings-css">
-                                <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            </div>
-                            <hr>
-                            <div>
-                                <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
-                                <hr>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-
         </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div class="card" style="margin-bottom: 1em;">
+                <hr>
+                <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
+                <div class="card-block">
+                    <h4 class="card-title">Tawshif Ahsan Khan</h4>
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div class="card" style="margin-bottom: 1em;">
+                <hr>
+                <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
+                <div class="card-block">
+                    <h4 class="card-title">Tawshif Ahsan Khan</h4>
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div class="card" style="margin-bottom: 1em;">
+                <hr>
+                <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
+                <div class="card-block">
+                    <h4 class="card-title">Tawshif Ahsan Khan</h4>
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div class="card" style="margin-bottom: 1em;">
+                <hr>
+                <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
+                <div class="card-block">
+                    <h4 class="card-title">Tawshif Ahsan Khan</h4>
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div class="card" style="margin-bottom: 1em;">
+                <hr>
+                <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
+                <div class="card-block">
+                    <h4 class="card-title">Tawshif Ahsan Khan</h4>
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div class="card" style="margin-bottom: 1em;">
+                <hr>
+                <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
+                <div class="card-block">
+                    <h4 class="card-title">Tawshif Ahsan Khan</h4>
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div class="card" style="margin-bottom: 1em;">
+                <hr>
+                <img class="card-img-top" style="width:15em" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
+                <div class="card-block">
+                    <h4 class="card-title">Tawshif Ahsan Khan</h4>
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
 </div>
