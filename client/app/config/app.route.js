@@ -129,7 +129,7 @@
         },
       })
       .state('userprofileWithParam', {
-        url: '/api/userprofile:id',
+        url: '/api/userprofile/:id',
         views: {
           'menu': {
             templateUrl: 'app/menu/menu.html',
@@ -705,7 +705,7 @@
         },
       })
       .state('analytics_userdetails', {
-        url:'/api/analytics_userdetails',
+        url:'/api/analytics_userdetails/:id',
         views: {
           'menu': {
             templateUrl: 'app/menu/menu.html',

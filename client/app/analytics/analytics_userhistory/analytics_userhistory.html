@@ -92,82 +92,30 @@
                 <div class="row">
                     <div class="well col-xs-9">
                         <div class="list-group">
-                            <a href="#" class="list-group-item">
-                                <div class="media col-md-3">
-                                    <figure class="pull-left">
-                                        <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250" alt="placehold.it/350x250">
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <h4 class="list-group-item-heading" style="color:white;"> Event Name </h4>
-                                    <p class="list-group-item-text" style="color:white;"> Date: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Time: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Venue: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Organizer: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Important Note: </p>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <h2 style="color:white;"> <small style="color:white;"> Role:  </small> Member </h2>
-                                    <button type="button" class="btn btn-default btn-lg btn-block"> Details </button>
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <div class="media col-md-3">
-                                    <figure class="pull-left">
-                                        <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250" alt="placehold.it/350x250">
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <h4 class="list-group-item-heading" style="color:white;"> Event Name </h4>
-                                    <p class="list-group-item-text" style="color:white;"> Date: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Time: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Venue: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Organizer: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Important Note: </p>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <h2 style="color:yellow"> <small style="color:white;"> Role:  </small> Task Lead </h2>
-                                    <button type="button" class="btn btn-default btn-lg btn-block"> Details </button>
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <div class="media col-md-3">
-                                    <figure class="pull-left">
-                                        <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250" alt="placehold.it/350x250">
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <h4 class="list-group-item-heading" style="color:white;"> Event Name </h4>
-                                    <p class="list-group-item-text" style="color:white;"> Date: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Time: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Venue: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Organizer: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Important Note: </p>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <h2 style="color:orange;"> <small style="color:white;"> Role:  </small> Organizer </h2>
-                                    <button type="button" class="btn btn-default btn-lg btn-block"> Details </button>
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <div class="media col-md-3">
-                                    <figure class="pull-left">
-                                        <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250" alt="placehold.it/350x250">
-                                    </figure>
-                                </div>
-                                <div class="col-md-4">
-                                    <h4 class="list-group-item-heading" style="color:white;"> Event Name </h4>
-                                    <p class="list-group-item-text" style="color:white;"> Date: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Time: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Venue: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Organizer: </p>
-                                    <p class="list-group-item-text" style="color:white;"> Important Note: </p>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <h2 style="color:red;"> <small style="color:white;"> Role:  </small> Director </h2>
-                                    <button type="button" class="btn btn-default btn-lg btn-block"> Details </button>
-                                </div>
-                            </a>
+                            <div ng-repeat="events in ctrl.event">
+                                <a ui-sref="user_eventdetails({id:events.event_id})" class="list-group-item">
+                                    <div class="media col-md-3">
+                                        <!-- <div class="media col-md-3"> -->
+                                        <figure class="pull-left">
+                                            <img class="media-object img-rounded img-responsive" src="{{events.path}}" alt="event image">
+                                        </figure>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <!-- <div class="col-md-6"> -->
+                                        <h4 class="list-group-item-heading"> </h4>
+                                        <h4 class="list-group-item-heading" style="color:white;"> {{events.event.brief_desc}} </h4>
+                                        <p class="list-group-item-text" style="color:white;"> Date: {{events.event.start_date}}</p>
+                                        <p class="list-group-item-text" style="color:white;"> Time: {{events.event.start_time}} - {{events.event.end_time}}</p>
+                                        <p class="list-group-item-text" style="color:white;"> Venue: {{events.event.venue}}</p>
+                                        <p class="list-group-item-text" style="color:white;"> Organizer: {{events.organization}}</p>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <h2 class={{events.myrole}}> <small style="color:white;"> Role:  </small> {{events.role}} </h2>
+                                        <button type="button" class="btn btn-default btn-lg btn-block btn-info"> Details </button>
+                                    </div>
+                                </a>
+                                <hr>
+                            </div>
                         </div>
                     </div>
                 </div>

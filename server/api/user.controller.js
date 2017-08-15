@@ -71,7 +71,12 @@ var retrieveUser = function(db) {
     switch (parseInt(user.option)) {
         case 1:  //Option 1: Select all field in User table
             db.User
-                .findOne({ where: where })
+                .findOne({ 
+                    where: where 
+                    , include: [ {model: db.Email
+                                , attributes: ["email_id"]
+                                , required: true} ]
+                })
                 // this .then() handles successful findAll operation
                 .then(function (result) {
                     console.log("-- POST /api/username findOne then() result \n " + JSON.stringify(result));

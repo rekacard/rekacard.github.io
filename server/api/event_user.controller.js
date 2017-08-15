@@ -24,7 +24,7 @@ var retrieveUpcomingEvent = function (db) {
                                 }
                             }
                             , attributes: ["organisation_id", "start_date", "start_time", "end_time", 
-                                           "img_filename", "venue", "brief_desc", "note", ]
+                                           "img_filename", "venue", "brief_desc", ]
                             , order: [["start_date", "DESC"]]
                             , required: true} ]
             })
@@ -71,7 +71,7 @@ var retrievePastEvent = function (db) {
                                 }
                             }
                             , attributes: ["organisation_id", "start_date", "start_time", "end_time", 
-                                           "img_filename", "venue", "brief_desc", "note", ]
+                                           "img_filename", "venue", "brief_desc", ]
                             , order: [["start_date", "DESC"]]
                             , required: true}]
             })

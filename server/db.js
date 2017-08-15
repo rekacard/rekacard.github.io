@@ -44,6 +44,7 @@ const Organisation = sequelize.import('./models/organisations');
 Events.hasMany(Event_User, { foreignKey: 'event_id' });
 Event_User.belongsTo(Events, { foreignKey: 'event_id' });
 Email.belongsTo(User, { foreignKey: 'user_id' });
+User.hasOne(Email, { foreignKey: 'user_id' });
 
 // Exports Models
 module.exports = {
