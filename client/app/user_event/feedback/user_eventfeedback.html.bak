@@ -6,16 +6,22 @@
                 <div class="tabbable-line">
                     <ul class="nav nav-tabs ">
                         <li>
-                            <a ui-sref="user_eventdetails">Event Details</a>
+                            <a href="/#!/user_eventdetails">Event Details</a>
                         </li>
                         <li>
-                            <a ui-sref="user_eventsubmission">Profile Submitted</a>
+                            <a href="/#!/user_eventsubmission">Profile Submitted</a>
                         </li>
                         <li>
-                            <a ui-sref="user_eventbrief">Volunteer Brief</a>
+                            <a href="/#!/user_eventbrief">Volunteer Brief</a>
                         </li>
                         <li class="active">
-                            <a ui-sref="user_eventfeedback">Feedback Form</a>
+                            <a href="/#!/user_eventfeedback">Feedback Form</a>
+                        </li>
+                        <li>
+                            <a href="/#!/user_eventattendance">Attendance Sheet</a>
+                        </li>
+                        <li>
+                            <a href="/#!/user_eventdebrief">Debrief Form</a>
                         </li>
                     </ul>
                     <div class="tab-content">
