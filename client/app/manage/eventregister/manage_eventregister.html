@@ -1,0 +1,93 @@
+<div class="container" style="margin-top: 30px;">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+            <h3> Event Management System </h3>
+            <h2> {Event Title} </h2>
+            <div data-spy="scroll" class="tabbable-panel">
+                <div class="tabbable-line">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a ui-sref="manage_eventoverview">Overview</a>
+                        </li>
+                        <li>
+                            <a ui-sref="manage_eventdetails">Event Details</a>
+                        </li>
+                        <li class="active">
+                            <a ui-sref="manage_eventregister">Registration Form</a>
+                        </li>
+                        <li>
+                            <a ui-sref="manage_eventbrief">Volunteer Brief</a>
+                        </li>
+                        <li>
+                            <a ui-sref="manage_eventvolunteer">Volunteer Management</a>
+                        </li>
+                        <li>
+                            <a ui-sref="manage_eventdebrief">Debrief Form</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-content">
+                        <div class="tab-pane active">                     
+                            <div class="well well-sm">
+                                <h4>Select the information you require volunteers to provide for event registration.</h4>
+                            </div>
+                            <form>
+                                <div class="form-group row">
+                                    <input type="checkbox" name="fullname" class="col-sm-2 col-form-label" checked>Full Name <hr>
+                                    <input type="checkbox" name="nric" class="col-sm-2 col-form-label">NRIC <hr>
+                                    <input type="checkbox" name="mobileno" class="col-sm-2 col-form-label">Mobile Number <hr>
+                                    <input type="checkbox" name="email" class="col-sm-2 col-form-label" checked>Email <hr>
+                                    <input type="checkbox" name="dob" class="col-sm-2 col-form-label">DOB <hr>
+                                    <input type="checkbox" name="dietary" class="col-sm-2 col-form-label">Dietary Requirement <br>
+                                        <ul style="padding:1em; margin-left:10em">
+                                            <li><label> Options: </label>
+                                                <label><input type="checkbox" class="subOption" style="margin-left:2em"> No restriction</label>
+                                                <label><input type="checkbox" class="subOption" style="margin-left:2em"> Vegetarian</label>
+                                                <label><input type="checkbox" class="subOption" style="margin-left:2em"> Halal</label>
+                                                <label><input type="checkbox" class="subOption" style="margin-left:2em"> Other </label><input type="text" name="other_reason" />
+                                            </li>
+                                        </ul><hr>
+                                    <input type="checkbox" name="shirtsize" class="col-sm-2 col-form-label"> T-shirt size  
+                                        <ul style="padding:1em; margin-left:10em">
+                                            <li><label> Options: </label>
+                                                <label><input type="checkbox" class="subOption" style="margin-left:2em"> XXS</label>
+                                                <label><input type="checkbox" class="subOption" style="margin-left:2em"> XS</label>
+                                                <label><input type="checkbox" class="subOption" style="margin-left:2em"> S</label>
+                                                <label><input type="checkbox" class="subOption" style="margin-left:2em"> M</label>
+                                                <label><input type="checkbox" class="subOption" style="margin-left:2em"> L</label>
+                                                <label><input type="checkbox" class="subOption" style="margin-left:2em"> XL</label>
+                                                <label><input type="checkbox" class="subOption" style="margin-left:2em"> 2XL</label>
+                                                <label><input type="checkbox" class="subOption" style="margin-left:2em"> 3XL</label>
+                                            </li>
+                                            <li>
+                                                <label><input type="checkbox" class="subOption" style="margin-top:2em; margin-right:2em"> Upload Image of T-shirt Measurements by Supplier</label>
+                                                       <input id="fileupload" name="myfile" type="file" style="padding:1em; margin-left:4em"/> 
+                                            </li>
+                                        </ul><hr>
+                                    <input type="checkbox" name="shirtsize" class="col-sm-2 col-form-label"> Interested Role
+                                        <ul style="padding:1em; margin-left:10em">
+                                            <li><label><input type="checkbox" class="subOption" style="margin-left:2em"> Input Role 1 :</label><input type="text" name="other_reason" /></li>
+                                            <li><label><input type="checkbox" class="subOption" style="margin-left:2em"> Input Role 2 :</label><input type="text" name="other_reason" /></li>
+                                            <li><label><input type="checkbox" class="subOption" style="margin-left:2em"> Input Role 3 :</label><input type="text" name="other_reason" /></li>
+                                            <li><label><input type="checkbox" class="subOption" style="margin-left:2em"> Input Role 4 : </label><input type="text" name="other_reason" /></li>
+                                            <li><label><input type="checkbox" class="subOption" style="margin-left:2em"> Input Role 5 : </label><input type="text" name="other_reason" /></li>
+                                            <li><a ref="">+ Add more</a></li>
+                                        </ul><hr>  
+                                    <input type="checkbox" name="terms" class="col-sm-2 col-form-label">Terms & Conditions <br>
+                                        <ul style="padding:1em; margin-left:9em">
+                                            <li><textarea name="message" rows="10" cols="100">I consent the event organizer to have my photos/videos taken during the event for publicity purposes. </textarea></li>                                            </li>
+                                        </ul>
+                                </div>
+                                <p align="right">
+                                <button type="button" class="btn btn-download">Save</button>
+                                </p>
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

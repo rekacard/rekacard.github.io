@@ -97,8 +97,6 @@
 <!--Load angular-animate-->
 <script src="bower_components/angular-animate/angular-animate.min.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-<!--Load bootstrap-vertical-tabs-->
-<script src="bower_components/bootstrap-vertical-tabs/index.js"></script>
 
 <script src="app/app.js"></script>
 <script src="app/config/app.route.js"></script>
@@ -119,15 +117,6 @@
 <script src="app/user_event/eventdetails/user_eventdetails.controller.js"></script>
 <script src="app/user_event/feedback/user_eventfeedback.controller.js"></script>
 <script src="app/user_event/submission/user_eventsubmission.controller.js"></script>
-
-<script src="app/manage/eventoverview/manage_eventoverview.controller.js"></script>
-<script src="app/manage/eventdetails/manage_eventdetails.controller.js"></script>
-<script src="app/manage/eventregister/manage_eventregister.controller.js"></script>
-<script src="app/manage/eventbrief/manage_eventbrief.controller.js"></script>
-<script src="app/manage/eventvolunteer/manage_eventvolunteer.controller.js"></script>
-<script src="app/manage/eventdebrief/manage_eventdebrief.controller.js"></script>
-
-
 <script src="app/analytics/analytics_userdetails/analytics_userdetails.controller.js"></script>
 <script src="app/analytics/analytics_usersearch/analytics_usersearch.controller.js"></script>
 <script src="app/analytics/analytics_userprofile/analytics_userprofile.controller.js"></script>
