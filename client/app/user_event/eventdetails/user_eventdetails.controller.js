@@ -11,15 +11,21 @@
         .controller("UserEventDetailsCtrl", UserEventDetailsCtrl);    // angular.controller() attaches a controller to the angular module
                                             // specified as you can see, angular methods are chainable
 
+    UserEventDetailsCtrl.$inject = [ 'user' ];
 
     // EventCtrl function declaration. A function declaration uses the syntax: functionName([arg [, arg [...]]]){ ... }
     // EventCtrl accepts the injected dependency as a parameter. We name it DeptService for consistency, but you may
     // assign any name
-    function UserEventDetailsCtrl() {
+    function UserEventDetailsCtrl(user) {
 
         // Declares the var vm (for ViewModel) and assigns it the object this (in this case, the EventCtrl)
         // Any function or variable that you attach to vm will be exposed to callers of EventCtrl, e.g., register.html
         var vm = this;
+        if (user) {
+            vm.parseuser = user;
+            vm.user = vm.parseuser.split(',')[0];
+            vm.role = (vm.parseuser.split(',')[1] == '1')? '1':'';
+        }
 
     } // END UserEventCtrl
 

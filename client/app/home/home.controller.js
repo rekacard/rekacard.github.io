@@ -10,10 +10,13 @@
     vm.search = search;
     vm.getname = getname;
     vm.event = [];
-    vm.user = user;
     vm.page = 0;
-
-    if (vm.user) vm.getname();
+    if (user) {
+      vm.parseuser = user;
+      vm.user = vm.parseuser.split(',')[0];
+      vm.role = vm.parseuser.split(',')[1];
+      vm.getname();
+    }
     vm.search();
 
     function getname() {

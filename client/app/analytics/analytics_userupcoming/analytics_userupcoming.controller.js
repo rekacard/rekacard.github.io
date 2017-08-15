@@ -1,11 +1,11 @@
 (function () {
     angular
         .module("PAF")          
-        .controller("AnalyticsUserBadgesCtrl", AnalyticsUserBadgesCtrl);    
+        .controller("AnalyticsUserUpcomingCtrl", AnalyticsUserUpcomingCtrl);    
 
-    AnalyticsUserBadgesCtrl.$inject = [ 'user' ];
+    AnalyticsUserUpcomingCtrl.$inject = [ 'user' ];
 
-    function AnalyticsUserBadgesCtrl(user) {
+    function AnalyticsUserUpcomingCtrl(user) {
 
         var vm = this;
         if (user) {
@@ -14,6 +14,6 @@
             vm.role = (vm.parseuser.split(',')[1] == '1')? '1':'';
         }
 
-    } // END AnalyticsUserBadgesCtrl
+    } // END AnalyticsUserUpcomingCtrl
 
 })();

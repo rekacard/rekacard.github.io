@@ -8,6 +8,10 @@
   function MenuCtrl(user) {
     var vm = this;
 
-    vm.user = user;
+    if (user) {
+      vm.parseuser = user;
+      vm.user = vm.parseuser.split(',')[0];
+      vm.role = (vm.parseuser.split(',')[1] == '1')? '1':'';
+    }
   }
 })();

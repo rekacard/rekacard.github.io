@@ -176,7 +176,7 @@
           }
         },
       })
-.state("manage_eventoverview", {
+      .state("manage_eventoverview", {
         url: "/api/manage_eventoverview",
         views: {
           'menu': {
@@ -536,7 +536,7 @@
           }
         },
       })
-.state('analytics_userprofile', {
+      .state('analytics_userprofile', {
         url:'/api/analytics_userprofile',
         views: {
           'menu': {
@@ -618,6 +618,30 @@
           'content': {
             templateUrl: 'app/analytics/analytics_userbadges/analytics_userbadges.html',
             controller: 'AnalyticsUserBadgesCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('analytics_userupcoming', {
+        url:'/api/analytics_userupcoming',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userupcoming/analytics_userupcoming.html',
+            controller: 'AnalyticsUserUpcomingCtrl as ctrl',
           }
         },
         resolve: {

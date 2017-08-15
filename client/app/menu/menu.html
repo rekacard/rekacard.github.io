@@ -11,20 +11,25 @@
                       <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                      <li><a tabindex="-1" ui-sref="userprofile" ui-sref-active="active">Profile</a></li>
+                      <li><a tabindex="-1" ui-sref="analytics_userprofile" ui-sref-active="active">Profile</a></li>
+                      <li><a tabindex="-1" ui-sref="analytics_userskills" ui-sref-active="active">Skills & Interests</a></li>
+                      <li><a tabindex="-1" ui-sref="analytics_userexperience" ui-sref-active="active">Experience</a></li>
+                      <li><a tabindex="-1" ui-sref="analytics_userbadges" ui-sref-active="active">Badges</a></li>
                       <li class="divider"></li>
-                      <li><a tabindex="-1" ui-sref="userhome" ui-sref-active="active">Upcoming Events<span class="sr-only">(userhome)</span></a></li>
-                      <li><a tabindex="-1" ui-sref="pastevent" ui-sref-active="active">Event History<span class="sr-only">(pastevent)</span></a></li>
+                      <li><a tabindex="-1" ui-sref="analytics_userupcoming" ui-sref-active="active">Event Upcoming<span class="sr-only">(userhome)</span></a></li>
+                      <li><a tabindex="-1" ui-sref="analytics_userhistory" ui-sref-active="active">Event History<span class="sr-only">(pastevent)</span></a></li>
+                      <li class="divider"></li>
+                      <li><a tabindex="-1" ui-sref="analytics_useremergency" ui-sref-active="active">Emergency</a></li>
                     </ul>
                   </li>
-                  <li ng-if="ctrl.user" class="dropdown">
+                  <li ng-if="ctrl.role" class="dropdown">
                     <!-- Link or button to toggle dropdown -->
                     <a class="dropdown-toggle" id="dropDownUser-id" role="button" data-toggle="dropdown">
                       Manage
                       <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                      <li><a tabindex="-1" ui-sref="userlist" ui-sref-active="active">List User</a></li>
+                      <li><a tabindex="-1" ui-sref="analytics_usersearch" ui-sref-active="active">List User</a></li>
                     </ul>
                   </li>
                   <li ng-if="ctrl.user"><a href="/logout" ui-sref-active="active">Logout</a></li> 
