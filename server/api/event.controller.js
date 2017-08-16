@@ -9,14 +9,26 @@ var retrieveEvent = function (db) {
         // }
 
         // console.log("-- POST /api/event/ " + where.id);
+        vm = this;
         const itemPerPage = 9;
-        var offset = parseInt(req.query.page) * itemPerPage;
+        vm.offset = parseInt(req.query.page) * itemPerPage;
+        vm.event_id = parseInt(req.query.event_id);
+        if (vm.event_id == 0) {
+            vm.where =  {
+                            start_date: {
+                                $gte: new Date()
+                            }
+                        };
+        } else if (vm.event_id > 0) {
+            vm.where = { 'event_id': vm.event_id };
+        }
 
         db.Events
             // findOne asks sequelize to search
             .findAll({
-                order: [["start_date", "ASC"]]
-                , limit: [offset, itemPerPage]
+                where: vm.where
+                , order: [["start_date", "ASC"]]
+                , limit: [vm.offset, itemPerPage]
             })
             // this .then() handles successful findAll operation
             // in this example, findAll() used the callback function to return departments

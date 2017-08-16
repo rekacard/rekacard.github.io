@@ -45,9 +45,8 @@
         };
 
         if ($stateParams.id) {
-            console.log("Received stateParams.user_id: " + $stateParams.id);
+            // console.log("Received stateParams.user_id: " + $stateParams.id);
             vm.viewuser = parseInt($stateParams.id);
-            // vm.search();
             vm.search();
         }
         

@@ -15,8 +15,8 @@
     function UpcomingCtrl(user, EventService, ModelService) {
       // Read configurations
 
-        // Declares the var vm (for ViewModel) and assigns it the object this (in this case, the EventCtrl)
-        // Any function or variable that you attach to vm will be exposed to callers of EventCtrl, e.g., register.html
+      // Declares the var vm (for ViewModel) and assigns it the object this (in this case, the EventCtrl)
+      // Any function or variable that you attach to vm will be exposed to callers of EventCtrl, e.g., register.html
       var vm = this;
       vm.user = user;
       vm.search = search;

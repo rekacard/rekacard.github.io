@@ -393,7 +393,7 @@
         },
       })
       .state("user_eventdetails", {
-        url: "/api/user_eventdetails",
+        url: "/api/user_eventdetails/:id",
         views: {
           'menu': {
             templateUrl: 'app/menu/menu.html',
