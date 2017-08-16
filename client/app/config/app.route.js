@@ -584,6 +584,30 @@
           }
         },
       })
+      .state('analytics_userprofileWithParam', {
+        url:'/api/analytics_userprofile/:id',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userprofile/analytics_userprofile.html',
+            controller: 'AnalyticsUserProfileWithParamCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
       .state('analytics_userskills', {
         url:'/api/analytics_userskills',
         views: {
