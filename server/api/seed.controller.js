@@ -8,23 +8,27 @@ var createNewAllTables = function (db) {
             setTimeout(function () { //your express code here
                 createNewUser(db);
                 setTimeout(function () { //your express code here
-                    createNewEvent(db);
+                    createNewBadges(db);
                     setTimeout(function () { //your express code here
-                        createNewEvent_User(db);
-                        // setTimeout(function() { //your express code here
-                            // console.log("Callback function");
-                        // }, timeout_millisecond);
-                    }, 3000);
-                }, 3000);
-            }, 1000);
-        }, 1000);
-
+                        createNewUser_Badges(db);
+                        setTimeout(function () { //your express code here
+                            createNewEvent(db);
+                            setTimeout(function () { //your express code here
+                                createNewEvent_User(db);
+                                // setTimeout(function() { //your express code here
+                                    // console.log("Callback function");
+                                // }, timeout_millisecond);
+                            }, 2000); 
+                        }, 500);
+                    }, 500);
+                }, 2000);
+            }, 500);
+        }, 500);
     };
 };
 
 var createNewRole = function (db) {
     //   return function(req, res) {
-
     db.Role
         .create({
             // role_id: 1,
@@ -161,7 +165,7 @@ var createNewUser = function (db) {
             console.log("Error", arguments)
         })
 
-db.User
+    db.User
         .create({
             role_id: 1,
             nric: "S1234567A",
@@ -188,8 +192,7 @@ db.User
         }).catch(function () {
             console.log("Error", arguments)
         });
-
-
+        
     db.User
         .create({
             role_id: 4,
@@ -698,70 +701,104 @@ var createNewOrganisation = function (db) {
     // };
 };
 
+var createNewUser_Badges = function (db) {
+    //   return function(req, res) {
+    var date = new Date;
+    var dateNow = date.getUTCFullYear() +
+        '-' + String(parseInt(date.getUTCMonth()) + 1)  +
+        '-' + date.getUTCDate() +
+        " 00:00:00";
 
-// var syncEventforUser = function(db) {
-//   return function(req, res) {
-//       console.log("createNewEventforUser");
-//         db
-//             .create({
-//                 event_id: 1,
-//                 user_id: 4,
-//                 role_id: 4,
-//             })
-//             .then(function (user) {
-//                 console.log(user);
-//             }).catch(function () {
-//                 console.log("Error", arguments)
-//             })
+    db.User_Badge
+        .create({
+            user_id: 4,
+            badge_id: 1,
+            date_aquired: dateNow,
+        })
+        .then(function (user) {
+            console.log(user);
+        }).catch(function () {
+            console.log("Error", arguments)
+        })
 
-//         db
-//             .create({
-//                 event_id: 2,
-//                 user_id: 4,
-//                 role_id: 4,
-//             })
-//             .then(function (user) {
-//                 console.log(user);
-//             }).catch(function () {
-//                 console.log("Error", arguments)
-//             })
+    db.User_Badge
+        .create({
+            user_id: 4,
+            badge_id: 2,
+            date_aquired: dateNow,
+        })
+        .then(function (user) {
+            console.log(user);
+        }).catch(function () {
+            console.log("Error", arguments)
+        })
 
-//         db
-//             .create({
-//                 event_id: 3,
-//                 user_id: 4,
-//                 role_id: 4,
-//             })
-//             .then(function (user) {
-//                 console.log(user);
-//             }).catch(function () {
-//                 console.log("Error", arguments)
-//             })
+    db.User_Badge
+        .create({
+            user_id: 4,
+            badge_id: 3,
+            date_aquired: dateNow,
+        })
+        .then(function (user) {
+            console.log(user);
+        }).catch(function () {
+            console.log("Error", arguments)
+        })
 
-//         db
-//             .create({
-//                 event_id: 4,
-//                 user_id: 4,
-//                 role_id: 4,
-//             })
-//             .then(function (user) {
-//                 console.log(user);
-//             }).catch(function () {
-//                 console.log("Error", arguments)
-//             })
-//     };
-// };
+    db.User_Badge
+        .create({
+            user_id: 1,
+            badge_id: 2,
+            date_aquired: dateNow,
+        })
+        .then(function (user) {
+            console.log(user);
+        }).catch(function () {
+            console.log("Error", arguments)
+        })
+    // };
+};
+
+var createNewBadges = function (db) {
+    //   return function(req, res) {
+    db.Badge
+        .create({
+            desc: "EcoWarriors",
+            img_filename: "EcoWarriors.jpg",
+        })
+        .then(function (user) {
+            console.log(user);
+        }).catch(function () {
+            console.log("Error", arguments)
+        })
+
+    db.Badge
+        .create({
+            desc: "Cat Lover",
+            img_filename: "Cat_Lover.jpg",
+        })
+        .then(function (user) {
+            console.log(user);
+        }).catch(function () {
+            console.log("Error", arguments)
+        })
+
+    db.Badge
+        .create({
+            desc: "Animal Lover",
+            img_filename: "Animal_Lover.jpg",
+        })
+        .then(function (user) {
+            console.log(user);
+        }).catch(function () {
+            console.log("Error", arguments)
+        })
+    // };
+};
 
 // Export route handlers
 module.exports = function (db) {
     return {
         createNewAllTables: createNewAllTables(db),
-        // createNewRole: createNewRole(db),
-        // createNewUser: createNewUser(db),
-        // createNewEvent: createNewEvent(db),
-        // createNewOrganisation: createNewOrganisation(db),
-        // createNewEventforUser: createNewEventforUser(db),
-
-        // syncEventforUser: syncEventforUser(db),
     }
 };

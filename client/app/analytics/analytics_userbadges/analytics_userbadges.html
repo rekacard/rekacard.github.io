@@ -2,7 +2,7 @@
     <div ng-if='ctrl.user'>
         <div id="header">
             <center>
-                <h1>Analytics - Details on {Member Name}</h1>
+                <h1>Analytics - Details on {{ctrl.name}}</h1>
             </center>
             <br>
             <br>
@@ -40,23 +40,14 @@
             <!-- Tab panes -->
             <div class="tab-content">
                 <h3 style="color:orange;">Badges Earned</h3>
-
                 <div class="badge" style="padding: 3em">
-                    <figure style="width: 33%; float: left; margin: 0; text-align: center; padding: 0;">
-                        <img src="http://4.bp.blogspot.com/-ftPgkpHwMXI/T5iD_jzaUwI/AAAAAAAAAes/y_3mrw59qP8/s1600/EcoWarriors+logo.jpg" class="ecowarrior img-circle img-thumbnail"
-                            alt="ecowarrior" width="60%">
-                        <figcaption style="padding: 10px; font-size:20px;"> Eco-Warrior </figcaption>
-                    </figure>
-                    <figure style="width: 33%; float: left; margin: 0; text-align: center; padding: 0;">
-                        <img src="https://cdn.shopify.com/s/files/1/0267/4223/products/445578_750978248_product_800x.jpg?v=1480971127" class="catlover img-circle img-thumbnail"
-                            alt="cat lover" width="60%">
-                        <figcaption style="padding: 10px; font-size:20px;"> Cat Lover </figcaption>
-                    </figure>
-                    <figure style="width: 33%; float: left; margin: 0; text-align: center; padding: 0;">
-                        <img src="https://s-media-cache-ak0.pinimg.com/564x/11/4a/b1/114ab148e0c097bbcde69859fc2ae9d5.jpg" class="animallover img-circle img-thumbnail"
-                            alt="animal lover" width="60%">
-                        <figcaption style="padding: 10px; font-size:20px;"> Animal Lover </figcaption>
-                    </figure>
+                    <div ng-repeat="badges in ctrl.badge"> 
+                        <figure style="width: 33%; float: left; margin: 0; text-align: center; padding: 0;">
+                            <img src="{{badges.path}}" class="ecowarrior img-circle img-thumbnail"
+                                alt="{{badges.description}}" width="60%">
+                            <figcaption style="padding: 10px; font-size:20px;"> {{badges.description}} </figcaption>
+                        </figure>
+                    </div> 
                 </div>
 
                 <hr>

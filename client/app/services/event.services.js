@@ -26,12 +26,13 @@
         service.retrieveUpcomingEvent = retrieveUpcomingEvent;
         service.retrievePastEvent = retrievePastEvent;
 
-        function retrieveEvent(page) {
+        function retrieveEvent(page, event) {
             return $http({
                 method: 'GET'
                 , url: 'api/event'
                 , params: {
                     'page': page,
+                    'event_id': event,
                 }
             });
         }

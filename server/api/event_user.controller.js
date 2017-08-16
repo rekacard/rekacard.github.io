@@ -16,7 +16,7 @@ var retrieveUpcomingEvent = function (db) {
             // findAll asks sequelize to search for records that contain the serach fields
             .findAll({
                 attributes: ["event_id", "role_id", "task_id"]  //, "events.brief_desc"
-                ,where: where
+                , where: where
                 , include: [ {model: db.Events
                             , where: {
                                 start_date: {

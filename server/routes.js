@@ -5,7 +5,8 @@ module.exports = function(app, db) {
   var Events  = require('./api/event.controller')(db);
   var Event_User  = require('./api/event_user.controller')(db);
   var Seed  = require('./api/seed.controller')(db);
-  
+  var Badge  = require('./api/badge.controller')(db);
+
   // app.post("/api/login", Email.retrieveIDByEmail);
   // app.post("/register", function(req, res) {
   //   console.log(req.body);
@@ -19,6 +20,7 @@ module.exports = function(app, db) {
   app.get("/api/event", Events.retrieveEvent);
   app.get("/api/upcomingevent", Event_User.retrieveUpcomingEvent);
   app.get("/api/pastevent", Event_User.retrievePastEvent);
+  app.get("/api/badge", Badge.retrieveBadge);
   app.get("/new", Seed.createNewAllTables);       // events Table
 
 };
