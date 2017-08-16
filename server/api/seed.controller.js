@@ -161,6 +161,35 @@ var createNewUser = function (db) {
             console.log("Error", arguments)
         })
 
+db.User
+        .create({
+            role_id: 1,
+            nric: "S1234567A",
+            salutation: "Ms",
+            name_first: "Lynn",
+            name_last: "Wong",
+            gender: 'F',
+            dob: '1988-11-10 00:00:00',
+            tel_mobile: 91234567,
+        })
+        .then(function (user) {
+            console.log(user);
+            db.Email
+                .create({
+                    email_id: "lynn@email.com",
+                    user_id: parseInt(user.dataValues.user_id),
+                    password: "123",
+                })
+                .then(function (user) {
+                    console.log(user);
+                }).catch(function () {
+                    console.log("Error", arguments)
+                })
+        }).catch(function () {
+            console.log("Error", arguments)
+        });
+
+
     db.User
         .create({
             role_id: 4,
