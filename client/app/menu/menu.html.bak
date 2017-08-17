@@ -29,12 +29,7 @@
                       <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                      <li><a tabindex="-1" ui-sref="analytics_dashboard" ui-sref-active="active">Dashboard</a></li>
-                      <li class="divider"></li>
-                      <li><a tabindex="-1" ui-sref="analytics_usersearch" ui-sref-active="active">User Database</a></li>
-                      <li class="divider"></li>
-                      <li><a tabindex="-1" ui-sref="manage_eventupcoming" ui-sref-active="active">Upcoming Events</a></li>
-                      <li><a tabindex="-1" ui-sref="manage_eventpast" ui-sref-active="active">Past Events</a></li>
+                      <li><a tabindex="-1" ui-sref="analytics_usersearch" ui-sref-active="active">List User</a></li>
                     </ul>
                   </li>
                   <li ng-if="ctrl.user"><a href="/logout" ui-sref-active="active">Logout</a></li> 

@@ -176,54 +176,6 @@
           }
         },
       })
-      .state("manage_eventupcoming", {
-        url: "/api/manage_eventupcoming",
-        views: {
-          'menu': {
-            templateUrl: 'app/menu/menu.html',
-            controller: 'MenuCtrl as ctrl',
-          },
-          'content': {
-            templateUrl: 'app/manage/eventupcoming/manage_eventupcoming.html',
-            controller: 'EventUpcomingCtrl as ctrl',
-          }
-        },
-        resolve: {
-          user: function(PassportSvc) {
-            return PassportSvc.userAuth()
-              .then(function(result) {
-                return result.data.user;
-              })
-              .catch(function(err) {
-                return '';
-              });
-          }
-        },
-      })
-      .state("manage_eventpast", {
-        url: "/api/manage_eventpast",
-        views: {
-          'menu': {
-            templateUrl: 'app/menu/menu.html',
-            controller: 'MenuCtrl as ctrl',
-          },
-          'content': {
-            templateUrl: 'app/manage/eventpast/manage_eventpast.html',
-            controller: 'EventPastCtrl as ctrl',
-          }
-        },
-        resolve: {
-          user: function(PassportSvc) {
-            return PassportSvc.userAuth()
-              .then(function(result) {
-                return result.data.user;
-              })
-              .catch(function(err) {
-                return '';
-              });
-          }
-        },
-      })
       .state("manage_eventoverview", {
         url: "/api/manage_eventoverview",
         views: {

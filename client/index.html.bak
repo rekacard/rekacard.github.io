@@ -118,8 +118,6 @@
 <script src="app/user_event/eventdetails/user_eventdetails.controller.js"></script>
 <script src="app/user_event/feedback/user_eventfeedback.controller.js"></script>
 <script src="app/user_event/submission/user_eventsubmission.controller.js"></script>
-<script src="app/manage/eventupcoming/manage_eventupcoming.controller.js"></script>
-<script src="app/manage/eventpast/manage_eventpast.controller.js"></script>
 <script src="app/manage/eventoverview/manage_eventoverview.controller.js"></script>
 <script src="app/manage/eventdetails/manage_eventdetails.controller.js"></script>
 <script src="app/manage/eventregister/manage_eventregister.controller.js"></script>
