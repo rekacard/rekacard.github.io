@@ -32,7 +32,7 @@
         function search() {
             UserService.retrieveUser(vm.user)
                 .then(function(result) {
-                    console.log(JSON.stringify(result));
+                    // console.log(JSON.stringify(result));
                     vm.profile = result.data;
                     vm.profile.name = vm.profile.salutation + ' ' + vm.profile.name_first + ' ' + vm.profile.name_last;
                 })

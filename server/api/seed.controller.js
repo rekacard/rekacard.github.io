@@ -12,13 +12,19 @@ var createNewAllTables = function (db) {
                     setTimeout(function () { //your express code here
                         createNewUser_Badges(db);
                         setTimeout(function () { //your express code here
-                            createNewEvent(db);
+                            createNewAlerts(db);
                             setTimeout(function () { //your express code here
-                                createNewEvent_User(db);
-                                // setTimeout(function() { //your express code here
-                                    // console.log("Callback function");
-                                // }, timeout_millisecond);
-                            }, 2000); 
+                                createNewEvent(db);
+                                setTimeout(function () { //your express code here
+                                    createNewEvent_User(db);
+                                    setTimeout(function () { //your express code here
+                                        createNewUser_Alerts(db);
+                                        // setTimeout(function() { //your express code here
+                                            // console.log("Callback function");
+                                        // }, timeout_millisecond);
+                                    }, 2000);
+                                }, 2000); 
+                            }, 500);
                         }, 500);
                     }, 500);
                 }, 2000);
@@ -795,6 +801,57 @@ var createNewBadges = function (db) {
         })
     // };
 };
+
+var createNewUser_Alerts = function (db) {
+    //   return function(req, res) {
+
+    db.User_Alert
+        .create({
+            user_id: 4,
+            event_id: 3,
+            alert_id: 1,
+        })
+        .then(function (user) {
+            console.log(user);
+        }).catch(function () {
+            console.log("Error", arguments)
+        })
+
+    db.User_Alert
+        .create({
+            user_id: 5,
+            event_id: 3,
+            alert_id: 2,
+        })
+        .then(function (user) {
+            console.log(user);
+        }).catch(function () {
+            console.log("Error", arguments)
+        })
+}
+
+var createNewAlerts = function (db) {
+    //   return function(req, res) {
+    db.Alert
+        .create({
+            alert_msg: "You have a new Event assign to the role of Event Organizer",
+        })
+        .then(function (user) {
+            console.log(user);
+        }).catch(function () {
+            console.log("Error", arguments)
+        })
+
+    db.Alert
+        .create({
+            alert_msg: "Reminder: Please fill in the feedback form",
+        })
+        .then(function (user) {
+            console.log(user);
+        }).catch(function () {
+            console.log("Error", arguments)
+        })
+}
 
 // Export route handlers
 module.exports = function (db) {

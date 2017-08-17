@@ -2,6 +2,10 @@
     <div class="panel-body">
         <!-- <h4 ng-if='!ctrl.user'>Please <a ui-sref='login'>login</a> first.</h4> -->
         <h3 ng-if='ctrl.user'>Welcome back, {{ctrl.name | uppercase}}!</h3>
+          <div ng-if='ctrl.alert' class="alert alert-info alert-dismissable">
+            <a class="panel-close close" data-dismiss="alert">×</a>
+            <i class="fa fa-coffee"></i> {{ctrl.alert}}}
+        </div>  
         <br>
         <div>
             <div class="container">
@@ -11,46 +15,46 @@
                     <!--<div class="img-thumbnail img-responsive">-->
                     <!--<div class="img-thumbnail">-->
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
+                        <div class="wrap-item text-left">
                             <!--<a ui-sref="user_eventsignup({id:ctrl.profile[0].user_id})">-->
                             <a ui-sref="user_eventsignup">
                                 <div class="thumbnail">
-                                    <img src="../../assets/img/UHeart01.jpg">
+                                    <img src={{ctrl.event[0].path}}> 
                                     <h3 class="pad-bt15">{{ctrl.event[0].brief_desc}}</h3>
+                                </div>
                             </a>
-                                <p style="text-align: left;">{{ctrl.event[0].detail_desc}}</p>
-                                <p style="text-align: left;"><b>Event Date: </b> {{ctrl.event[0].start_date}} </p>
-                                <p style="text-align: left;"><b>Start/End Time: </b> {{ctrl.event[0].start_time}} - {{ctrl.event[0].end_time}} </p>
-                                <p style="text-align: left;"><b>Venue: </b> {{ctrl.event[0].venue}}</p>
-                            </div>
+                            <p>{{ctrl.event[0].detail_desc}}</p>
+                            <p><b>Event Date: </b> {{ctrl.event[0].start_date}} </p>
+                            <p><b>Start/End Time: </b> {{ctrl.event[0].start_time}} - {{ctrl.event[0].end_time}} </p>
+                            <p><b>Venue: </b> {{ctrl.event[0].venue}}</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
+                        <div class="wrap-item text-left">
                             <a ui-sref="user_eventsignup">
                                 <div class="thumbnail">
-                                    <img src="../../assets/img/UHeart02.jpg">
+                                    <img src={{ctrl.event[1].path}}> 
                                     <h3 class="pad-bt15">{{ctrl.event[1].brief_desc}}</h3>
+                                </div>
                             </a>
-                                <p style="text-align: left;">{{ctrl.event[1].detail_desc}}</p>
-                                <p style="text-align: left;"><b>Event Date: </b>{{ctrl.event[1].start_date}} </p>
-                                <p style="text-align: left;"><b>Start/End Time: </b>{{ctrl.event[1].start_time}} - {{ctrl.event[1].end_time}} </p>
-                                <p style="text-align: left;"><b>Venue: </b>{{ctrl.event[1].venue}}</p>
-                            </div>
+                            <p>{{ctrl.event[1].detail_desc}}</p>
+                            <p><b>Event Date: </b> {{ctrl.event[1].start_date}} </p>
+                            <p><b>Start/End Time: </b> {{ctrl.event[1].start_time}} - {{ctrl.event[1].end_time}} </p>
+                            <p><b>Venue: </b> {{ctrl.event[1].venue}}</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
+                        <div class="wrap-item text-left">
                             <a ui-sref="user_eventsignup">
                                 <div class="thumbnail">
-                                    <img src="../../assets/img/UHeart03.jpg">
+                                    <img src={{ctrl.event[2].path}}> 
                                     <h3 class="pad-bt15">{{ctrl.event[2].brief_desc}}</h3>
+                                </div>
                             </a>
-                                <p style="text-align: left;">{{ctrl.event[2].detail_desc}}</p>
-                                <p style="text-align: left;"><b>Event Date:</b>{{ctrl.event[2].start_date}} </p>
-                                <p style="text-align: left;"><b>Start/End Time:</b>{{ctrl.event[2].start_time}} - {{ctrl.event[2].end_time}} </p>
-                                <p style="text-align: left;"><b>Venue:</b>{{ctrl.event[2].venue}}</p>
-                            </div>
+                            <p>{{ctrl.event[2].detail_desc}}</p>
+                            <p><b>Event Date: </b> {{ctrl.event[2].start_date}} </p>
+                            <p><b>Start/End Time: </b> {{ctrl.event[2].start_time}} - {{ctrl.event[2].end_time}} </p>
+                            <p><b>Venue: </b> {{ctrl.event[2].venue}}</p>
                         </div>
                     </div>
                 </div>
@@ -59,45 +63,45 @@
 
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
+                        <div class="wrap-item text-left">
                             <a ui-sref="user_eventsignup">
                                 <div class="thumbnail">
-                                    <img src="../../assets/img/UHeart04.jpg">
+                                    <img src={{ctrl.event[3].path}}> 
                                     <h3 class="pad-bt15">{{ctrl.event[3].brief_desc}}</h3>
+                                </div>
                             </a>
-                                <p style="text-align: left;">{{ctrl.event[3].detail_desc}}</p>
-                                <p style="text-align: left;"><b>Event Date: </b>{{ctrl.event[3].start_date}} </p>
-                                <p style="text-align: left;"><b>Start/End Time: </b>{{ctrl.event[3].start_time}} - {{ctrl.event[3].end_time}} </p>
-                                <p style="text-align: left;"><b>Venue: </b>{{ctrl.event[3].venue}}</p>
-                            </div>
+                            <p>{{ctrl.event[3].detail_desc}}</p>
+                            <p><b>Event Date: </b> {{ctrl.event[3].start_date}} </p>
+                            <p><b>Start/End Time: </b> {{ctrl.event[3].start_time}} - {{ctrl.event[3].end_time}} </p>
+                            <p><b>Venue: </b> {{ctrl.event[3].venue}}</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
+                        <div class="wrap-item text-left">
                             <a ui-sref="user_eventsignup">
                                 <div class="thumbnail">
-                                    <img src="../../assets/img/UHeart05.jpg">
+                                    <img src={{ctrl.event[4].path}}> 
                                     <h3 class="pad-bt15">{{ctrl.event[4].brief_desc}}</h3>
+                                </div>
                             </a>
-                                <p style="text-align: left;">{{ctrl.event[4].detail_desc}}</p>
-                                <p style="text-align: left;"><b>Event Date: </b>{{ctrl.event[4].start_date}} </p>
-                                <p style="text-align: left;"><b>Start/End Time: </b>{{ctrl.event[4].start_time}} - {{ctrl.event[4].end_time}} </p>
-                                <p style="text-align: left;"><b>Venue: </b>{{ctrl.event[4].venue}}</p>
-                            </div>
+                            <p>{{ctrl.event[4].detail_desc}}</p>
+                            <p><b>Event Date: </b> {{ctrl.event[4].start_date}} </p>
+                            <p><b>Start/End Time: </b> {{ctrl.event[4].start_time}} - {{ctrl.event[4].end_time}} </p>
+                            <p><b>Venue: </b> {{ctrl.event[4].venue}}</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
+                        <div class="wrap-item text-left">
                             <a ui-sref="user_eventsignup">
                                 <div class="thumbnail">
-                                    <img src="../../assets/img/UHeart06.jpg">
+                                    <img src={{ctrl.event[5].path}}>
                                     <h3 class="pad-bt15">{{ctrl.event[5].brief_desc}}</h3>
+                                </div>
                             </a>
-                                <p style="text-align: left;">{{ctrl.event[5].detail_desc}}</p>
-                                <p style="text-align: left;"><b>Event Date: </b>{{ctrl.event[5].start_date}} </p>
-                                <p style="text-align: left;"><b>Start/End Time: </b>{{ctrl.event[5].start_time}} - {{ctrl.event[5].end_time}} </p>
-                                <p style="text-align: left;"><b>Venue: </b>{{ctrl.event[5].venue}}</p>
-                            </div>
+                            <p>{{ctrl.event[5].detail_desc}}</p>
+                            <p><b>Event Date: </b> {{ctrl.event[5].start_date}} </p>
+                            <p><b>Start/End Time: </b> {{ctrl.event[5].start_time}} - {{ctrl.event[5].end_time}} </p>
+                            <p><b>Venue: </b> {{ctrl.event[5].venue}}</p>
                         </div>
                     </div>
                 </div>
@@ -106,45 +110,45 @@
 
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
+                        <div class="wrap-item text-left">
                             <a ui-sref="user_eventsignup">
                                 <div class="thumbnail">
-                                    <img src="../../assets/img/UHeart07.jpg">
+                                    <img src={{ctrl.event[6].path}}> 
                                     <h3 class="pad-bt15">{{ctrl.event[6].brief_desc}}</h3>
+                                </div>
                             </a>
-                                <p style="text-align: left;">{{ctrl.event[6].detail_desc}}</p>
-                                <p style="text-align: left;"><b>Event Date: </b>{{ctrl.event[6].start_date}} </p>
-                                <p style="text-align: left;"><b>Start/End Time: </b>{{ctrl.event[6].start_time}} - {{ctrl.event[6].end_time}} </p>
-                                <p style="text-align: left;"><b>Venue: </b>{{ctrl.event[6].venue}}</p>
-                            </div>
+                            <p>{{ctrl.event[6].detail_desc}}</p>
+                            <p><b>Event Date: </b> {{ctrl.event[6].start_date}} </p>
+                            <p><b>Start/End Time: </b> {{ctrl.event[6].start_time}} - {{ctrl.event[6].end_time}} </p>
+                            <p><b>Venue: </b> {{ctrl.event[6].venue}}</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
+                        <div class="wrap-item text-left">
                             <a ui-sref="user_eventsignup">
                                 <div class="thumbnail">
-                                    <img src="../../assets/img/UHeart08.jpg">
+                                    <img src={{ctrl.event[7].path}}>
                                     <h3 class="pad-bt15">{{ctrl.event[7].brief_desc}}</h3>
+                                </div>
                             </a>
-                                <p style="text-align: left;">{{ctrl.event[7].detail_desc}}</p>
-                                <p style="text-align: left;"><b>Event Date: </b>{{ctrl.event[7].start_date}} </p>
-                                <p style="text-align: left;"><b>Start/End Time: </b>{{ctrl.event[7].start_time}} - {{ctrl.event[7].end_time}} </p>
-                                <p style="text-align: left;"><b>Venue: </b>{{ctrl.event[7].venue}}</p>
-                            </div>
+                            <p>{{ctrl.event[7].detail_desc}}</p>
+                            <p><b>Event Date: </b> {{ctrl.event[7].start_date}} </p>
+                            <p><b>Start/End Time: </b> {{ctrl.event[7].start_time}} - {{ctrl.event[7].end_time}} </p>
+                            <p><b>Venue: </b> {{ctrl.event[7].venue}}</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
+                        <div class="wrap-item text-left">
                             <a ui-sref="user_eventsignup">
                                 <div class="thumbnail" style="height:450px">
-                                    <img src="../../assets/img/UHeart09.jpg">
+                                    <img src={{ctrl.event[8].path}}>
                                     <h3 class="pad-bt15">{{ctrl.event[8].brief_desc}}</h3>
+                                </div>
                             </a>
-                                <p style="text-align: left;">{{ctrl.event[8].detail_desc}}</p>
-                                <p style="text-align: left;"><b>Event Date: </b>{{ctrl.event[8].start_date}} </p>
-                                <p style="text-align: left;"><b>Start/End Time: </b>{{ctrl.event[8].start_time}} - {{ctrl.event[8].end_time}} </p>
-                                <p style="text-align: left;"><b>Venue: </b>{{ctrl.event[8].venue}}</p>
-                            </div>
+                            <p>{{ctrl.event[8].detail_desc}}</p>
+                            <p><b>Event Date: </b> {{ctrl.event[8].start_date}} </p>
+                            <p><b>Start/End Time: </b> {{ctrl.event[8].start_time}} - {{ctrl.event[8].end_time}} </p>
+                            <p><b>Venue: </b> {{ctrl.event[8].venue}}</p>
                         </div>
                     </div>
                 </div>
