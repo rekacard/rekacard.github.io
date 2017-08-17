@@ -159,7 +159,7 @@ Highcharts.chart('engagement', {
             color: Highcharts.getOptions().colors[0],
             radius: '112%',
             innerRadius: '88%',
-            y: 88
+            y: 71
         }]
     }, {
         name: 'Task Lead',
