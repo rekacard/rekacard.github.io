@@ -2,7 +2,7 @@
     <div ng-if='ctrl.user'>
         <div id="header">
             <center>
-                <h1>Analytics - Details on {{ctrl.name}}</h1>
+                <h1>User Details of {{ctrl.name}}</h1>
             </center>
             <br>
             <br>
@@ -80,10 +80,13 @@
                         </tr>
                         <tr>
                             <th>Clan / Ancestral Village</th>
-                            <td>Shunde, Guangdong</td>
+                            <td>Sunheng, Guangdong</td>
                         </tr>
                     </tbody>
                 </table>
+                <p align="right">
+                    <a ui-sref="edit_userprofile"  class="btn btn-download">Edit</a>
+                </p>
                 <hr>
             </div>
         </div>

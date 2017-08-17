@@ -2,7 +2,7 @@
     <div ng-if='ctrl.user'>
         <div id="header">
             <center>
-                <h1>User Details of {{ctrl.name}}</h1>
+                <h1>Analytics - Details on {{ctrl.name}}</h1>
             </center>
             <br>
             <br>
@@ -42,8 +42,8 @@
                 <h3 style="color:orange;">Work Experience</h3>
                 <table class="table">
                     <col width="20%">
-                    <col width="40%">
-                    <col width="40%">
+                    <col width="30%">
+                    <col width="50%">
                     <tbody>
                         <tr>
                             <th>Year</th>
@@ -52,18 +52,18 @@
                         </tr>
                         <tr>
                             <td>2017</td>
-                            <td>Renforest Associates</td>
-                            <td>Founder</td>
+                            <td>National University of Singapore</td>
+                            <td>Researcher</td>
                         </tr>
                         <tr>
                             <td>2015</td>
-                            <td>Insead</td>
-                            <td>PhD Candidate</td>
+                            <td>National Technological University</td>
+                            <td>Teaching Assistant</td>
                         </tr>
                         <tr>
                             <td>2013</td>
-                            <td>National University of Singapore</td>
-                            <td>Researcher</td>
+                            <td>Singtel</td>
+                            <td>Customer Service Operator</td>
                         </tr>
                     </tbody>
                 </table>
@@ -71,8 +71,8 @@
                 <h3 style="color:orange;">Education</h3>
                 <table class="table">
                     <col width="20%">
-                    <col width="40%">
-                    <col width="40%">
+                    <col width="30%">
+                    <col width="50%">
                     <tbody>
                         <tr>
                             <th>Year</th>
@@ -86,19 +86,16 @@
                         </tr>
                         <tr>
                             <td>2007</td>
-                            <td>Hwa Chong Junior College</td>
-                            <td>PCM-LEP</td>
+                            <td>Saint Andrew's Junior College</td>
+                            <td>PCME</td>
                         </tr>
                         <tr>
                             <td>2005</td>
-                            <td>River Valley High School</td>
+                            <td>Tanglin Secondary School</td>
                             <td>NIL</td>
                         </tr>
                     </tbody>
                 </table>
-                <p align="right">
-                    <a ui-sref="edit_userexperience"  class="btn btn-download">Edit</a>
-                </p>
             </div>
         </div>
     </div>

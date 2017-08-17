@@ -12,7 +12,7 @@
             <!-- required for floating -->
             <!-- Nav tabs -->
             <ul class="nav nav-tabs tabs-left">
-                <li>
+                <li class="active">
                     <a ui-sref="analytics_userprofile">Basic Profile</a>
                 </li>
                 <li>
@@ -30,7 +30,7 @@
                 <li>
                     <a ui-sref="analytics_userhistory">Event History</a>
                 </li>
-                <li class="active">
+                <li>
                     <a ui-sref="analytics_useremergency">Emergency Contact</a>
                 </li>
             </ul>
@@ -39,33 +39,55 @@
         <div class="col-xs-9">
             <!-- Tab panes -->
             <div class="tab-content">
-                <h3 style="color:orange;">Emergency Contact</h3>
+                <center><img src="../../assets/img/user_512.png" class="avatar img-circle img-thumbnail" alt="avatar" width="30%"></center>
 
+                <h3 style="color:orange;">Personal Information</h3>
                 <table class="table">
                     <col width="30%">
                     <col width="70%">
                     <tbody>
                         <tr>
-                            <th>Blood Type</th>
-                            <td>O+</td>
-                        </tr>
-                        <tr>
-                            <th>Next-of-kin Name</th>
-                            <td>Kwan Chee Meng</td>
-                        </tr>
-                        <tr>
-                            <th>Relationship</th>
-                            <td>Mother</td>
+                            <th>Name</th>
+                            <td>{{ctrl.profile.name}}</td>
                         </tr>
                         <tr>
                             <th>Mobile Number</th>
-                            <td>98765432</td>
+                            <td>{{ctrl.profile.tel_mobile}}</td>
+                        </tr>
+                        <tr>
+                            <th>Date of Birth</th>
+                            <td>{{ctrl.profile.dob}}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{{ctrl.profile.email.email_id}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3 style="color:orange;">My Roots</h3>
+                <table class="table">
+                    <col width="30%">
+                    <col width="70%">
+                    <tbody>
+                        <tr>
+                            <th>Ethnicity</th>
+                            <td>Chinese</td>
+                        </tr>
+                        <tr>
+                            <th>Dialect Group</th>
+                            <td>Cantonese</td>
+                        </tr>
+                        <tr>
+                            <th>Clan / Ancestral Village</th>
+                            <td>Shunde, Guangdong</td>
                         </tr>
                     </tbody>
                 </table>
                 <p align="right">
-                    <a ui-sref="edit_useremergency"  class="btn btn-download">Edit</a>
+                    <a ui-sref="edit_userprofile"  class="btn btn-download">Edit</a>
                 </p>
+                <hr>
             </div>
         </div>
     </div>

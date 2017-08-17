@@ -46,20 +46,38 @@
                     <tbody>
                         <tr>
                             <th>Conversational Languages</th>
-                            <td>Chinese, English, Cantonese</td>
+                            <td><form><input type="text" size="50" value="Chinese, English, Cantonese"></form>
+                            </td>
                         </tr>
                         <tr>
                             <th>Skillsets I would like to develop / contribute</th>
-                            <td>Talent Management, Event Planning, Photography</td>
+                            <td>
+                                <form>
+                                    <input type="checkbox" name="talentmgmt" class="col-sm-1 col-form-label" checked>Talent Management <br> 
+                                    <input type="checkbox" name="eventplanning" class="col-sm-1 col-form-label" checked>Event Planning <br>
+                                    <input type="checkbox" name="photography" class="col-sm-1 col-form-label" checked>Photography <br>
+                                    <input type="checkbox" name="emcee" class="col-sm-1 col-form-label">Emcee <br>
+                                    <input type="checkbox" name="emcee" class="col-sm-1 col-form-label">Logistics <br>
+                                </form>
+                            </td>
                         </tr>
                         <tr>
                             <th>Interested Causes</th>
-                            <td>Animal, Elderly, Environment</td>
+                            <td>
+                                <form>
+                                    <input type="checkbox" name="talentmgmt" class="col-sm-1 col-form-label" checked>Animal <br> 
+                                    <input type="checkbox" name="eventplanning" class="col-sm-1 col-form-label">Culture & Arts <br>
+                                    <input type="checkbox" name="photography" class="col-sm-1 col-form-label">Children <br>
+                                    <input type="checkbox" name="emcee" class="col-sm-1 col-form-label" checked>Elderly <br>
+                                    <input type="checkbox" name="emcee" class="col-sm-1 col-form-label" checked>Environment <br>
+                                    <input type="checkbox" name="emcee" class="col-sm-1 col-form-label">Inclusivity <br>
+                                </form>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
                 <p align="right">
-                    <a ui-sref="edit_userskills"  class="btn btn-download">Edit</a>
+                    <a ui-sref="analytics_userskills"  class="btn btn-download">Save Changes</a>
                 </p>
             </div>
         </div>

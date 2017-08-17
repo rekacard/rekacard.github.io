@@ -111,6 +111,7 @@
 <script src="app/registration/register.controller.js"></script>
 <script src="app/userprofile/userprofile.controller.js"></script>
 <script src="app/userprofile/userprofilewithparam.controller.js"></script>
+<script src="app/user_event/signup/user_eventsignup.controller.js"></script>
 <script src="app/user_event/brief/user_eventbrief.controller.js"></script>
 <script src="app/user_event/eventdetails/user_eventdetails.controller.js"></script>
 <script src="app/user_event/feedback/user_eventfeedback.controller.js"></script>

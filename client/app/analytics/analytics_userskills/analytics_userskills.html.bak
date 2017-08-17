@@ -2,7 +2,7 @@
     <div ng-if='ctrl.user'>
         <div id="header">
             <center>
-                <h1>User Details of {{ctrl.name}}</h1>
+                <h1>Analytics - Details on {{ctrl.name}}</h1>
             </center>
             <br>
             <br>
@@ -15,7 +15,7 @@
                 <li>
                     <a ui-sref="analytics_userprofile">Basic Profile</a>
                 </li>
-                <li>
+                <li class="active">
                     <a ui-sref="analytics_userskills">Skills & Interests</a>
                 </li>
                 <li>
@@ -30,7 +30,7 @@
                 <li>
                     <a ui-sref="analytics_userhistory">Event History</a>
                 </li>
-                <li class="active">
+                <li>
                     <a ui-sref="analytics_useremergency">Emergency Contact</a>
                 </li>
             </ul>
@@ -39,33 +39,25 @@
         <div class="col-xs-9">
             <!-- Tab panes -->
             <div class="tab-content">
-                <h3 style="color:orange;">Emergency Contact</h3>
-
+                <h3 style="color:orange;">Skillsets & Interests</h3>
                 <table class="table">
                     <col width="30%">
                     <col width="70%">
                     <tbody>
                         <tr>
-                            <th>Blood Type</th>
-                            <td>O+</td>
+                            <th>Conversational Languages</th>
+                            <td>Chinese, English, Cantonese</td>
                         </tr>
                         <tr>
-                            <th>Next-of-kin Name</th>
-                            <td>Kwan Chee Meng</td>
+                            <th>Skillsets I would like to develop / contribute</th>
+                            <td>Talent Management, Event Planning, Photography</td>
                         </tr>
                         <tr>
-                            <th>Relationship</th>
-                            <td>Mother</td>
-                        </tr>
-                        <tr>
-                            <th>Mobile Number</th>
-                            <td>98765432</td>
+                            <th>Interested Causes</th>
+                            <td>Animal, Elderly, Environment</td>
                         </tr>
                     </tbody>
                 </table>
-                <p align="right">
-                    <a ui-sref="edit_useremergency"  class="btn btn-download">Edit</a>
-                </p>
             </div>
         </div>
     </div>

@@ -12,13 +12,13 @@
             <!-- required for floating -->
             <!-- Nav tabs -->
             <ul class="nav nav-tabs tabs-left">
-                <li>
+                <li class="active">
                     <a ui-sref="analytics_userprofile">Basic Profile</a>
                 </li>
                 <li>
                     <a ui-sref="analytics_userskills">Skills & Interests</a>
                 </li>
-                <li class="active">
+                <li>
                     <a ui-sref="analytics_userexperience">Work Experience / Education</a>
                 </li>
                 <li>
@@ -39,66 +39,57 @@
         <div class="col-xs-9">
             <!-- Tab panes -->
             <div class="tab-content">
-                <h3 style="color:orange;">Work Experience</h3>
+                <center><img src="../../assets/img/user_512.png" class="avatar img-circle img-thumbnail" alt="avatar" width="30%"></center>
+                <center><h6>Upload a different photo...</h6></center>
+                <input type="file" class="text-center center-block well well-sm">
+                <br>
+                <h3 style="color:orange;">Personal Information</h3>
                 <table class="table">
-                    <col width="20%">
-                    <col width="40%">
-                    <col width="40%">
+                    <col width="30%">
+                    <col width="70%">
                     <tbody>
                         <tr>
-                            <th>Year</th>
-                            <th>Company</th>
-                            <th>Position</th>
+                            <th>Name</th>
+                            <td><form><input type="text" size="50" value="{{ctrl.profile.name}}"></form></td>
                         </tr>
                         <tr>
-                            <td>2017</td>
-                            <td>Renforest Associates</td>
-                            <td>Founder</td>
+                            <th>Mobile Number</th>
+                            <td><form><input type="text" size="50" value="{{ctrl.profile.tel_mobile}}"></form></td>
                         </tr>
                         <tr>
-                            <td>2015</td>
-                            <td>Insead</td>
-                            <td>PhD Candidate</td>
+                            <th>Date of Birth</th>
+                            <td><form><input type="date" size="50" value="{{ctrl.profile.dob}}"></form></td>
                         </tr>
                         <tr>
-                            <td>2013</td>
-                            <td>National University of Singapore</td>
-                            <td>Researcher</td>
+                            <th>Email</th>
+                            <td><form><input type="email" size="50" value="{{ctrl.profile.email.email_id}}"></form></td>
                         </tr>
                     </tbody>
                 </table>
                 <hr>
-                <h3 style="color:orange;">Education</h3>
+                <h3 style="color:orange;">My Roots</h3>
                 <table class="table">
-                    <col width="20%">
-                    <col width="40%">
-                    <col width="40%">
+                    <col width="30%">
+                    <col width="70%">
                     <tbody>
                         <tr>
-                            <th>Year</th>
-                            <th>Institution</th>
-                            <th>Course</th>
+                            <th>Ethnicity</th>
+                            <td><form><input type="text" size="50" value="Chinese"></form></td>
                         </tr>
                         <tr>
-                            <td>2011</td>
-                            <td>National University of Singapore</td>
-                            <td>Psychology</td>
+                            <th>Dialect Group</th>
+                            <td><form><input type="text" size="50" value="Cantonese"></form></td>
                         </tr>
                         <tr>
-                            <td>2007</td>
-                            <td>Hwa Chong Junior College</td>
-                            <td>PCM-LEP</td>
-                        </tr>
-                        <tr>
-                            <td>2005</td>
-                            <td>River Valley High School</td>
-                            <td>NIL</td>
+                            <th>Clan / Ancestral Village</th>
+                            <td><form><input type="text" size="50" value="Sunheng, Guangdong"></form></td>
                         </tr>
                     </tbody>
                 </table>
                 <p align="right">
-                    <a ui-sref="edit_userexperience"  class="btn btn-download">Edit</a>
+                    <a ui-sref="analytics_userprofile"  class="btn btn-download">Save Changes</a>
                 </p>
+                <hr>
             </div>
         </div>
     </div>
