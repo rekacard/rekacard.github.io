@@ -24,11 +24,9 @@
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="wrap-item text-center">
-                            <a ui-sref="user_eventsignup">
-                                <div class="thumbnail">
-                                    <img src="../../assets/img/UHeart02.jpg">
-                                    <h3 class="pad-bt15">{{ctrl.event[1].brief_desc}}</h3>
-                            </a>
+                            <div class="thumbnail" >
+                                <img src="../../assets/img/UHeart02.jpg">
+                                <h3 class="pad-bt15">{{ctrl.event[1].brief_desc}}</h3>
                                 <p style="text-align: left;">{{ctrl.event[1].detail_desc}}</p>
                                 <p style="text-align: left;"><b>Event Date: </b>{{ctrl.event[1].start_date}} </p>
                                 <p style="text-align: left;"><b>Start/End Time: </b>{{ctrl.event[1].start_time}} - {{ctrl.event[1].end_time}} </p>
@@ -38,11 +36,9 @@
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="wrap-item text-center">
-                            <a ui-sref="user_eventsignup">
-                                <div class="thumbnail">
-                                    <img src="../../assets/img/UHeart03.jpg">
-                                    <h3 class="pad-bt15">{{ctrl.event[2].brief_desc}}</h3>
-                            </a>
+                            <div class="thumbnail">
+                                <img src="../../assets/img/UHeart03.jpg">
+                                <h3 class="pad-bt15">{{ctrl.event[2].brief_desc}}</h3>
                                 <p style="text-align: left;">{{ctrl.event[2].detail_desc}}</p>
                                 <p style="text-align: left;"><b>Event Date:</b>{{ctrl.event[2].start_date}} </p>
                                 <p style="text-align: left;"><b>Start/End Time:</b>{{ctrl.event[2].start_time}} - {{ctrl.event[2].end_time}} </p>
@@ -57,11 +53,9 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="wrap-item text-center">
-                            <a ui-sref="user_eventsignup">
-                                <div class="thumbnail">
-                                    <img src="../../assets/img/UHeart04.jpg">
-                                    <h3 class="pad-bt15">{{ctrl.event[3].brief_desc}}</h3>
-                            </a>
+                            <div class="thumbnail">
+                                <img src="../../assets/img/UHeart04.jpg">
+                                <h3 class="pad-bt15">{{ctrl.event[3].brief_desc}}</h3>
                                 <p style="text-align: left;">{{ctrl.event[3].detail_desc}}</p>
                                 <p style="text-align: left;"><b>Event Date: </b>{{ctrl.event[3].start_date}} </p>
                                 <p style="text-align: left;"><b>Start/End Time: </b>{{ctrl.event[3].start_time}} - {{ctrl.event[3].end_time}} </p>
@@ -72,11 +66,8 @@
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="wrap-item text-center">
                             <div class="thumbnail">
-                            <a ui-sref="user_eventsignup">
-                                <div class="thumbnail">
-                                    <img src="../../assets/img/UHeart05.jpg">
-                                    <h3 class="pad-bt15">{{ctrl.event[4].brief_desc}}</h3>
-                            </a>
+                                <img src="../../assets/img/UHeart05.jpg">
+                                <h3 class="pad-bt15">{{ctrl.event[4].brief_desc}}</h3>
                                 <p style="text-align: left;">{{ctrl.event[4].detail_desc}}</p>
                                 <p style="text-align: left;"><b>Event Date: </b>{{ctrl.event[4].start_date}} </p>
                                 <p style="text-align: left;"><b>Start/End Time: </b>{{ctrl.event[4].start_time}} - {{ctrl.event[4].end_time}} </p>
@@ -86,11 +77,9 @@
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="wrap-item text-center">
-                            <a ui-sref="user_eventsignup">
-                                <div class="thumbnail">
-                                    <img src="../../assets/img/UHeart06.jpg">
-                                    <h3 class="pad-bt15">{{ctrl.event[5].brief_desc}}</h3>
-                            </a>
+                            <div class="thumbnail">
+                                <img src="../../assets/img/UHeart06.jpg">
+                                <h3 class="pad-bt15">{{ctrl.event[5].brief_desc}}</h3>
                                 <p style="text-align: left;">{{ctrl.event[5].detail_desc}}</p>
                                 <p style="text-align: left;"><b>Event Date: </b>{{ctrl.event[5].start_date}} </p>
                                 <p style="text-align: left;"><b>Start/End Time: </b>{{ctrl.event[5].start_time}} - {{ctrl.event[5].end_time}} </p>
@@ -105,11 +94,9 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="wrap-item text-center">
-                            <a ui-sref="user_eventsignup">
-                                <div class="thumbnail">
-                                    <img src="../../assets/img/UHeart07.jpg">
-                                    <h3 class="pad-bt15">{{ctrl.event[6].brief_desc}}</h3>
-                            </a>
+                             <div class="thumbnail"> 
+                                <img src="../../assets/img/UHeart07.jpg">
+                                <h3 class="pad-bt15">{{ctrl.event[6].brief_desc}}</h3>
                                 <p style="text-align: left;">{{ctrl.event[6].detail_desc}}</p>
                                 <p style="text-align: left;"><b>Event Date: </b>{{ctrl.event[6].start_date}} </p>
                                 <p style="text-align: left;"><b>Start/End Time: </b>{{ctrl.event[6].start_time}} - {{ctrl.event[6].end_time}} </p>
@@ -119,11 +106,9 @@
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="wrap-item text-center">
-                            <a ui-sref="user_eventsignup">
-                                <div class="thumbnail">
-                                    <img src="../../assets/img/UHeart08.jpg">
-                                    <h3 class="pad-bt15">{{ctrl.event[7].brief_desc}}</h3>
-                            </a>
+                            <div class="thumbnail">
+                                <img src="../../assets/img/UHeart08.jpg">
+                                <h3 class="pad-bt15">{{ctrl.event[7].brief_desc}}</h3>
                                 <p style="text-align: left;">{{ctrl.event[7].detail_desc}}</p>
                                 <p style="text-align: left;"><b>Event Date: </b>{{ctrl.event[7].start_date}} </p>
                                 <p style="text-align: left;"><b>Start/End Time: </b>{{ctrl.event[7].start_time}} - {{ctrl.event[7].end_time}} </p>
@@ -133,11 +118,9 @@
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="wrap-item text-center">
-                            <a ui-sref="user_eventsignup">
-                                <div class="thumbnail" style="height:450px">
-                                    <img src="../../assets/img/UHeart09.jpg">
-                                    <h3 class="pad-bt15">{{ctrl.event[8].brief_desc}}</h3>
-                            </a>
+                            <div class="thumbnail" style="height:450px">
+                                <img src="../../assets/img/UHeart09.jpg">
+                                <h3 class="pad-bt15">{{ctrl.event[8].brief_desc}}</h3>
                                 <p style="text-align: left;">{{ctrl.event[8].detail_desc}}</p>
                                 <p style="text-align: left;"><b>Event Date: </b>{{ctrl.event[8].start_date}} </p>
                                 <p style="text-align: left;"><b>Start/End Time: </b>{{ctrl.event[8].start_time}} - {{ctrl.event[8].end_time}} </p>
