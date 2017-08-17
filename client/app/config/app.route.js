@@ -848,6 +848,30 @@
           }
         },
       })
+      .state('analytics_userpassword', {
+        url:'/api/analytics_userpassword',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userpassword/analytics_userpassword.html',
+            controller: 'AnalyticsUserPasswordCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
       .state('analytics_usersearch', {
         url:'/api/analytics_usersearch',
         views: {

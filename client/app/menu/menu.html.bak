@@ -20,8 +20,6 @@
                       <li><a tabindex="-1" ui-sref="analytics_userhistory" ui-sref-active="active">Event History<span class="sr-only">(pastevent)</span></a></li>
                       <li class="divider"></li>
                       <li><a tabindex="-1" ui-sref="analytics_useremergency" ui-sref-active="active">Emergency</a></li>
-                      <li class="divider"></li>
-                      <li><a tabindex="-1" ui-sref="analytics_userpassword" ui-sref-active="active">Change Password</a></li>
                     </ul>
                   </li>
                   <li ng-if="ctrl.role" class="dropdown">

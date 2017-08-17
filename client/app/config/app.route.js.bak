@@ -560,6 +560,30 @@
           }
         },
       })
+      .state('edit_userprofile', {
+        url:'/api/edit_userprofile',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/edit/edit_userprofile/edit_userprofile.html',
+            controller: 'EditUserProfileCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
       .state('analytics_userprofileWithParam', {
         url:'/api/analytics_userprofile/:id',
         views: {
@@ -608,6 +632,30 @@
           }
         },
       })
+      .state('edit_userskills', {
+        url:'/api/edit_userskills',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/edit/edit_userskills/edit_userskills.html',
+            controller: 'EditUserSkillsCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
       .state('analytics_userexperience', {
         url:'/api/analytics_userexperience',
         views: {
@@ -618,6 +666,30 @@
           'content': {
             templateUrl: 'app/analytics/analytics_userexperience/analytics_userexperience.html',
             controller: 'AnalyticsUserExperienceCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('edit_userexperience', {
+        url:'/api/edit_userexperience',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/edit/edit_userexperience/edit_userexperience.html',
+            controller: 'EditUserExperienceCtrl as ctrl',
           }
         },
         resolve: {
@@ -714,6 +786,30 @@
           'content': {
             templateUrl: 'app/analytics/analytics_useremergency/analytics_useremergency.html',
             controller: 'AnalyticsUserEmergencyCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('edit_useremergency', {
+        url:'/api/edit_useremergency',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/edit/edit_useremergency/edit_useremergency.html',
+            controller: 'EditUserEmergencyCtrl as ctrl',
           }
         },
         resolve: {
