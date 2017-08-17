@@ -321,7 +321,7 @@
         },
       })
       .state("user_eventsignup", {
-        url: "/api/user_eventsignup",
+        url: "/api/user_eventsignup/:id",
         views: {
           'menu': {
             templateUrl: 'app/menu/menu.html',
