@@ -109,8 +109,11 @@
 <script src="app/home/home.controller.js"></script>
 <script src="app/login/login.controller.js"></script>
 <script src="app/registration/register.controller.js"></script>
+<script src="app/userlist/userlist.controller.js"></script>
 <script src="app/userprofile/userprofile.controller.js"></script>
 <script src="app/userprofile/userprofilewithparam.controller.js"></script>
+<script src="app/upcoming/upcoming.controller.js"></script>
+<script src="app/member_event_history/past_event.controller.js"></script>
 <script src="app/user_event/brief/user_eventbrief.controller.js"></script>
 <script src="app/user_event/eventdetails/user_eventdetails.controller.js"></script>
 <script src="app/user_event/feedback/user_eventfeedback.controller.js"></script>
@@ -124,6 +127,7 @@
 <script src="app/manage/eventvolunteer/manage_eventvolunteer.controller.js"></script>
 <script src="app/manage/eventdebrief/manage_eventdebrief.controller.js"></script>
 <script src="app/analytics/analytics_dashboard/analytics_dashboard.controller.js"></script>
+<script src="app/analytics/analytics_userdetails/analytics_userdetails.controller.js"></script>
 <script src="app/analytics/analytics_usersearch/analytics_usersearch.controller.js"></script>
 <script src="app/analytics/analytics_userprofile/analytics_userprofile.controller.js"></script>
 <script src="app/analytics/analytics_userprofile/analytics_userprofileWithParam.controller.js"></script>
