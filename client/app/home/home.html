@@ -12,9 +12,12 @@
                     <!--<div class="img-thumbnail">-->
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="wrap-item text-center">
-                            <div class="thumbnail">
-                                <img src="../../assets/img/UHeart01.jpg">
-                                <h3 class="pad-bt15">{{ctrl.event[0].brief_desc}}</h3>
+                            <!--<a ui-sref="user_eventsignup({id:ctrl.profile[0].user_id})">-->
+                            <a ui-sref="user_eventsignup">
+                                <div class="thumbnail">
+                                    <img src="../../assets/img/UHeart01.jpg">
+                                    <h3 class="pad-bt15">{{ctrl.event[0].brief_desc}}</h3>
+                            </a>
                                 <p style="text-align: left;">{{ctrl.event[0].detail_desc}}</p>
                                 <p style="text-align: left;"><b>Event Date: </b> {{ctrl.event[0].start_date}} </p>
                                 <p style="text-align: left;"><b>Start/End Time: </b> {{ctrl.event[0].start_time}} - {{ctrl.event[0].end_time}} </p>
@@ -71,7 +74,6 @@
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="wrap-item text-center">
-                            <div class="thumbnail">
                             <a ui-sref="user_eventsignup">
                                 <div class="thumbnail">
                                     <img src="../../assets/img/UHeart05.jpg">
