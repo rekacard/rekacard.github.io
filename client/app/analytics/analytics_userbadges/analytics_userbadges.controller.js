@@ -34,7 +34,7 @@
 
             BadgeService.retrieveUser_Badge(vm.user)
                 .then(function(result) {
-                    console.log(JSON.stringify(result));
+                    // console.log(JSON.stringify(result));
                     vm.badge = result.data;
                     for (var i in vm.badge) {
                         var bge = vm.badge[i].badge;
