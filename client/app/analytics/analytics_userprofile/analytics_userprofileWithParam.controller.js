@@ -19,7 +19,6 @@
                 vm.search();
            }
         }
-        // }
 
         function search() {
             UserService.retrieveUser(vm.viewuser)

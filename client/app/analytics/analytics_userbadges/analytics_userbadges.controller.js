@@ -47,5 +47,4 @@
                 });
         } // END search
     } // END AnalyticsUserBadgesCtrl
-
 })();
