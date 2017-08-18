@@ -3,11 +3,13 @@
         .module("PAF")          
         .controller("UserEventSignupCtrl", UserEventSignupCtrl);    
 
-    UserEventSignupCtrl.$inject = [ 'user', "$stateParams", 'EventService', 'ModelService' ];
+    UserEventSignupCtrl.$inject = [ 'user', "$stateParams", 'EventService', 'ModelService', 'UserService' ];
 
-    function UserEventSignupCtrl(user, $stateParams, EventService, ModelService) {
+    function UserEventSignupCtrl(user, $stateParams, EventService, ModelService, UserService) {
 
         var vm = this;
+        vm.getname = getname;
+        vm.searchUser = searchUser;
         vm.search = search;
         vm.nric = "";
         vm.salutation = "";
@@ -22,6 +24,8 @@
             vm.parseuser = user;
             vm.user = vm.parseuser.split(',')[0];
             vm.role = (vm.parseuser.split(',')[1] == '1')? '1':'';
+            vm.getname();
+            vm.searchUser();
         }
 
         if ($stateParams.id) {
@@ -29,6 +33,29 @@
             vm.event = $stateParams.id;
             vm.event_id = parseInt($stateParams.id);
             vm.search();
+        }
+
+        function getname() {
+        UserService.retrieveUserName(vm.user)
+            .then(function(result) {
+            // console.log(JSON.stringify(result));
+            vm.name = result.data.salutation + ' ' + result.data.name_first + ' ' + result.data.name_last;
+            })
+            .catch(function(err) {
+            console.log(err);
+            });
+        }
+
+        function searchUser() {
+            UserService.retrieveUser(vm.user)
+                .then(function(result) {
+                    // console.log(JSON.stringify(result));
+                    vm.profile = result.data;
+                    vm.profile.name = vm.profile.salutation + ' ' + vm.profile.name_first + ' ' + vm.profile.name_last;
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
         }
 
         function search() {

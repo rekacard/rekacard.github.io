@@ -24,15 +24,44 @@
                                 <h4>This is information you submitted to event organizer during registration.</h4>
                             </div>
                             <div>
-                                <p> Surname: </p>
-                                <p> Given name:  </p>
-                                <p> NRIC:  </p>
-                                <p> Mobile Number:  </p>
-                                <p> Email:  </p>
-                                <p> DOB:  </p>
-                                <p> Dietary Requirements:  </p>
-                                <p> T-shirt Size:  </p>
-                                <p> Interested Role:  </p>
+                                <table class="table">
+                                    <col width="30%">
+                                    <col width="70%">
+                                    <tbody>
+                                        <tr>
+                                            <th>Name: </th>
+                                            <td>{{ctrl.profile.name}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>NRIC:</th>
+                                            <td>S7712345Z</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Mobile Number:</th>
+                                            <td>{{ctrl.profile.tel_mobile}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Email:</th>
+                                            <td>{{ctrl.profile.email.email_id}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>DOB:</th>
+                                            <td>{{ctrl.profile.dob}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Dietary Requirements:</th>
+                                            <td>No restriction</td>
+                                        </tr>
+                                        <tr>
+                                            <th>T-shirt Size:</th>
+                                            <td>S</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Interested Role:</th>
+                                            <td>Befriender</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                                 <br>
                                 <p><i class="fa fa-check-square-o" aria-hidden="true"></i> I agree to the organizer's terms of service and consent to having my photos/videos taken during the event for publicity purposes.</p>
                                 <br>
