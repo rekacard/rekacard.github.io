@@ -47,12 +47,10 @@
             <div class="container">
               <div class="row">
                 <div class="banner-info text-center wow fadeIn delay-05s">
-                  <br>
-                  <br>
                   <h1 class="bnr-title">Volunteers</h1>
                   <h2 class="bnr-sub-title">Start a new journey!</h2>
-                  <p class="bnr-para"><b>Be part of the social movement to make the world a better place!</b></p>
-                  <p class="bnr-para"><b>Come and join us for some of the fun events!</b></p>
+                  <p class="bnr-para">Be part of the social movement to make the world a better place!</p>
+                  <p class="bnr-para">Come and join us for some of the fun events!</p>
                   <div class="brn-btn">
                     <a ui-sref="login" class="btn btn-download">Sign in</a>
                     <a ui-sref="register" class="btn btn-more">Register</a>
