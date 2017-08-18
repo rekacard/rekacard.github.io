@@ -310,8 +310,6 @@ var createNewUser = function (db) {
         }).catch(function () {
             console.log("Error", arguments)
         });
-
-
     //   };
 };
 

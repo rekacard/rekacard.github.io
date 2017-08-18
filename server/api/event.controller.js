@@ -10,10 +10,15 @@ var retrieveEvent = function (db) {
 
         // console.log("-- POST /api/event/ " + where.id);
         vm = this;
-        const itemPerPage = 9;
+        var itemPerPage = 9;
         vm.offset = parseInt(req.query.page) * itemPerPage;
         vm.event_id = parseInt(req.query.event_id);
-        if (vm.event_id == 0) {
+        console.log("event_id " + vm.event_id)
+        if ((vm.event_id == 0) || (vm.event_id == -1))  {
+            if (vm.event_id == -1) {
+                var itemPerPage = 50;
+                vm.offset = parseInt(req.query.page) * itemPerPage;
+            }
             vm.where =  {
                             start_date: {
                                 $gte: new Date()
@@ -21,6 +26,15 @@ var retrieveEvent = function (db) {
                         };
         } else if (vm.event_id > 0) {
             vm.where = { 'event_id': vm.event_id };
+        } else if (vm.event_id == -2) {
+            vm.where = { 'event_id': vm.event_id };
+                var itemPerPage = 50;
+                vm.offset = parseInt(req.query.page) * itemPerPage;
+            vm.where =  {
+                            start_date: {
+                                $lt: new Date()
+                            }
+                        };
         }
 
         db.Events

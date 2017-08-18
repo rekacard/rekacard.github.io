@@ -53,7 +53,7 @@
 
     function search() {
       const dir = "../../assets/img/";
-      EventService.retrieveEvent(vm.page, '0')
+      EventService.retrieveEvent('0', vm.page)
         .then(function(result) {
           // console.log(JSON.stringify(result));
           vm.event = result.data;  // assign to Event Table data
