@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1">
             <h3> Event Management System </h3>
-            <h2> { Event Title } </h2>
+            <h2> {{ctrl.event[0].brief_desc}} </h2>
             <div data-spy="scroll" class="tabbable-panel">
                 <div class="tabbable-line">
                     <ul class="nav nav-tabs">
@@ -10,7 +10,7 @@
                             <a ui-sref="manage_eventoverview">Overview</a>
                         </li>
                         <li>
-                            <a ui-sref="manage_eventdetails">Event Details</a>
+                            <a ui-sref="manage_eventdetails({id:ctrl.event[0].event_id})">Event Details</a>
                         </li>
                         <li>
                             <a ui-sref="manage_eventregister">Registration Form</a>

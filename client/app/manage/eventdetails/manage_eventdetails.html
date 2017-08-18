@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1">
             <h3> Event Management System </h3>
-            <h2> {Event Title} </h2>
+            <h2> {{ctrl.event.brief_desc}} </h2>
             <div data-spy="scroll" class="tabbable-panel">
                 <div class="tabbable-line">
                     <ul class="nav nav-tabs">
@@ -46,49 +46,49 @@
                             <div class="form-group row">
                                 <label for="inputEventName" class="col-sm-2 col-form-label">Event Name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputEventName" placeholder="U Heart National Day Celebrations">
+                                    <input type="text" class="form-control" id="inputEventName" ng-value="ctrl.event.brief_desc" placeholder="U Heart National Day Celebrations">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Date</label>
                                 <div class="col-sm-3">
-                                    <input class="form-control" type="date" value="2011-08-19" id="inputDate">
+                                    <input class="form-control" type="date" ng-value="ctrl.event.start_date" id="inputDate">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="inputStartTime" class="col-sm-2 col-form-label">Start Time</label>
                                 <div class="col-sm-3">
-                                    <input type="time" class="form-control" id="inputStartTime">
+                                    <input type="time" class="form-control" ng-value="ctrl.event.start_time" id="inputStartTime">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="inputEndTime" class="col-sm-2 col-form-label">End Time</label>
                                 <div class="col-sm-3">
-                                    <input type="time" class="form-control" id="inputEndTime">
+                                    <input type="time" class="form-control" ng-value="ctrl.event.end_time" id="inputEndTime">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="inputVenue" class="col-sm-2 col-form-label">Venue</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" rows="2" id="inputVenue"></textarea>
+                                    <textarea class="form-control" rows="2" ng-value="ctrl.event.venue" id="inputVenue"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="inputOrganizer" class="col-sm-2 col-form-label">Organizer</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputOrganizer">
+                                    <input type="text" class="form-control" ng-value="ctrl.event.organisation" id="inputOrganizer">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="inputEventDescription" class="col-sm-2 col-form-label">Event Description</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" rows="3" id="inputEventDescription"></textarea>
+                                    <textarea class="form-control" rows="3" ng-value="ctrl.event.detail_desc" id="inputEventDescription"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="inputImptNote" class="col-sm-2 col-form-label">Important Things to Note</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" rows="3" id="inputImptNote"></textarea>
+                                    <textarea class="form-control" rows="3" ng-value="ctrl.event.note" id="inputImptNote"></textarea>
                                 </div>
                             </div>
                             <p align="right">

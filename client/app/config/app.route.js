@@ -177,7 +177,7 @@
         },
       })
       .state("manage_eventoverview", {
-        url: "/api/manage_eventoverview",
+        url: "/api/manage_eventoverview/:id",
         views: {
           'menu': {
             templateUrl: 'app/menu/menu.html',
@@ -201,7 +201,7 @@
         },
       })
       .state("manage_eventdetails", {
-        url: "/api/manage_eventdetails",
+        url: "/api/manage_eventdetails/:id",
         views: {
           'menu': {
             templateUrl: 'app/menu/menu.html',
