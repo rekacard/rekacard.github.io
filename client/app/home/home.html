@@ -2,47 +2,66 @@
     <div class="panel-body">
         <!-- <h4 ng-if='!ctrl.user'>Please <a ui-sref='login'>login</a> first.</h4> -->
         <h3 ng-if='ctrl.user'>Welcome back, {{ctrl.name | uppercase}}!</h3>
+        <div ng-if='ctrl.alert' class="alert alert-info alert-dismissable">
+            <a class="panel-close close" data-dismiss="alert">×</a>
+            <i class="fa fa-coffee"></i> {{ctrl.alert}}}
+        </div>
         <br>
         <div>
             <div class="container">
 
                 <div class="row">
-                    <!--<div class="item-img">-->
-                    <!--<div class="img-thumbnail img-responsive">-->
-                    <!--<div class="img-thumbnail">-->
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
-                            <div class="thumbnail" style="height:550px">
-                                <img src="../../assets/img/UHeart01.jpg">
-                                <h3 class="pad-bt15">{{ctrl.event[0].brief_desc}}</h3>
+                        <div class="wrap-item text-left">
+                            <div class="thumbnail">
+                                <a ng-if='ctrl.user' ui-sref="user_eventsignup({id:ctrl.event[0].event_id})">
+                                    <img src={{ctrl.event[0].path}}> 
+                                    <h3 class="pad-bt15">{{ctrl.event[0].brief_desc}}</h3>
+                                </a>
+                                <a ng-if='!ctrl.user' ui-sref="login">
+                                    <img src={{ctrl.event[0].path}}> 
+                                    <h3 class="pad-bt15">{{ctrl.event[0].brief_desc}}</h3>
+                                </a>
                                 <p>{{ctrl.event[0].detail_desc}}</p>
-                                <p>{{ctrl.event[0].start_date}} </p>
-                                <p>{{ctrl.event[0].start_time}} - {{ctrl.event[0].end_time}} </p>
-                                <p>{{ctrl.event[0].venue}}</p>
+                                <p><b>Event Date: </b> {{ctrl.event[0].start_date}} </p>
+                                <p><b>Start/End Time: </b> {{ctrl.event[0].start_time}} - {{ctrl.event[0].end_time}} </p>
+                                <p><b>Venue: </b> {{ctrl.event[0].venue}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
-                            <div class="thumbnail" style="height:550px">
-                                <img src="../../assets/img/UHeart02.jpg">
-                                <h3 class="pad-bt15">{{ctrl.event[1].brief_desc}}</h3>
+                        <div class="wrap-item text-left">
+                            <div class="thumbnail">
+                                <a ng-if='ctrl.user' ui-sref="user_eventsignup({id:ctrl.event[1].event_id})">
+                                    <img src={{ctrl.event[1].path}}> 
+                                    <h3 class="pad-bt15">{{ctrl.event[1].brief_desc}}</h3>
+                                </a>
+                                <a ng-if='!ctrl.user' ui-sref="login">
+                                    <img src={{ctrl.event[1].path}}> 
+                                    <h3 class="pad-bt15">{{ctrl.event[1].brief_desc}}</h3>
+                                </a>
                                 <p>{{ctrl.event[1].detail_desc}}</p>
-                                <p>{{ctrl.event[1].start_date}} </p>
-                                <p>{{ctrl.event[1].start_time}} - {{ctrl.event[1].end_time}} </p>
-                                <p>{{ctrl.event[1].venue}}</p>
+                                <p><b>Event Date: </b> {{ctrl.event[1].start_date}} </p>
+                                <p><b>Start/End Time: </b> {{ctrl.event[1].start_time}} - {{ctrl.event[1].end_time}} </p>
+                                <p><b>Venue: </b> {{ctrl.event[1].venue}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
-                            <div class="thumbnail" style="height:550px">
-                                <img src="../../assets/img/UHeart03.jpg">
-                                <h3 class="pad-bt15">{{ctrl.event[2].brief_desc}}</h3>
+                        <div class="wrap-item text-left">
+                            <div class="thumbnail">
+                                <a ng-if='ctrl.user' ui-sref="user_eventsignup({id:ctrl.event[2].event_id})">
+                                    <img src={{ctrl.event[2].path}}> 
+                                    <h3 class="pad-bt15">{{ctrl.event[2].brief_desc}}</h3>
+                                </a>
+                                <a ng-if='!ctrl.user' ui-sref="login">
+                                    <img src={{ctrl.event[2].path}}> 
+                                    <h3 class="pad-bt15">{{ctrl.event[2].brief_desc}}</h3>
+                                </a>
                                 <p>{{ctrl.event[2].detail_desc}}</p>
-                                <p>{{ctrl.event[2].start_date}} </p>
-                                <p>{{ctrl.event[2].start_time}} - {{ctrl.event[2].end_time}} </p>
-                                <p>{{ctrl.event[2].venue}}</p>
+                                <p><b>Event Date: </b> {{ctrl.event[2].start_date}} </p>
+                                <p><b>Start/End Time: </b> {{ctrl.event[2].start_time}} - {{ctrl.event[2].end_time}} </p>
+                                <p><b>Venue: </b> {{ctrl.event[2].venue}}</p>
                             </div>
                         </div>
                     </div>
@@ -52,38 +71,56 @@
 
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
-                            <div class="thumbnail" style="height:550px">
-                                <img src="../../assets/img/UHeart04.jpg">
-                                <h3 class="pad-bt15">{{ctrl.event[3].brief_desc}}</h3>
+                        <div class="wrap-item text-left">
+                            <div class="thumbnail">
+                                <a ng-if='ctrl.user' ui-sref="user_eventsignup({id:ctrl.event[3].event_id})">
+                                    <img src={{ctrl.event[3].path}}> 
+                                    <h3 class="pad-bt15">{{ctrl.event[3].brief_desc}}</h3>
+                                </a>
+                                <a ng-if='!ctrl.user' ui-sref="login">
+                                    <img src={{ctrl.event[3].path}}> 
+                                    <h3 class="pad-bt15">{{ctrl.event[3].brief_desc}}</h3>
+                                </a>
                                 <p>{{ctrl.event[3].detail_desc}}</p>
-                                <p>{{ctrl.event[3].start_date}} </p>
-                                <p>{{ctrl.event[3].start_time}} - {{ctrl.event[3].end_time}} </p>
-                                <p>{{ctrl.event[3].venue}}</p>
+                                <p><b>Event Date: </b> {{ctrl.event[3].start_date}} </p>
+                                <p><b>Start/End Time: </b> {{ctrl.event[3].start_time}} - {{ctrl.event[3].end_time}} </p>
+                                <p><b>Venue: </b> {{ctrl.event[3].venue}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
-                            <div class="thumbnail" style="height:550px">
-                                <img src="../../assets/img/UHeart05.jpg">
-                                <h3 class="pad-bt15">{{ctrl.event[4].brief_desc}}</h3>
+                        <div class="wrap-item text-left">
+                            <div class="thumbnail">
+                                <a ng-if='ctrl.user' ui-sref="user_eventsignup({id:ctrl.event[4].event_id})">
+                                    <img src={{ctrl.event[4].path}}> 
+                                    <h3 class="pad-bt15">{{ctrl.event[4].brief_desc}}</h3>
+                                </a>
+                                <a ng-if='!ctrl.user' ui-sref="login">
+                                    <img src={{ctrl.event[4].path}}> 
+                                    <h3 class="pad-bt15">{{ctrl.event[4].brief_desc}}</h3>
+                                </a>
                                 <p>{{ctrl.event[4].detail_desc}}</p>
-                                <p>{{ctrl.event[4].start_date}} </p>
-                                <p>{{ctrl.event[4].start_time}} - {{ctrl.event[4].end_time}} </p>
-                                <p>{{ctrl.event[4].venue}}</p>
+                                <p><b>Event Date: </b> {{ctrl.event[4].start_date}} </p>
+                                <p><b>Start/End Time: </b> {{ctrl.event[4].start_time}} - {{ctrl.event[4].end_time}} </p>
+                                <p><b>Venue: </b> {{ctrl.event[4].venue}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
-                            <div class="thumbnail" style="height:550px">
-                                <img src="../../assets/img/UHeart06.jpg">
-                                <h3 class="pad-bt15">{{ctrl.event[5].brief_desc}}</h3>
+                        <div class="wrap-item text-left">
+                            <div class="thumbnail">
+                                <a ng-if='ctrl.user' ui-sref="user_eventsignup({id:ctrl.event[5].event_id})5">
+                                    <img src={{ctrl.event[5].path}}>
+                                    <h3 class="pad-bt15">{{ctrl.event[5].brief_desc}}</h3>
+                                </a>
+                                <a ng-if='!ctrl.user' ui-sref="login">
+                                    <img src={{ctrl.event[5].path}}>
+                                    <h3 class="pad-bt15">{{ctrl.event[5].brief_desc}}</h3>
+                                </a>
                                 <p>{{ctrl.event[5].detail_desc}}</p>
-                                <p>{{ctrl.event[5].start_date}} </p>
-                                <p>{{ctrl.event[5].start_time}} - {{ctrl.event[5].end_time}} </p>
-                                <p>{{ctrl.event[5].venue}}</p>
+                                <p><b>Event Date: </b> {{ctrl.event[5].start_date}} </p>
+                                <p><b>Start/End Time: </b> {{ctrl.event[5].start_time}} - {{ctrl.event[5].end_time}} </p>
+                                <p><b>Venue: </b> {{ctrl.event[5].venue}}</p>
                             </div>
                         </div>
                     </div>
@@ -93,38 +130,56 @@
 
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
-                             <div class="thumbnail" style="height:550px"> 
-                                <img src="../../assets/img/UHeart07.jpg">
-                                <h3 class="pad-bt15">{{ctrl.event[6].brief_desc}}</h3>
+                        <div class="wrap-item text-left">
+                            <div class="thumbnail">
+                                <a ng-if='ctrl.user' ui-sref="user_eventsignup({id:ctrl.event[6].event_id})">
+                                    <img src={{ctrl.event[6].path}}> 
+                                    <h3 class="pad-bt15">{{ctrl.event[6].brief_desc}}</h3>
+                                </a>
+                                <a ng-if='!ctrl.user' ui-sref="login">
+                                    <img src={{ctrl.event[6].path}}> 
+                                    <h3 class="pad-bt15">{{ctrl.event[6].brief_desc}}</h3>
+                                </a>
                                 <p>{{ctrl.event[6].detail_desc}}</p>
-                                <p>{{ctrl.event[6].start_date}} </p>
-                                <p>{{ctrl.event[6].start_time}} - {{ctrl.event[6].end_time}} </p>
-                                <p>{{ctrl.event[6].venue}}</p>
+                                <p><b>Event Date: </b> {{ctrl.event[6].start_date}} </p>
+                                <p><b>Start/End Time: </b> {{ctrl.event[6].start_time}} - {{ctrl.event[6].end_time}} </p>
+                                <p><b>Venue: </b> {{ctrl.event[6].venue}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
-                            <div class="thumbnail" style="height:550px">
-                                <img src="../../assets/img/UHeart08.jpg">
-                                <h3 class="pad-bt15">{{ctrl.event[7].brief_desc}}</h3>
+                        <div class="wrap-item text-left">
+                            <div class="thumbnail">
+                                <a ng-if='ctrl.user' ui-sref="user_eventsignup({id:ctrl.event[7].event_id})">
+                                    <img src={{ctrl.event[7].path}}>
+                                    <h3 class="pad-bt15">{{ctrl.event[7].brief_desc}}</h3>
+                                </a>
+                                <a ng-if='!ctrl.user' ui-sref="login">
+                                    <img src={{ctrl.event[7].path}}>
+                                    <h3 class="pad-bt15">{{ctrl.event[7].brief_desc}}</h3>
+                                </a>
                                 <p>{{ctrl.event[7].detail_desc}}</p>
-                                <p>{{ctrl.event[7].start_date}} </p>
-                                <p>{{ctrl.event[7].start_time}} - {{ctrl.event[7].end_time}} </p>
-                                <p>{{ctrl.event[7].venue}}</p>
+                                <p><b>Event Date: </b> {{ctrl.event[7].start_date}} </p>
+                                <p><b>Start/End Time: </b> {{ctrl.event[7].start_time}} - {{ctrl.event[7].end_time}} </p>
+                                <p><b>Venue: </b> {{ctrl.event[7].venue}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="wrap-item text-center">
-                            <div class="thumbnail" style="height:550px">
-                                <img src="../../assets/img/UHeart09.jpg">
-                                <h3 class="pad-bt15">{{ctrl.event[8].brief_desc}}</h3>
+                        <div class="wrap-item text-left">
+                            <div class="thumbnail">
+                                <a ng-if='ctrl.user' ui-sref="user_eventsignup({id:ctrl.event[8].event_id})">
+                                    <img src={{ctrl.event[8].path}}>
+                                    <h3 class="pad-bt15">{{ctrl.event[8].brief_desc}}</h3>
+                                </a>
+                                <a ng-if='!ctrl.user' ui-sref="login">
+                                    <img src={{ctrl.event[8].path}}>
+                                    <h3 class="pad-bt15">{{ctrl.event[8].brief_desc}}</h3>
+                                </a>
                                 <p>{{ctrl.event[8].detail_desc}}</p>
-                                <p>{{ctrl.event[8].start_date}} </p>
-                                <p>{{ctrl.event[8].start_time}} - {{ctrl.event[8].end_time}} </p>
-                                <p>{{ctrl.event[8].venue}}</p>
+                                <p><b>Event Date: </b> {{ctrl.event[8].start_date}} </p>
+                                <p><b>Start/End Time: </b> {{ctrl.event[8].start_time}} - {{ctrl.event[8].end_time}} </p>
+                                <p><b>Venue: </b> {{ctrl.event[8].venue}}</p>
                             </div>
                         </div>
                     </div>
@@ -147,6 +202,5 @@
                 <!--container-->
             </div>
         </div>
-
     </div>
 </div>

@@ -1,0 +1,96 @@
+<div class="container" style="margin-top: 30px;">
+    <div ng-if='ctrl.user'>
+        <div id="header">
+            <center>
+                <h1>User Details of {{ctrl.name}}</h1>
+            </center>
+            <br>
+            <br>
+        </div>
+
+        <div class="col-xs-2">
+            <!-- required for floating -->
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs tabs-left">
+                <li class="active">
+                    <a ui-sref="analytics_userprofile">Basic Profile</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userskills">Skills & Interests</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userexperience">Work Experience / Education</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userbadges">Badges</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userupcoming">Event Upcoming</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userhistory">Event History</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_useremergency">Emergency Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-9">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <center><img src="../../assets/img/user_512.png" class="avatar img-circle img-thumbnail" alt="avatar" width="30%"></center>
+                <center><h6>Upload a different photo...</h6></center>
+                <input type="file" class="text-center center-block well well-sm">
+                <br>
+                <h3 style="color:orange;">Personal Information</h3>
+                <table class="table">
+                    <col width="30%">
+                    <col width="70%">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <td><form><input type="text" size="50" value="{{ctrl.profile.name}}"></form></td>
+                        </tr>
+                        <tr>
+                            <th>Mobile Number</th>
+                            <td><form><input type="text" size="50" value="{{ctrl.profile.tel_mobile}}"></form></td>
+                        </tr>
+                        <tr>
+                            <th>Date of Birth</th>
+                            <td><form><input type="date" size="50" value="{{ctrl.profile.dob}}"></form></td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td><form><input type="email" size="50" value="{{ctrl.profile.email.email_id}}"></form></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3 style="color:orange;">My Roots</h3>
+                <table class="table">
+                    <col width="30%">
+                    <col width="70%">
+                    <tbody>
+                        <tr>
+                            <th>Ethnicity</th>
+                            <td><form><input type="text" size="50" value="Chinese"></form></td>
+                        </tr>
+                        <tr>
+                            <th>Dialect Group</th>
+                            <td><form><input type="text" size="50" value="Cantonese"></form></td>
+                        </tr>
+                        <tr>
+                            <th>Clan / Ancestral Village</th>
+                            <td><form><input type="text" size="50" value="Sunheng, Guangdong"></form></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p align="right">
+                    <a ui-sref="analytics_userprofile"  class="btn btn-download">Save Changes</a>
+                </p>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>

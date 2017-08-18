@@ -16,7 +16,7 @@ var retrieveUpcomingEvent = function (db) {
             // findAll asks sequelize to search for records that contain the serach fields
             .findAll({
                 attributes: ["event_id", "role_id", "task_id"]  //, "events.brief_desc"
-                ,where: where
+                , where: where
                 , include: [ {model: db.Events
                             , where: {
                                 start_date: {
@@ -24,7 +24,7 @@ var retrieveUpcomingEvent = function (db) {
                                 }
                             }
                             , attributes: ["organisation_id", "start_date", "start_time", "end_time", 
-                                           "img_filename", "venue", "brief_desc", "note", ]
+                                           "img_filename", "venue", "brief_desc", ]
                             , order: [["start_date", "DESC"]]
                             , required: true} ]
             })
@@ -71,7 +71,7 @@ var retrievePastEvent = function (db) {
                                 }
                             }
                             , attributes: ["organisation_id", "start_date", "start_time", "end_time", 
-                                           "img_filename", "venue", "brief_desc", "note", ]
+                                           "img_filename", "venue", "brief_desc", ]
                             , order: [["start_date", "DESC"]]
                             , required: true}]
             })

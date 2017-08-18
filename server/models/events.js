@@ -4,7 +4,7 @@ module.exports = function (sequelize, Sequelize) {
     return sequelize.define("events",
         {
             event_id: {
-                type: Sequelize.INTEGER(20),
+                type: Sequelize.INTEGER(10),
                 autoIncrement: true,
                 primaryKey: true,
                 allowNull: false,

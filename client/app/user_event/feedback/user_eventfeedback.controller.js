@@ -3,11 +3,16 @@
         .module("PAF")          
         .controller("UserEventFeedbackCtrl", UserEventFeedbackCtrl);    
 
-    function UserEventFeedbackCtrl() {
+    UserEventFeedbackCtrl.$inject = [ 'user' ];
 
-        var vm = this;
-    
+    function UserEventFeedbackCtrl(user) {
 
+    var vm = this;
+    if (user) {
+      vm.parseuser = user;
+      vm.user = vm.parseuser.split(',')[0];
+      vm.role = (vm.parseuser.split(',')[1] == '1')? '1':'';
+    }
 
     Survey.Survey.cssType = "bootstrap";
 

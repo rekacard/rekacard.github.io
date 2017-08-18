@@ -1,405 +1,344 @@
-        <div class="past events">
-	        <h2 style="text-align: center;">Past Events</h2>
-            <div class="col-xs-12 col-sm-10 col-sm-offset-2 col-md-8">
-            <div class="search">
-              <div class="col-md-4">
-                <div class="form-group">
-                  <div class="serchtile">Event name</div>
-                      <label class="sr-only" for="looking">Event Name</label>
-                      <input id="event-search"  type="text" class="form-control">
-                  </div>
+<div class="container">
+    <h2 ng-if='ctrl.user' style="text-align: center;">User Database</h2>
+    <br>
+    <div ng-if='ctrl.user' class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <div class="input-group">
+                <input type="hidden" name="search_param" value="all" id="search_param">
+                <input type="text" class="form-control" name="x" placeholder="Search term...">
+                <div class="input-group-btn search-panel">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    	<span id="search_concept">By Causes</span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#contains">Animal</a></li>
+                        <li><a href="#its_equal">Culture & Arts</a></li>
+                        <li><a href="#greather_than">Children</a></li>
+                        <li><a href="#less_than">Elderly </a></li>
+                        <li><a href="#greather_than">Environment</a></li>
+                        <li><a href="#less_than">Inclusivity</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#all">All Causes</a></li>
+                    </ul>
                 </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <div class="serchtile">Category</div>
-                      <label class="sr-only" for="category">Category</label>
-                      <div class="input-group">
-                        <select id="category" name="category" class="form-control">
-                            <option value="1">All Causes</option>
-                            <option value="2">Animal</option>
-                            <option value="3">Culture</option>
-                            <option value="4">Children</option>
-                            <option value="5">Elderly</option>
-                            <option value="6">Environment</option>
-                            <option value="7">Arts</option>
-                            <option value="8">Other</option>
-                        </select>
-                      </div>  
-                 </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <div class="serchtile">Date</div>
-                      <label class="sr-only" for="date">Date</label>
-                      <div class="input-group">
-                        <select id="category" name="date" class="form-control">
-                            <option value="1">Past 3 months</option>
-                            <option value="2">Past 1 year</option>
-                            <option value="3">Past 3 years</option>
-                            <option value="4">All</option>
-                        </select>
-                      </div>  
-                 </div>
-              </div>
-
-              <div class="col-md-1">
-                <div class="form-group">
-                        <button type="submit" class="btn btn-default btn-primary" style="padding: 1.5em">Search</button> 
-                </div>  
-              </div>
-          </div>
+                <div class="input-group-btn search-panel">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    	<span id="search_concept">By Date</span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#contains">Past 3 months</a></li>
+                        <li><a href="#its_equal">Past 1 year</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#all">All</a></li>
+                    </ul>
+                </div>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
         </div>
+    </div>
 </div>
 
+<br>
 
 <div class="container">
-    
-        <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                <div class="card" style="margin-bottom: 1em;">
-                    <img class="card-img-top" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <a href="#">Total hours volunteered: 350</a> <br>
-                            <a href="#"># of events as task lead: 10</a> <br>
-                            <a href="#"># of events organized: 5</a> <br>
-                            <a href="#"># of badges earned: 7</a> <hr>
-                        </div>
-                        <div class="card-text">
-                           <div class="rating-block">
-                                <h4>Average rating</h4>
-                                <h2>4.3 <small>/ 5</small></h2>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </div>
+    <div ng-if='ctrl.user' class="row">
+        <div ng-if='ctrl.profile[0].name' class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div class="card" style="margin-bottom: 1em;">
+                <hr>
+                <a ui-sref="analytics_userprofileWithParam({id:ctrl.profile[0].user_id})">
+                    <img class="card-img-top" style="width:15em" src="../../assets/img/default_user.png">
+                    <h4 class="card-title">{{ctrl.profile[0].name}}</h4>
+                </a>
+                <div class="card-block">
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
                     </div>
-                    <div class="card-footer">
-                        <span><i class=""></i>Last event: 2 weeks ago</span> <hr>
-                        <div  align="center">
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
                             <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                <div class="card" style="margin-bottom: 1em;">
-                    <img class="card-img-top" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <a href="#">Total hours volunteered: 350</a> <br>
-                            <a href="#"># of events as task lead: 10</a> <br>
-                            <a href="#"># of events organized: 5</a> <br>
-                            <a href="#"># of badges earned: 7</a> <hr>
-                        </div>
-                        <div class="card-text">
-                           <div class="rating-block">
-                                <h4>Average rating</h4>
-                                <h2>4.3 <small>/ 5</small></h2>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <span><i class=""></i>Last event: 2 weeks ago</span> <hr>
-                        <div  align="center">
-                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-           <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                <div class="card" style="margin-bottom: 1em;">
-                    <img class="card-img-top" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <a href="#">Total hours volunteered: 350</a> <br>
-                            <a href="#"># of events as task lead: 10</a> <br>
-                            <a href="#"># of events organized: 5</a> <br>
-                            <a href="#"># of badges earned: 7</a> <hr>
-                        </div>
-                        <div class="card-text">
-                           <div class="rating-block">
-                                <h4>Average rating</h4>
-                                <h2>4.3 <small>/ 5</small></h2>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <span><i class=""></i>Last event: 2 weeks ago</span> <hr>
-                        <div  align="center">
-                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                <div class="card" style="margin-bottom: 1em;">
-                    <img class="card-img-top" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <a href="#">Total hours volunteered: 350</a> <br>
-                            <a href="#"># of events as task lead: 10</a> <br>
-                            <a href="#"># of events organized: 5</a> <br>
-                            <a href="#"># of badges earned: 7</a> <hr>
-                        </div>
-                        <div class="card-text">
-                           <div class="rating-block">
-                                <h4>Average rating</h4>
-                                <h2>4.3 <small>/ 5</small></h2>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <span><i class=""></i>Last event: 2 weeks ago</span> <hr>
-                        <div  align="center">
-                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-<div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <a href="#">Total hours volunteered: 350</a> <br>
-                            <a href="#"># of events as task lead: 10</a> <br>
-                            <a href="#"># of events organized: 5</a> <br>
-                            <a href="#"># of badges earned: 7</a> <hr>
-                        </div>
-                        <div class="card-text">
-                           <div class="rating-block">
-                                <h4>Average rating</h4>
-                                <h2>4.3 <small>/ 5</small></h2>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <span><i class=""></i>Last event: 2 weeks ago</span> <hr>
-                        <div  align="center">
-                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-<div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <a href="#">Total hours volunteered: 350</a> <br>
-                            <a href="#"># of events as task lead: 10</a> <br>
-                            <a href="#"># of events organized: 5</a> <br>
-                            <a href="#"># of badges earned: 7</a> <hr>
-                        </div>
-                        <div class="card-text">
-                           <div class="rating-block">
-                                <h4>Average rating</h4>
-                                <h2>4.3 <small>/ 5</small></h2>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <span><i class=""></i>Last event: 2 weeks ago</span> <hr>
-                        <div  align="center">
-                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-<div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <a href="#">Total hours volunteered: 350</a> <br>
-                            <a href="#"># of events as task lead: 10</a> <br>
-                            <a href="#"># of events organized: 5</a> <br>
-                            <a href="#"># of badges earned: 7</a> <hr>
-                        </div>
-                        <div class="card-text">
-                           <div class="rating-block">
-                                <h4>Average rating</h4>
-                                <h2>4.3 <small>/ 5</small></h2>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <span><i class=""></i>Last event: 2 weeks ago</span> <hr>
-                        <div  align="center">
-                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-<div class="col-sm-6 col-md-4 col-lg-3 mt-4 ">
-                <div class="card">
-                    <img class="card-img-top" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png">
-                    <div class="card-block">
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="meta">
-                            <a href="#">Total hours volunteered: 350</a> <br>
-                            <a href="#"># of events as task lead: 10</a> <br>
-                            <a href="#"># of events organized: 5</a> <br>
-                            <a href="#"># of badges earned: 7</a> <hr>
-                        </div>
-                        <div class="card-text">
-                           <div class="rating-block">
-                                <h4>Average rating</h4>
-                                <h2>4.3 <small>/ 5</small></h2>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <span><i class=""></i>Last event: 2 weeks ago</span> <hr>
-                        <div  align="center">
-                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
         </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div ng-if='ctrl.profile[1].name' class="card" style="margin-bottom: 1em;">
+                <hr>
+                <a ui-sref="analytics_userprofileWithParam({id:ctrl.profile[1].user_id})">
+                    <img class="card-img-top" style="width:15em" src="../../assets/img/default_user.png">
+                    <h4 class="card-title">{{ctrl.profile[1].name}}</h4>
+                </a>
+                <div class="card-block">
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div ng-if='ctrl.profile[2].name' class="card" style="margin-bottom: 1em;">
+                <hr>
+                <a ui-sref="analytics_userprofileWithParam({id:ctrl.profile[2].user_id})">
+                    <img class="card-img-top" style="width:15em" src="../../assets/img/default_user.png">
+                    <h4 class="card-title">{{ctrl.profile[2].name}}</h4>
+                </a>
+                <div class="card-block">
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div ng-if='ctrl.profile[3].name' class="card" style="margin-bottom: 1em;">
+                <hr>
+                <a ui-sref="analytics_userprofileWithParam({id:ctrl.profile[3].user_id})">
+                    <img class="card-img-top" style="width:15em" src="../../assets/img/default_user.png">
+                    <h4 class="card-title">{{ctrl.profile[3].name}}</h4>
+                </a>
+                <div class="card-block">
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div ng-if='ctrl.profile[4].name' class="card" style="margin-bottom: 1em;">
+                <hr>
+                <a ui-sref="analytics_userprofileWithParam({id:ctrl.profile[4].user_id})">
+                    <img class="card-img-top" style="width:15em" src="../../assets/img/default_user.png">
+                    <h4 class="card-title">{{ctrl.profile[4].name}}</h4>
+                </a>
+                <div class="card-block">
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div ng-if='ctrl.profile[5].name' class="card" style="margin-bottom: 1em;">
+                <hr>
+                <a ui-sref="analytics_userprofileWithParam({id:ctrl.profile[5].user_id})">
+                    <img class="card-img-top" style="width:15em" src="../../assets/img/default_user.png">
+                    <h4 class="card-title">{{ctrl.profile[5].name}}</h4>
+                </a>
+                <div class="card-block">
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div ng-if='ctrl.profile[6].name' class="card" style="margin-bottom: 1em;">
+                <hr>
+                <a ui-sref="analytics_userprofileWithParam({id:ctrl.profile[6].user_id})">
+                    <img class="card-img-top" style="width:15em" src="../../assets/img/default_user.png">
+                    <h4 class="card-title">{{ctrl.profile[6].name}}</h4>
+                </a>
+                <div class="card-block">
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div ng-if='ctrl.profile[7].name' class="card" style="margin-bottom: 1em;">
+                <hr>
+                <a ui-sref="analytics_userprofileWithParam({id:ctrl.profile[7].user_id})">
+                    <img class="card-img-top" style="width:15em" src="../../assets/img/default_user.png">
+                    <h4 class="card-title">{{ctrl.profile[7].name}}</h4>
+                </a>
+                <div class="card-block">
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div ng-if='ctrl.profile[8].name' class="card" style="margin-bottom: 1em;">
+                <hr>
+                <a ui-sref="analytics_userprofileWithParam({id:ctrl.profile[8].user_id})">
+                    <img class="card-img-top" style="width:15em" src="../../assets/img/default_user.png">
+                    <h4 class="card-title">{{ctrl.profile[8].name}}</h4>
+                </a>
+                <div class="card-block">
+                    <div class="meta">
+                        <p style="line-height:0.75em">Total hours volunteered: 350</p>
+                        <p style="line-height:0.75em"># of events as task lead: 10</p>
+                        <p style="line-height:0.75em"># of events organized: 5</p>
+                        <p style="line-height:0.75em"># of badges earned: 7</p>
+                        <p style="line-height:0.75em">Last event: 2 weeks ago</p>
+                        <a href="#">More Details...</a>
+                        <hr>
+                    </div>
+                    <div class="card-text">
+                        <h4>Average Rating: 3.5 /5</h4>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 70%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add to Watchlist </a>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

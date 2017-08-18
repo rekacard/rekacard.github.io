@@ -10,12 +10,12 @@
         .module("PAF")
         .controller("ProfileCtrl", ProfileCtrl);
 
-    ProfileCtrl.$inject = ['user', '$scope', '$state', 'UserService'];
+    ProfileCtrl.$inject = ['user', '$scope', 'UserService'];
 
     // ProfileCtrl function declaration. A function declaration uses the syntax: functionName([arg [, arg [...]]]){ ... }
     // ProfileCtrl accepts the injected dependency as a parameter. We name it DeptService for consistency, but you may
     // assign any name
-    function ProfileCtrl(user, $scope, $state, UserService) {
+    function ProfileCtrl(user, $scope, UserService) {
 
         // Declares the var vm (for ViewModel) and assigns it the object this (in this case, the EventCtrl)
         // Any function or variable that you attach to vm will be exposed to callers of EventCtrl, e.g., register.html

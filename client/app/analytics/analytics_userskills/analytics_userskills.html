@@ -1,0 +1,67 @@
+<div class="container" style="margin-top: 30px;">
+    <div ng-if='ctrl.user'>
+        <div id="header">
+            <center>
+                <h1>User Details of {{ctrl.name}}</h1>
+            </center>
+            <br>
+            <br>
+        </div>
+
+        <div class="col-xs-2">
+            <!-- required for floating -->
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs tabs-left">
+                <li>
+                    <a ui-sref="analytics_userprofile">Basic Profile</a>
+                </li>
+                <li class="active">
+                    <a ui-sref="analytics_userskills">Skills & Interests</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userexperience">Work Experience / Education</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userbadges">Badges</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userupcoming">Event Upcoming</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userhistory">Event History</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_useremergency">Emergency Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-9">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <h3 style="color:orange;">Skillsets & Interests</h3>
+                <table class="table">
+                    <col width="30%">
+                    <col width="70%">
+                    <tbody>
+                        <tr>
+                            <th>Conversational Languages</th>
+                            <td>Chinese, English, Cantonese</td>
+                        </tr>
+                        <tr>
+                            <th>Skillsets I would like to develop / contribute</th>
+                            <td>Talent Management, Event Planning, Photography</td>
+                        </tr>
+                        <tr>
+                            <th>Interested Causes</th>
+                            <td>Animal, Elderly, Environment</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p align="right">
+                    <a ui-sref="edit_userskills"  class="btn btn-download">Edit</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

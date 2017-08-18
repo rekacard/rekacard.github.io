@@ -1,27 +1,21 @@
 <div class="container" style="margin-top: 30px;">
-    <div class="row">
+    <div ng-if='ctrl.user' class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1">
             <h2> Event Title </h2>
             <div data-spy="scroll" class="tabbable-panel">
                 <div class="tabbable-line">
                     <ul class="nav nav-tabs ">
                         <li>
-                            <a href="/#!/user_eventdetails">Event Details</a>
+                            <a ui-sref="user_eventdetails">Event Details</a>
                         </li>
                         <li>
-                            <a href="/#!/user_eventsubmission">Profile Submitted</a>
+                            <a ui-sref="user_eventsubmission">Profile Submitted</a>
                         </li>
                         <li class="active">
-                            <a href="/#!/user_eventbrief">Volunteer Brief</a>
+                            <a ui-sref="user_eventbrief">Volunteer Brief</a>
                         </li>
                         <li>
-                            <a href="/#!/user_eventfeedback">Feedback Form</a>
-                        </li>
-                        <li>
-                            <a href="/#!/user_eventattendance">Attendance Sheet</a>
-                        </li>
-                        <li>
-                            <a href="/#!/user_eventdebrief">Debrief Form</a>
+                            <a ui-sref="user_eventfeedback">Feedback Form</a>
                         </li>
                     </ul>
                     <div class="tab-content">
@@ -31,14 +25,8 @@
                             </div>
                            <p>File(s) for download:</p>
                            <p>
-                               <a href="singinintherain.mp3" target="_blank"><img src="genekelly.jpg" alt="Gene_Kelly" /></a>
+                               <a href="https://drive.google.com/open?id=0B4_K1jGjchF2cWhWVzR6VjJpbFE" target="_blank">Volunteer Brief</a>
                            </p>
-                           <br>
-                           <br>
-                           <form id="uploadbrief" enctype="multipart/form-data" method="post" action="#">
-                                <input id="fileupload" name="myfile" type="file" />
-                                <input type="submit" value="submit" id="submit" />
-                           </form>
                         </div> 
                     </div>
                 </div>

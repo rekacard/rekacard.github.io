@@ -3,17 +3,22 @@
     .module('PAF')
     .controller('HomeCtrl', HomeCtrl);
 
-  HomeCtrl.$inject = [ 'user', 'EventService', 'UserService' ];
+  HomeCtrl.$inject = [ 'user', 'EventService', 'UserService', 'AlertService' ];
 
-  function HomeCtrl(user, EventService, UserService) {
+  function HomeCtrl(user, EventService, UserService, AlertService) {
     var vm = this;
     vm.search = search;
     vm.getname = getname;
+    vm.getalert = getalert;
     vm.event = [];
-    vm.user = user;
     vm.page = 0;
-
-    if (vm.user) vm.getname();
+    if (user) {
+      vm.parseuser = user;
+      vm.user = vm.parseuser.split(',')[0];
+      vm.role = vm.parseuser.split(',')[1];
+      vm.getname();
+      vm.getalert();
+    }
     vm.search();
 
     function getname() {
@@ -27,9 +32,28 @@
         });
     }
 
+    function getalert() {
+      AlertService.retrieveUser_Alert(vm.user)
+        .then(function(result) {
+          console.log(JSON.stringify(result));
+          vm.alert = result.data[0].alert.alert_msg;
+          // AlertService.deleteAlert(result.data[0].alert_id)
+          //   .then(function(result) {
+          //     // console.log(JSON.stringify(result));
+          //     console.log("Alert deleted!");
+          //   })
+          //   .catch(function(err) {
+          //     console.log(err);
+          //   });
+        })
+        .catch(function(err) {
+          console.log(err);
+        });
+    }
+
     function search() {
       const dir = "../../assets/img/";
-      EventService.retrieveEvent(vm.page)
+      EventService.retrieveEvent('0', vm.page)
         .then(function(result) {
           // console.log(JSON.stringify(result));
           vm.event = result.data;  // assign to Event Table data

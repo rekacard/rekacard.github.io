@@ -1,0 +1,94 @@
+<div class="container" style="margin-top: 30px;">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+            <h2><center> Past Events </center></h2>   
+
+            <br>
+            <div class="container">
+                <div class="col-xs-9 col-sm-8 col-sm-offset-1">
+
+            <div class="input-group">
+                        <input type="hidden" name="search_param" value="all" id="search_param">
+                        <input type="text" class="form-control" name="x" placeholder="Search term...">
+                        <div class="input-group-btn search-panel">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    	<span id="search_concept">By Causes</span> <span class="caret"></span>
+                    </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#contains">Animal</a></li>
+                                <li><a href="#its_equal">Culture & Arts</a></li>
+                                <li><a href="#greather_than">Children</a></li>
+                                <li><a href="#less_than">Elderly </a></li>
+                                <li><a href="#greather_than">Environment</a></li>
+                                <li><a href="#less_than">Inclusivity</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#all">All Causes</a></li>
+                            </ul>
+                        </div>
+                        <div class="input-group-btn search-panel">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    	<span id="search_concept">By Date</span> <span class="caret"></span>
+                    </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#contains">Past 3 months</a></li>
+                                <li><a href="#its_equal">Past 1 year</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#all">All</a></li>
+                            </ul>
+                        </div>
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+            <hr>
+
+
+
+                    <div class="row">
+                        <div class="list-group">
+                            <div ng-repeat="events in ctrl.event">
+                                <a ui-sref="manage_eventoverview({id:events.event_id})" class="list-group-item" style="height: 40px; padding: 30px 30px;">
+                                    <div class="media col-md-6">
+                                        <!-- <div class="media col-md-3"> -->
+                                        <figure class="pull-left">
+                                            <img class="media-object img-rounded img-responsive" src="{{events.path}}" alt="event image" style="max-height: 150px">
+                                        </figure>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <!-- <div class="col-md-6"> -->
+                                        <h4 class="list-group-item-heading"> </h4>
+                                        <h4 class="list-group-item-heading" style="color:white;"> {{events.brief_desc}} </h4>
+                                        <p class="list-group-item-text" style="color:white;"> Date: {{events.start_date}}</p>
+                                        <p class="list-group-item-text" style="color:white;"> Time: {{events.start_time}} - {{events.end_time}}</p>
+                                        <p class="list-group-item-text" style="color:white;"> Venue: {{events.venue}}</p>
+                                        <p class="list-group-item-text" style="color:white;"> Organizer: {{events.organization}}</p>
+                                    </div>
+                                </a>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                    <ul class="pagination pagination-large">
+                        <li class="disabled"><span>&laquo;</span></li>
+                        <li class="active"><span>1</span></li>
+                        <li><a href="http://bootsnipp.com?page=2">2</a></li>
+                        <li><a href="http://bootsnipp.com?page=3">3</a></li>
+                        <li><a href="http://bootsnipp.com?page=4">4</a></li>
+                        <li><a href="http://bootsnipp.com?page=5">5</a></li>
+                        <li><a href="http://bootsnipp.com?page=2" rel="next">&raquo;</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--container-->
+    </div>
+</div>

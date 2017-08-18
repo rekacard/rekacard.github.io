@@ -80,31 +80,7 @@
           }
         },
       })
-      .state('userhome', {
-        url: '/api/home',
-        views: {
-          'menu': {
-            templateUrl: 'app/menu/menu.html',
-            controller: 'MenuCtrl as ctrl',
-          },
-          'content': {
-            templateUrl: 'app/upcoming/upcoming.html',
-            controller: 'UpcomingCtrl as ctrl',
-          }
-        },
-        resolve: {
-          user: function(PassportSvc) {
-            return PassportSvc.userAuth()
-              .then(function(result) {
-                return result.data.user;
-              })
-              .catch(function(err) {
-                return '';
-              });
-          }
-        },
-      })
-      .state('userprofile', {
+    .state('userprofile', {
         url: '/api/userprofile',
         views: {
           'menu': {
@@ -129,7 +105,7 @@
         },
       })
       .state('userprofileWithParam', {
-        url: '/api/userprofile:id',
+        url: '/api/userprofile/:id',
         views: {
           'menu': {
             templateUrl: 'app/menu/menu.html',
@@ -152,16 +128,16 @@
           }
         },
       })
-    .state('userlist', {
-        url: '/api/userlist',
+      .state("manage_eventupcoming", {
+        url: "/api/manage_eventupcoming",
         views: {
           'menu': {
             templateUrl: 'app/menu/menu.html',
             controller: 'MenuCtrl as ctrl',
           },
           'content': {
-            templateUrl: 'app/userlist/userlist.html',
-            controller: 'UserListCtrl as ctrl',
+            templateUrl: 'app/manage/eventupcoming/manage_eventupcoming.html',
+            controller: 'EventUpcomingCtrl as ctrl',
           }
         },
         resolve: {
@@ -176,16 +152,160 @@
           }
         },
       })
-      .state('pastevent', {
-        url: '/api/pastevent',
+      .state("manage_eventpast", {
+        url: "/api/manage_eventpast",
         views: {
           'menu': {
             templateUrl: 'app/menu/menu.html',
             controller: 'MenuCtrl as ctrl',
           },
           'content': {
-            templateUrl: 'app/member_event_history/past_event.html',
-            controller: 'PastEventCtrl as ctrl',
+            templateUrl: 'app/manage/eventpast/manage_eventpast.html',
+            controller: 'EventPastCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state("manage_eventoverview", {
+        url: "/api/manage_eventoverview/:id",
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/manage/eventoverview/manage_eventoverview.html',
+            controller: 'EventOverviewCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state("manage_eventdetails", {
+        url: "/api/manage_eventdetails/:id",
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/manage/eventdetails/manage_eventdetails.html',
+            controller: 'EventEditCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state("manage_eventregister", {
+        url: "/api/manage_eventregister",
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/manage/eventregister/manage_eventregister.html',
+            controller: 'EventRegFormCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state("manage_eventbrief", {
+        url: "/api/manage_eventbrief",
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/manage/eventbrief/manage_eventbrief.html',
+            controller: 'EventBriefCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state("manage_eventvolunteer", {
+        url: "/api/manage_eventvolunteer",
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/manage/eventvolunteer/manage_eventvolunteer.html',
+            controller: 'EventVolMgmtCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state("manage_eventdebrief", {
+        url: "/api/manage_eventdebrief",
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/manage/eventdebrief/manage_eventdebrief.html',
+            controller: 'EventDebriefCtrl as ctrl',
           }
         },
         resolve: {
@@ -201,7 +321,7 @@
         },
       })
       .state("user_eventsignup", {
-        url: "/api/user_eventsignup",
+        url: "/api/user_eventsignup/:id",
         views: {
           'menu': {
             templateUrl: 'app/menu/menu.html',
@@ -249,7 +369,7 @@
         },
       })
       .state("user_eventdetails", {
-        url: "/api/user_eventdetails",
+        url: "/api/user_eventdetails/:id",
         views: {
           'menu': {
             templateUrl: 'app/menu/menu.html',
@@ -392,8 +512,320 @@
           }
         },
       })
+      .state('analytics_dashboard', {
+        url:'/api/analytics_dashboard',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_dashboard/analytics_dashboard.html',
+            controller: 'AnalyticsDashboardCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('analytics_userprofile', {
+        url:'/api/analytics_userprofile',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userprofile/analytics_userprofile.html',
+            controller: 'AnalyticsUserProfileCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('edit_userprofile', {
+        url:'/api/edit_userprofile',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/edit/edit_userprofile/edit_userprofile.html',
+            controller: 'EditUserProfileCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('analytics_userprofileWithParam', {
+        url:'/api/analytics_userprofile/:id',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userprofile/analytics_userprofile.html',
+            controller: 'AnalyticsUserProfileWithParamCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('analytics_userskills', {
+        url:'/api/analytics_userskills',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userskills/analytics_userskills.html',
+            controller: 'AnalyticsUserSkillsCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('edit_userskills', {
+        url:'/api/edit_userskills',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/edit/edit_userskills/edit_userskills.html',
+            controller: 'EditUserSkillsCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('analytics_userexperience', {
+        url:'/api/analytics_userexperience',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userexperience/analytics_userexperience.html',
+            controller: 'AnalyticsUserExperienceCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('edit_userexperience', {
+        url:'/api/edit_userexperience',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/edit/edit_userexperience/edit_userexperience.html',
+            controller: 'EditUserExperienceCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('analytics_userbadges', {
+        url:'/api/analytics_userbadges',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userbadges/analytics_userbadges.html',
+            controller: 'AnalyticsUserBadgesCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('analytics_userupcoming', {
+        url:'/api/analytics_userupcoming',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userupcoming/analytics_userupcoming.html',
+            controller: 'AnalyticsUserUpcomingCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('analytics_userhistory', {
+        url:'/api/analytics_userhistory',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userhistory/analytics_userhistory.html',
+            controller: 'AnalyticsUserHistoryCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('analytics_useremergency', {
+        url:'/api/analytics_useremergency',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_useremergency/analytics_useremergency.html',
+            controller: 'AnalyticsUserEmergencyCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('edit_useremergency', {
+        url:'/api/edit_useremergency',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/edit/edit_useremergency/edit_useremergency.html',
+            controller: 'EditUserEmergencyCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
       .state('analytics_userdetails', {
-        url:'/api/analytics_userdetails',
+        url:'/api/analytics_userdetails/:id',
         views: {
           'menu': {
             templateUrl: 'app/menu/menu.html',
@@ -402,6 +834,30 @@
           'content': {
             templateUrl: 'app/analytics/analytics_userdetails/analytics_userdetails.html',
             controller: 'AnalyticsUserDetailsCtrl as ctrl',
+          }
+        },
+        resolve: {
+          user: function(PassportSvc) {
+            return PassportSvc.userAuth()
+              .then(function(result) {
+                return result.data.user;
+              })
+              .catch(function(err) {
+                return '';
+              });
+          }
+        },
+      })
+      .state('analytics_userpassword', {
+        url:'/api/analytics_userpassword',
+        views: {
+          'menu': {
+            templateUrl: 'app/menu/menu.html',
+            controller: 'MenuCtrl as ctrl',
+          },
+          'content': {
+            templateUrl: 'app/analytics/analytics_userpassword/analytics_userpassword.html',
+            controller: 'AnalyticsUserPasswordCtrl as ctrl',
           }
         },
         resolve: {

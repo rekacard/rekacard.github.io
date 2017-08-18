@@ -11,16 +11,52 @@
         .controller("UserEventDetailsCtrl", UserEventDetailsCtrl);    // angular.controller() attaches a controller to the angular module
                                             // specified as you can see, angular methods are chainable
 
+    UserEventDetailsCtrl.$inject = [ 'user', "$stateParams", 'EventService', 'ModelService' ];
 
     // EventCtrl function declaration. A function declaration uses the syntax: functionName([arg [, arg [...]]]){ ... }
     // EventCtrl accepts the injected dependency as a parameter. We name it DeptService for consistency, but you may
     // assign any name
-    function UserEventDetailsCtrl() {
+    function UserEventDetailsCtrl(user, $stateParams, EventService, ModelService) {
 
         // Declares the var vm (for ViewModel) and assigns it the object this (in this case, the EventCtrl)
         // Any function or variable that you attach to vm will be exposed to callers of EventCtrl, e.g., register.html
         var vm = this;
+        vm.search = search;
+        if (user) {
+            vm.parseuser = user;
+            vm.user = vm.parseuser.split(',')[0];
+            vm.role = (vm.parseuser.split(',')[1] == '1')? '1':'';
+        }
 
+        if ($stateParams.id) {
+            // console.log("Received stateParams.event_id: " + $stateParams.id);
+            vm.event_id = parseInt($stateParams.id);
+            vm.search();
+        }
+
+        function search() {
+            const dir = "../../assets/img/";
+            EventService.retrieveEvent(vm.event_id, 0)
+                .then(function(result) {
+                // console.log(JSON.stringify(result));
+                vm.event = result.data[0];  // assign to Event Table data
+                // console.log(JSON.stringify(vm.event));
+                vm.event.path = dir + vm.event.img_filename;
+                vm.event.organisation = ModelService.organization[vm.event.organisation_id];
+                // Remove the second from time format HH:MM:SS
+                var l = vm.event.start_time.length;
+                var time = vm.event.start_time.substring(0, l-3);
+                vm.event.start_time = time;
+                l = vm.event.end_time.length;
+                time = vm.event.end_time.substring(0, l-3);
+                vm.event.end_time = time;
+                return true;
+                })
+                .catch(function(err) {
+                console.log(err);
+                return false;
+                });
+        }
     } // END UserEventCtrl
 
 })();

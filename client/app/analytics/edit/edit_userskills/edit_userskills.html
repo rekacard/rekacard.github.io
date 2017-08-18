@@ -1,0 +1,85 @@
+<div class="container" style="margin-top: 30px;">
+    <div ng-if='ctrl.user'>
+        <div id="header">
+            <center>
+                <h1>User Details of {{ctrl.name}}</h1>
+            </center>
+            <br>
+            <br>
+        </div>
+
+        <div class="col-xs-2">
+            <!-- required for floating -->
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs tabs-left">
+                <li>
+                    <a ui-sref="analytics_userprofile">Basic Profile</a>
+                </li>
+                <li class="active">
+                    <a ui-sref="analytics_userskills">Skills & Interests</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userexperience">Work Experience / Education</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userbadges">Badges</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userupcoming">Event Upcoming</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userhistory">Event History</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_useremergency">Emergency Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-9">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <h3 style="color:orange;">Skillsets & Interests</h3>
+                <table class="table">
+                    <col width="30%">
+                    <col width="70%">
+                    <tbody>
+                        <tr>
+                            <th>Conversational Languages</th>
+                            <td><form><input type="text" size="50" value="Chinese, English, Cantonese"></form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Skillsets I would like to develop / contribute</th>
+                            <td>
+                                <form>
+                                    <input type="checkbox" name="talentmgmt" class="col-sm-1 col-form-label" checked>Talent Management <br> 
+                                    <input type="checkbox" name="eventplanning" class="col-sm-1 col-form-label" checked>Event Planning <br>
+                                    <input type="checkbox" name="photography" class="col-sm-1 col-form-label" checked>Photography <br>
+                                    <input type="checkbox" name="emcee" class="col-sm-1 col-form-label">Emcee <br>
+                                    <input type="checkbox" name="emcee" class="col-sm-1 col-form-label">Logistics <br>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Interested Causes</th>
+                            <td>
+                                <form>
+                                    <input type="checkbox" name="talentmgmt" class="col-sm-1 col-form-label" checked>Animal <br> 
+                                    <input type="checkbox" name="eventplanning" class="col-sm-1 col-form-label">Culture & Arts <br>
+                                    <input type="checkbox" name="photography" class="col-sm-1 col-form-label">Children <br>
+                                    <input type="checkbox" name="emcee" class="col-sm-1 col-form-label" checked>Elderly <br>
+                                    <input type="checkbox" name="emcee" class="col-sm-1 col-form-label" checked>Environment <br>
+                                    <input type="checkbox" name="emcee" class="col-sm-1 col-form-label">Inclusivity <br>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p align="right">
+                    <a ui-sref="analytics_userskills"  class="btn btn-download">Save Changes</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

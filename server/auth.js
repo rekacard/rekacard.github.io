@@ -16,12 +16,20 @@ module.exports = function(app, db, passport) {
     // console.log("-- POST /api/login/ " + where.id);
     db.Email
     // findOne asks sequelize to search
-        .findOne({ where: where })
+        .findOne({ 
+          attributes: ["user_id", "password"]
+          , where: where
+          , include: [ {model: db.User
+                      , attributes: ["role_id"]
+                      , required: true} ]
+        })
         // this .then() handles successful findAll operation
         .then(function (result) {
-            // console.log("-- POST /api/login/ findOne then() result \n " + JSON.stringify(result));
-            if (result.password == password)
-              return done(null, String(result.user_id));
+            console.log("-- POST /api/login/ findOne then() result \n " + JSON.stringify(result));
+            if (result.password == password) {
+              var response = String(result.user_id) + ',' + String(result.user.role_id);
+              return done(null, response);
+            }
             return done(null, false);
         })
         // this .catch() handles erroneous findAll operation

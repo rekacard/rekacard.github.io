@@ -16,6 +16,7 @@
   <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" type="text/css" href="bower_components/ng-tags-input/ng-tags-input.min.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/upcoming.css">
 </head>
 
@@ -36,7 +37,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#">Connect<span class="logo-dec">Pro</span></a>
+                  <a class="navbar-brand" ui-sref="home">Connect<span class="logo-dec">Pro</span></a>
                 </div>
                 <ui-view name='menu'></ui-view>
               </div>
@@ -46,10 +47,12 @@
             <div class="container">
               <div class="row">
                 <div class="banner-info text-center wow fadeIn delay-05s">
+                  <br>
+                  <br>
                   <h1 class="bnr-title">Volunteers</h1>
                   <h2 class="bnr-sub-title">Start a new journey!</h2>
-                  <p class="bnr-para">Be part of the social movement to make the world a better place!</p>
-                  <p class="bnr-para">Come and join us for some of the fun events!</p>
+                  <p class="bnr-para"><b>Be part of the social movement to make the world a better place!</b></p>
+                  <p class="bnr-para"><b>Come and join us for some of the fun events!</b></p>
                   <div class="brn-btn">
                     <a ui-sref="login" class="btn btn-download">Sign in</a>
                     <a ui-sref="register" class="btn btn-more">Register</a>
@@ -101,24 +104,52 @@
 <script src="app/config/app.route.js"></script>
 <script src="app/services/passport.service.js"></script>
 <script src="app/services/user.services.js"></script>
+<script src="app/services/badge.services.js"></script>
 <script src="app/services/event.services.js"></script>
 <script src="app/services/model.services.js"></script>
+<script src="app/services/alert.services.js"></script>
+<script src="app/services/manage.services.js"></script>
 <script src="app/menu/menu.controller.js"></script>
 <script src="app/home/home.controller.js"></script>
 <script src="app/login/login.controller.js"></script>
 <script src="app/registration/register.controller.js"></script>
-<script src="app/userlist/userlist.controller.js"></script>
 <script src="app/userprofile/userprofile.controller.js"></script>
 <script src="app/userprofile/userprofilewithparam.controller.js"></script>
-<script src="app/upcoming/upcoming.controller.js"></script>
-<script src="app/member_event_history/past_event.controller.js"></script>
+<script src="app/user_event/signup/user_eventsignup.controller.js"></script>
 <script src="app/user_event/brief/user_eventbrief.controller.js"></script>
 <script src="app/user_event/eventdetails/user_eventdetails.controller.js"></script>
 <script src="app/user_event/feedback/user_eventfeedback.controller.js"></script>
 <script src="app/user_event/submission/user_eventsubmission.controller.js"></script>
-<script src="app/analytics/analytics_userdetails/analytics_userdetails.controller.js"></script>
+<script src="app/manage/eventupcoming/manage_eventupcoming.controller.js"></script>
+<script src="app/manage/eventpast/manage_eventpast.controller.js"></script>
+<script src="app/manage/eventoverview/manage_eventoverview.controller.js"></script>
+<script src="app/manage/eventdetails/manage_eventdetails.controller.js"></script>
+<script src="app/manage/eventregister/manage_eventregister.controller.js"></script>
+<script src="app/manage/eventbrief/manage_eventbrief.controller.js"></script>
+<script src="app/manage/eventvolunteer/manage_eventvolunteer.controller.js"></script>
+<script src="app/manage/eventdebrief/manage_eventdebrief.controller.js"></script>
+<script src="app/analytics/analytics_dashboard/analytics_dashboard.controller.js"></script>
 <script src="app/analytics/analytics_usersearch/analytics_usersearch.controller.js"></script>
+<script src="app/analytics/analytics_userprofile/analytics_userprofile.controller.js"></script>
+<script src="app/analytics/edit/edit_userprofile/edit_userprofile.controller.js"></script>
+<script src="app/analytics/analytics_userprofile/analytics_userprofileWithParam.controller.js"></script>
+<script src="app/analytics/analytics_userskills/analytics_userskills.controller.js"></script>
+<script src="app/analytics/edit/edit_userskills/edit_userskills.controller.js"></script>
+<script src="app/analytics/analytics_userexperience/analytics_userexperience.controller.js"></script>
+<script src="app/analytics/edit/edit_userexperience/edit_userexperience.controller.js"></script>
+<script src="app/analytics/analytics_userbadges/analytics_userbadges.controller.js"></script>
+<script src="app/analytics/analytics_userupcoming/analytics_userupcoming.controller.js"></script>
+<script src="app/analytics/analytics_userhistory/analytics_userhistory.controller.js"></script>
+<script src="app/analytics/analytics_useremergency/analytics_useremergency.controller.js"></script>
+<script src="app/analytics/edit/edit_useremergency/edit_useremergency.controller.js"></script>
+<script src="app/analytics/analytics_userpassword/analytics_userpassword.controller.js"></script>
 <!--Loads the js file that contains the surveyjs integration controller definition-->
 <script src="https://surveyjs.azureedge.net/0.12.20/survey.jquery.min.js"></script>
+<!--Loads the js files for highcharts on director dashboard-->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/heatmap.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
 
 </html>

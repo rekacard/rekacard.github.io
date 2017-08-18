@@ -3,8 +3,8 @@
 			<div class="col-md-6 col-md-offset-3">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h1>Login</h1>
-						<p><i>Do not have an account yet? <a href="app/registration/register.html">Sign Up</a></i></p>
+						<h1>Sign In</h1>
+						<p><i>Do not have an account yet? <a ui-sref="register">Register</a></i></p>
 					</div>
 
 					<div class="panel-body">
@@ -30,9 +30,9 @@
 								</div>
 								<!-- <input type="button" class="btn btn-lg btn-success btn-block" ng-click="ctrl.login()" value="Login"> -->
 		    					<div class="form-group">
-      								<button class="btn btn-lg btn-success btn-block" type="submit">Login</button>
+      								<button class="btn btn-lg btn-success btn-block" type="submit">Sign In</button>
     							</div>
-					</fieldset>
+							</fieldset>
 						</form>
 						<hr>
 						<center>
@@ -43,7 +43,7 @@
 						<!-- color #3B5998  btn-primary -->
 						<a class="btn btn-lg btn-block btn-primary btn-social btn-facebook" ng-click="ctrl.login()"> 
     						<span class="fa fa-facebook"></span> Sign in with Facebook </a>
-            <div ng-if='ctrl.msg' class="alert alert-danger" role="alert"><i class='fa fa-exclamation-triangle'></i> {{ctrl.msg}}</div>
+            			<div ng-if='ctrl.msg' class="alert alert-danger" role="alert"><i class='fa fa-exclamation-triangle'></i> {{ctrl.msg}}</div>
 					</div>
 				</div>
 			</div>

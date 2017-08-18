@@ -1,31 +1,31 @@
 <div class="container" style="margin-top: 30px;">
-    <div class="row">
+    <div ng-if='ctrl.user' class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1">
             <h2> Event Title </h2>
             <div data-spy="scroll" class="tabbable-panel">
                 <div class="tabbable-line">
                     <ul class="nav nav-tabs ">
                         <li class="active">
-                            <a href="/#!/user_eventdetails">Event Details</a>
+                            <a ui-sref="user_eventdetails">Event Details</a>
                         </li>
                         <li>
-                            <a href="/#!/user_eventsubmission">Profile Submitted</a>
+                            <a ui-sref="user_eventsubmission">Profile Submitted</a>
                         </li>
                         <li>
-                            <a href="/#!/user_eventbrief">Volunteer Brief</a>
+                            <a ui-sref="user_eventbrief">Volunteer Brief</a>
                         </li>
                         <li>
-                            <a href="/#!/user_eventfeedback">Feedback Form</a>
+                            <a ui-sref="user_eventfeedback">Feedback Form</a>
                         </li>
                         <li>
-                            <a href="/#!/user_eventattendance">Attendance Sheet</a>
+                            <a ui-sref="user_eventattendance">Attendance Sheet</a>
                         </li>
                         <li>
-                            <a href="/#!/user_eventdebrief">Debrief Form</a>
+                            <a ui-sref="user_eventdebrief">Debrief Form</a>
                         </li>
                     </ul>
                     <div class="tab-content">
-                        <div class="tab-pane active">                     
+                        <div class="tab-pane active">
                             <div class="well well-sm">
                                 <h4></h4>
                             </div>
@@ -90,21 +90,17 @@
                                     </div>
                                 </div>
                             </form>
-                                <p align="right">
-                                    <button type="button" class="btn btn-default btn-sm">
+                            <p align="right">
+                                <button type="button" class="btn btn-default btn-sm">
                                     <span class="glyphicon glyphicon-floppy-saved"></span>Save</button>
-                                </p>
-                                
+                            </p>
                             <div class="well well-sm">
                                 <h4></h4>
                             </div>
-                            </div>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-

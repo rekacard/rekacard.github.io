@@ -10,12 +10,12 @@
         .module("PAF")
         .controller("ProfileParamCtrl", ProfileParamCtrl);
 
-    ProfileParamCtrl.$inject = ['user', '$scope', '$state', "$stateParams", 'UserService'];
+    ProfileParamCtrl.$inject = ['user', '$scope', "$stateParams", 'UserService'];
 
     // ProfileParamCtrl function declaration. A function declaration uses the syntax: functionName([arg [, arg [...]]]){ ... }
     // ProfileParamCtrl accepts the injected dependency as a parameter. We name it DeptService for consistency, but you may
     // assign any name
-    function ProfileParamCtrl(user, $scope, $state, $stateParams, UserService) {
+    function ProfileParamCtrl(user, $scope, $stateParams, UserService) {
 
         // Declares the var vm (for ViewModel) and assigns it the object this (in this case, the EventCtrl)
         // Any function or variable that you attach to vm will be exposed to callers of EventCtrl, e.g., register.html
@@ -45,9 +45,8 @@
         };
 
         if ($stateParams.id) {
-            console.log("Received stateParams.user_id: " + $stateParams.id);
+            // console.log("Received stateParams.user_id: " + $stateParams.id);
             vm.viewuser = parseInt($stateParams.id);
-            // vm.search();
             vm.search();
         }
         

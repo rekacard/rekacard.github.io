@@ -35,6 +35,8 @@ const User = sequelize.import('./models/users');
 const Events = sequelize.import('./models/events');
 const Event_User = sequelize.import('./models/event_users');
 const Organisation = sequelize.import('./models/organisations');
+const User_Badge = sequelize.import('./models/user_badges');
+const Badge = sequelize.import('./models/badges');
 
 // Define Model Associations
 
@@ -43,6 +45,10 @@ const Organisation = sequelize.import('./models/organisations');
 // Foreign key is set in Event_User model
 Events.hasMany(Event_User, { foreignKey: 'event_id' });
 Event_User.belongsTo(Events, { foreignKey: 'event_id' });
+Email.belongsTo(User, { foreignKey: 'user_id' });
+User.hasOne(Email, { foreignKey: 'user_id' });
+Badge.hasMany(User_Badge, { foreignKey: 'badge_id' });
+User_Badge.belongsTo(Badge, { foreignKey: 'badge_id' });
 
 // Exports Models
 module.exports = {
@@ -53,4 +59,6 @@ module.exports = {
   Events: Events,   // Event is a reserved word
   Event_User: Event_User,
   Organisation: Organisation,
+  User_Badge: User_Badge,
+  Badge: Badge,
 };

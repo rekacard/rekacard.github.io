@@ -1,0 +1,94 @@
+<div class="container" style="margin-top: 30px;">
+    <div ng-if='ctrl.user'>
+        <div id="header">
+            <center>
+                <h1>User Details of {{ctrl.name}}</h1>
+            </center>
+            <br>
+            <br>
+        </div>
+
+        <div class="col-xs-2">
+            <!-- required for floating -->
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs tabs-left">
+                <li class="active">
+                    <a ui-sref="analytics_userprofile">Basic Profile</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userskills">Skills & Interests</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userexperience">Work Experience / Education</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userbadges">Badges</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userupcoming">Event Upcoming</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userhistory">Event History</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_useremergency">Emergency Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-9">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <center><img src="../../assets/img/user_512.png" class="avatar img-circle img-thumbnail" alt="avatar" width="30%"></center>
+
+                <h3 style="color:orange;">Personal Information</h3>
+                <table class="table">
+                    <col width="30%">
+                    <col width="70%">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <td>{{ctrl.profile.name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Mobile Number</th>
+                            <td>{{ctrl.profile.tel_mobile}}</td>
+                        </tr>
+                        <tr>
+                            <th>Date of Birth</th>
+                            <td>{{ctrl.profile.dob}}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{{ctrl.profile.email.email_id}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3 style="color:orange;">My Roots</h3>
+                <table class="table">
+                    <col width="30%">
+                    <col width="70%">
+                    <tbody>
+                        <tr>
+                            <th>Ethnicity</th>
+                            <td>Chinese</td>
+                        </tr>
+                        <tr>
+                            <th>Dialect Group</th>
+                            <td>Cantonese</td>
+                        </tr>
+                        <tr>
+                            <th>Clan / Ancestral Village</th>
+                            <td>Sunheng, Guangdong</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p align="right">
+                    <a ui-sref="edit_userprofile"  class="btn btn-download">Edit</a>
+                </p>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>

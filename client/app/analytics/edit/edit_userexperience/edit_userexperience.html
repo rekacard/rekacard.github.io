@@ -1,0 +1,119 @@
+<div class="container" style="margin-top: 30px;">
+    <div ng-if='ctrl.user'>
+        <div id="header">
+            <center>
+                <h1>User Details of {{ctrl.name}}</h1>
+            </center>
+            <br>
+            <br>
+        </div>
+
+        <div class="col-xs-2">
+            <!-- required for floating -->
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs tabs-left">
+                <li>
+                    <a ui-sref="analytics_userprofile">Basic Profile</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userskills">Skills & Interests</a>
+                </li>
+                <li class="active">
+                    <a ui-sref="analytics_userexperience">Work Experience / Education</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userbadges">Badges</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userupcoming">Event Upcoming</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_userhistory">Event History</a>
+                </li>
+                <li>
+                    <a ui-sref="analytics_useremergency">Emergency Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-9">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <h3 style="color:orange;">Work Experience</h3>
+                <table class="table">
+                    <col width="20%">
+                    <col width="40%">
+                    <col width="30%">
+                    <col width="10%">
+                    <tbody>
+                        <tr>
+                            <th>Year</th>
+                            <th>Company</th>
+                            <th>Position</th>
+                        </tr>
+                        <tr>
+                            <td><form><input type="year" size="3" value="2017"></form></td>
+                            <td><form><input type="text" size="40" value="Renforest Associates"></form></td>
+                            <td><form><input type="text" size="30" value="Founder"></form></td>
+                            <td><i class="fa fa-arrow-up" aria-hidden="true"></i>&nbsp;<i class="fa fa-arrow-down" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-times" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <td><form><input type="year" size="3" value="2015"></form></td>
+                            <td><form><input type="text" size="40" value="Insead"></form></td>
+                            <td><form><input type="text" size="30" value="PhD Candidate"></form></td>
+                            <td><i class="fa fa-arrow-up" aria-hidden="true"></i>&nbsp;<i class="fa fa-arrow-down" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-times" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <td><form><input type="year" size="3" value="2013"></form></td>
+                            <td><form><input type="text" size="40" value="National University of Singapore"></form></td>
+                            <td><form><input type="text" size="30" value="Researcher"></form></td>
+                            <td><i class="fa fa-arrow-up" aria-hidden="true"></i>&nbsp;<i class="fa fa-arrow-down" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-times" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <td><a ui-sref=""><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add More</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3 style="color:orange;">Education</h3>
+                <table class="table">
+                    <col width="20%">
+                    <col width="40%">
+                    <col width="30%">
+                    <col width="10%">
+                    <tbody>
+                        <tr>
+                            <th>Year</th>
+                            <th>Institution</th>
+                            <th>Course</th>
+                        </tr>
+                        <tr>
+                            <td><form><input type="year" size="3" value="2011"></form></td>
+                            <td><form><input type="text" size="40" value="National University of Singapore"></form></td>
+                            <td><form><input type="text" size="30" value="Psychology"></form></td>
+                            <td><i class="fa fa-arrow-up" aria-hidden="true"></i>&nbsp;<i class="fa fa-arrow-down" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-times" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <td><form><input type="year" size="3" value="2007"></form></td>
+                            <td><form><input type="text" size="40" value="Hwa Chong Junior College"></form></td>
+                            <td><form><input type="text" size="30" value="PCM-LEP"></form></td>
+                            <td><i class="fa fa-arrow-up" aria-hidden="true"></i>&nbsp;<i class="fa fa-arrow-down" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-times" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <td><form><input type="year" size="3" value="2005"></form></td>
+                            <td><form><input type="text" size="40" value="River Valley High School"></form></td>
+                            <td><form><input type="text" size="30" value="NIL"></form></td>
+                            <td><i class="fa fa-arrow-up" aria-hidden="true"></i>&nbsp;<i class="fa fa-arrow-down" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-times" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <td><a ui-sref=""><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add More</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p align="right">
+                    <a ui-sref="analytics_userexperience"  class="btn btn-download">Save Changes</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

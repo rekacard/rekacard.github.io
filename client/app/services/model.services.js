@@ -11,7 +11,6 @@
     // ModelService function declaration
     // Accepts the injected dependency as a parameter. We name it $http for consistency, but you may assign any name
     function ModelService() {
-    // function ModelService($http) {
         var service = this;
 
         // EXPOSED DATA MODELS -----------------------------------------------------------------------------------------
