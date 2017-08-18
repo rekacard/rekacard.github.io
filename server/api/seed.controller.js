@@ -99,7 +99,7 @@ var createNewUser = function (db) {
             console.log(user);
             db.Email
                 .create({
-                    email_id: "john@ken.com",
+                    email_id: "john@connectpro.com",
                     user_id: parseInt(user.dataValues.user_id),
                     password: "abc",
                 })
@@ -128,7 +128,7 @@ var createNewUser = function (db) {
             console.log(user.dataValues.user_id);
             db.Email
                 .create({
-                    email_id: "jenny@ken.com",
+                    email_id: "jenny@connectpro.com",
                     user_id: parseInt(user.dataValues.user_id),
                     password: "abc",
                 })
@@ -158,7 +158,7 @@ var createNewUser = function (db) {
             console.log(user.dataValues.user_id);
             db.Email
                 .create({
-                    email_id: "ken@ken.com",
+                    email_id: "ken@connectpro.com",
                     user_id: parseInt(user.dataValues.user_id),
                     password: "abc",
                 })
@@ -186,7 +186,7 @@ var createNewUser = function (db) {
             console.log(user);
             db.Email
                 .create({
-                    email_id: "lynn@email.com",
+                    email_id: "lynn@connectpro.com",
                     user_id: parseInt(user.dataValues.user_id),
                     password: "123",
                 })
@@ -214,7 +214,7 @@ var createNewUser = function (db) {
             console.log(user);
             db.Email
                 .create({
-                    email_id: "winnie@ken.com",
+                    email_id: "winnie@connectpro.com",
                     user_id: parseInt(user.dataValues.user_id),
                     password: "abc",
                 })
@@ -242,7 +242,7 @@ var createNewUser = function (db) {
             console.log(user);
             db.Email
                 .create({
-                    email_id: "alice@ken.com",
+                    email_id: "alice@connectpro.com",
                     user_id: parseInt(user.dataValues.user_id),
                     password: "abc",
                 })
@@ -270,7 +270,7 @@ var createNewUser = function (db) {
             console.log(user);
             db.Email
                 .create({
-                    email_id: "terry@ken.com",
+                    email_id: "terry@connectpro.com",
                     user_id: parseInt(user.dataValues.user_id),
                     password: "abc",
                 })
@@ -298,7 +298,7 @@ var createNewUser = function (db) {
             console.log(user);
             db.Email
                 .create({
-                    email_id: "felicia@ken.com",
+                    email_id: "felicia@connectpro.com",
                     user_id: parseInt(user.dataValues.user_id),
                     password: "abc",
                 })
